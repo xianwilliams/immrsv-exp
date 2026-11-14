@@ -1,0 +1,135 @@
+{
+  "createdAt": "2026-11-13",
+  "copyPolicy": "Owner-supplied responsibilities determine service scope. Public project posts and verified visual evidence add project context. Role descriptions explain only the named responsibility; they do not claim sole agency ownership, unverified outcomes, contract terms, headcounts, dates, or budgets. Archive-only projects describe documented features instead of asserting unverified services.",
+  "recommendedSectionHeadings": {
+    "default": "Our contribution",
+    "starry": "Inside the experience",
+    "crumbl": "Inside the experience"
+  },
+  "projects": {
+    "wcdonalds": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Fabrication oversight",
+        "Install + dismantle management",
+        "Staffing"
+      ],
+      "supportingSources": [
+        "https://wearesocial.com/us/case-study/wcdonalds-immersive-dining-experience/",
+        "ASSETS/BYU EXDM - Oct 2024.pdf, pages 7–8",
+        "qa/deck-text.txt"
+      ],
+      "basisNotes": "Deck confirms Nick worked on WcDonald’s Anime Dining Experience in Hollywood in March 2024. Agency case study supplies the dining, projection, walk-through, and vending-machine context; the owner brief supplies Nick’s precise responsibilities."
+    },
+    "starry": {
+      "responsibilityBasis": "Visual evidence in the supplied project archive; no detailed service credits provided",
+      "scopeMode": "documented project features",
+      "confirmedRoles": [],
+      "supportingSources": [
+        "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 1.jpeg",
+        "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 2.jpeg",
+        "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 3.jpeg",
+        "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 4.jpeg",
+        "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 6.jpeg"
+      ],
+      "basisNotes": "Photos substantiate the court, branding, participation, spectators, and indoor setting. No date, event name, location, league, fabrication ownership, staffing, or production-management responsibility inferred."
+    },
+    "crumbl": {
+      "responsibilityBasis": "Visual evidence in the supplied project archive; no detailed service credits provided",
+      "scopeMode": "documented project features",
+      "confirmedRoles": [],
+      "supportingSources": [
+        "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/",
+        "concepts/research/assets-index.json",
+        "qa/deck-sheet.jpg"
+      ],
+      "basisNotes": "HQ archive filenames date photographs to 2023; imagery verifies the mixer, ingredients, cookie box, swings, mailboxes, and corridor displays. The BYU deck describes a separate Edmonton international launch/scavenger hunt in March 2023. That different campaign is not attached to this HQ gallery or story."
+    },
+    "sundance": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Fabrication management",
+        "Event production",
+        "Specialty staffing"
+      ],
+      "savedPrimaryPost": "qa/gallery-research/sundance-source.html",
+      "primaryPostUrl": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+      "supportingSources": [
+        "https://www.bizbash.com/experiential-marketing/sundance-film-festival-2026-how-attendees-and-brands-bid-farewell-to-park-city"
+      ],
+      "basisNotes": "Nick’s post identifies the third year of Guru House/Number Project World of Hyatt production, the THR private media space, and program formats. The original brief supplies the 2024–2026 range and the three credited responsibilities."
+    },
+    "nascar-billboard": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Fabrication management",
+        "Specialty staffing",
+        "Logistics"
+      ],
+      "savedPrimaryPost": "qa/gallery-research/nascar-billboard-source.html",
+      "primaryPostUrl": "https://www.linkedin.com/posts/nick-wirsching_can-we-getta-hell-yeah-im-activity-7428125428239945728-q-nF",
+      "supportingSources": [
+        "https://unloop.agency/portfolios/nascar/",
+        "https://www.nascar.com/news-media/2026/02/10/nascar-kicks-off-2026-season-by-setting-guinness-world-records-title-with-worlds-loudest-billboard/amp/"
+      ],
+      "basisNotes": "Nick’s post confirms Times Square, the engine replica, pedal interaction, 72andSunny partnership, and Guinness recognition. Owner role list controls scope; no permitting or technical-engineering responsibility is added to Nick’s three credited roles."
+    },
+    "stones": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Fabrication management",
+        "Event production",
+        "Logistics",
+        "Staffing"
+      ],
+      "savedPrimaryPost": "qa/gallery-research/stones-source.html",
+      "primaryPostUrl": "https://www.linkedin.com/posts/nick-wirsching_earlier-this-month-in-chicago-we-brought-activity-7483162217434046465-_7Kn",
+      "supportingSources": [
+        "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+        "https://www.nascar.com/news-media/2026/06/24/nascar-rolling-stones-team-up-for-first-of-its-kind-collaboration/amp/"
+      ],
+      "basisNotes": "Nick’s post confirms the retired-car conversion, album context, three Chicago activation days, and experiential details. Display Group confirms the fabrication context and gearshift/pedal controls. No responsibility for the campaign film, music, or merchandise design is assigned to Nick."
+    },
+    "tictac": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Remote tour production",
+        "Staffing",
+        "Routing",
+        "Site negotiation"
+      ],
+      "savedPrimaryPost": "qa/gallery-research/tictac-source.html",
+      "primaryPostUrl": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+      "basisNotes": "Nick’s post confirms the mobile sampling tour through Southern colleges, universities and game days, including campus activity, late-night food and tailgates. Exact route, stop counts, attendance, sales and staffing numbers are not supplied and are not invented."
+    },
+    "fourloko": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Fabrication management",
+        "Event production",
+        "Logistics"
+      ],
+      "savedPrimaryPost": "qa/gallery-research/fourloko-source.html",
+      "primaryPostUrl": "https://www.linkedin.com/posts/nick-wirsching_size-does-matter-and-sometimes-a-small-package-activity-7340758903099412482-2Rwv",
+      "basisNotes": "Nick’s post confirms 140 sq ft, Guru House/Number Project collaboration, Live Nation circuit, and the listed interactive features. The post’s sales-lift claim is deliberately omitted from website copy; no unsupported attribution of that result to IMMRSV."
+    },
+    "keebler": {
+      "responsibilityBasis": "Owner-provided project role list in the original website brief",
+      "scopeMode": "responsibilities",
+      "confirmedRoles": [
+        "Fabrication management",
+        "Event production",
+        "Site negotiation"
+      ],
+      "savedPrimaryPost": "qa/gallery-research/keebler-source.html",
+      "primaryPostUrl": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+      "basisNotes": "Nick’s post confirms Grand Central, a one-day sampling event, the Hollow Tree Express, cookie-tap interaction, mugs, sound and uniforms. No permit, contractual, fabrication authorship, or attendance claims are added beyond the owner-provided responsibilities."
+    }
+  }
+}

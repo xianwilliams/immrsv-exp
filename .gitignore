@@ -1,0 +1,40 @@
+# Dependencies, build output, and caches
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.cache/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local configuration and credentials
+.env*
+!.env.example
+.vercel/
+.netlify/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Original source archive and local design/research output.
+# The optimized images and fonts in public/ are part of the website.
+/ASSETS/
+/concepts/
+/qa/
+/scrollcraft/
+
+# Local agent/editor state and OS clutter
+.codex/
+.agents/
+.aws/
+.vscode/
+.idea/
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

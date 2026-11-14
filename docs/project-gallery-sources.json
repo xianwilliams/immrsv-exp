@@ -1,0 +1,1018 @@
+{
+  "createdAt": "2026-11-13",
+  "preparation": "Orientation normalized, full source aspect ratio preserved, maximum dimension 2000 pixels, WebP quality 89 for photos and 90 for video stills. No AI-generated or synthetic imagery. No upscaling.",
+  "projects": {
+    "wcdonalds": [
+      {
+        "path": "public/media/galleries/wcdonalds-5.webp",
+        "src": "/media/galleries/wcdonalds-5.webp",
+        "project": "wcdonalds",
+        "url": "https://wearesocial.com/us/wp-content/uploads/sites/3/2025/04/5.jpg",
+        "sourcePage": "https://wearesocial.com/us/case-study/wcdonalds-immersive-dining-experience/",
+        "kind": "photo",
+        "width": 1920,
+        "height": 1280,
+        "originalDimensions": [1920, 1280],
+        "alt": "Guests raising WcDonald’s cups around the immersive dining table",
+        "caption": "A shared table inside the WcDonald’s experience."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-10.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_10-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1298,
+        "alt": "Anime city projections surrounding the WcDonald’s dining room",
+        "caption": "An anime city, projected across the room and tables."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-08.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_8-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1257,
+        "alt": "Space-themed projections and meal settings in the WcDonald’s experience",
+        "caption": "A different world with every sequence."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-11.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_11-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1250,
+        "alt": "Forest projections across WcDonald’s tables and walls",
+        "caption": "An immersive environment from wall to tabletop."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-07.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_7-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1117,
+        "alt": "Pink animated projections behind WcDonald’s dining tables",
+        "caption": "The dining room transformed by light and animation."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-06.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_6-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1579,
+        "alt": "WcDonald’s meal, branded packaging and illuminated tabletop",
+        "caption": "The experience carries through to every place setting."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-02.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_2-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1819,
+        "alt": "Exterior of the WcDonald’s pop-up with its inverted golden arches",
+        "caption": "WcDonald’s, brought into the real world."
+      },
+      {
+        "src": "/media/galleries/wcdonalds-press-04.webp",
+        "project": "wcdonalds",
+        "url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2024/03/WcDonaldsImmersiveDiningExperience_4-scaled.jpg",
+        "sourcePage": "https://www.anitrendz.com/news/2024/03/08/mcdonalds-hosts-wcdonalds-immersive-anime-dining-experience-in-los-angeles-on-march-9-10",
+        "credit": "Cassidy Sparrow/Getty Images for McDonald’s; press photography published by Anime Trending",
+        "kind": "photo",
+        "width": 2000,
+        "height": 1008,
+        "alt": "Wide view of the WcDonald’s dining room installation",
+        "caption": "The dining environment, ready for guests."
+      }
+    ],
+    "starry": [
+      {
+        "src": "/media/galleries/starry-01.webp",
+        "project": "starry",
+        "width": 2000,
+        "height": 1333,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 1.jpeg",
+        "archiveId": 2,
+        "originalDimensions": [2048, 1365],
+        "alt": "A Starry basketball centered on the branded court",
+        "caption": "A brand experience built around the game.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/starry-02.webp",
+        "project": "starry",
+        "width": 2000,
+        "height": 1333,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 2.jpeg",
+        "archiveId": 3,
+        "originalDimensions": [2048, 1365],
+        "alt": "Players and spectators around the Starry activation court",
+        "caption": "The court in action.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/starry-03.webp",
+        "project": "starry",
+        "width": 1200,
+        "height": 628,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 3.jpeg",
+        "archiveId": 4,
+        "originalDimensions": [1200, 628],
+        "alt": "A participant taking a shot at the Starry basketball activation",
+        "caption": "Putting fans in the middle of the experience.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/starry-04.webp",
+        "project": "starry",
+        "width": 1200,
+        "height": 628,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 4.jpeg",
+        "archiveId": 5,
+        "originalDimensions": [1200, 628],
+        "alt": "Wide view of the Starry activation and surrounding event crowd",
+        "caption": "A complete branded environment on the event floor.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/starry-05.webp",
+        "project": "starry",
+        "width": 1200,
+        "height": 628,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 6.jpeg",
+        "archiveId": 1,
+        "originalDimensions": [1200, 628],
+        "alt": "Spectators filling the stands around the Starry court",
+        "caption": "Built for the energy of a live audience.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      }
+    ],
+    "crumbl": [
+      {
+        "src": "/media/galleries/crumbl-01.webp",
+        "project": "crumbl",
+        "width": 2000,
+        "height": 1333,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (53 of 101).jpg",
+        "archiveId": 13,
+        "originalDimensions": [7681, 5121],
+        "alt": "Entrance to Crumbl headquarters with dimensional lettering and oversized cookies",
+        "caption": "A first impression that feels unmistakably Crumbl.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-02.webp",
+        "project": "crumbl",
+        "width": 2000,
+        "height": 1333,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (70 of 101).jpg",
+        "archiveId": 31,
+        "originalDimensions": [7469, 4979],
+        "alt": "Oversized butter, eggs and spatula at the Secret Ingredient installation",
+        "caption": "Everyday ingredients, at a completely different scale.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-03.webp",
+        "project": "crumbl",
+        "width": 1600,
+        "height": 2000,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation_LindseySpotLight (14 of 15).jpg",
+        "archiveId": 34,
+        "originalDimensions": [4635, 5794],
+        "alt": "A guest seated in a giant pink Crumbl cookie box",
+        "caption": "An environment people can step inside.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-04.webp",
+        "project": "crumbl",
+        "width": 1600,
+        "height": 2000,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (100 of 101).jpg",
+        "archiveId": 37,
+        "originalDimensions": [4987, 6234],
+        "alt": "Full view of a giant pink mixer sculpture at Crumbl headquarters",
+        "caption": "A larger-than-life centerpiece.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-05.webp",
+        "project": "crumbl",
+        "width": 2000,
+        "height": 1600,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (86 of 101).jpg",
+        "archiveId": 23,
+        "originalDimensions": [6744, 5395],
+        "alt": "Custom pink Crumbl swings suspended around a communal table",
+        "caption": "Bringing a playful point of view to shared space.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-06.webp",
+        "project": "crumbl",
+        "width": 2000,
+        "height": 1600,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (75 of 101).jpg",
+        "archiveId": 40,
+        "originalDimensions": [6830, 5464],
+        "alt": "A wall of custom pink mailboxes at Crumbl headquarters",
+        "caption": "Details that carry the brand throughout the building.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-07.webp",
+        "project": "crumbl",
+        "width": 2000,
+        "height": 1600,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (60 of 101).jpg",
+        "archiveId": 35,
+        "originalDimensions": [6287, 5030],
+        "alt": "Dimensional cookie displays along the Crumbl University corridor",
+        "caption": "Turning a hallway into a brand story.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-08.webp",
+        "project": "crumbl",
+        "width": 1600,
+        "height": 2000,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (48 of 101).jpg",
+        "archiveId": 46,
+        "originalDimensions": [4367, 5459],
+        "alt": "Oversized chocolate-chip cookie inside a pink branded box",
+        "caption": "A familiar product becomes an immersive moment.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-09.webp",
+        "project": "crumbl",
+        "width": 2000,
+        "height": 1333,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (74 of 101).jpg",
+        "archiveId": 7,
+        "originalDimensions": [6954, 4636],
+        "alt": "Two guests posing with the Secret Ingredient installation",
+        "caption": "Designed for the people who bring it to life.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      },
+      {
+        "src": "/media/galleries/crumbl-10.webp",
+        "project": "crumbl",
+        "width": 1600,
+        "height": 2000,
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (101 of 101).jpg",
+        "archiveId": 12,
+        "originalDimensions": [5197, 6496],
+        "alt": "Close-up of the sculpted controls on a pink oversized mixer",
+        "caption": "Custom fabrication, down to the details.",
+        "kind": "photo",
+        "credit": "User-provided IMMRSV project archive"
+      }
+    ],
+    "sundance": [
+      {
+        "src": "/media/galleries/sundance.webp",
+        "project": "sundance",
+        "url": "https://eu-images.contentstack.com/v3/assets/blt725d5e066dc2264b/blt004e125aba42470e/69810d2f50aa5e9aef261e56/Hyatt-09.jpg",
+        "sourcePage": "https://www.bizbash.com/experiential-marketing/sundance-film-festival-2026-how-attendees-and-brands-bid-farewell-to-park-city",
+        "credit": "Courtesy of Guru House, published by BizBash",
+        "kind": "photo",
+        "width": 1600,
+        "height": 1066,
+        "alt": "A World of Hyatt and Variety panel at Sundance Film Festival 2026",
+        "caption": "World of Hyatt at Sundance Film Festival 2026."
+      },
+      {
+        "src": "/media/galleries/sundance-wellness.webp",
+        "project": "sundance",
+        "url": "https://eu-images.contentstack.com/v3/assets/blt725d5e066dc2264b/blt333208a4d23ff19b/69810e6c83114abeff7006f9/GURU-HYATT-189.jpg",
+        "sourcePage": "https://www.bizbash.com/experiential-marketing/sundance-film-festival-2026-how-attendees-and-brands-bid-farewell-to-park-city",
+        "credit": "Courtesy of Guru House, published by BizBash",
+        "kind": "photo",
+        "width": 1067,
+        "height": 1600,
+        "alt": "Pilates mats and event signage inside the World of Hyatt activation",
+        "caption": "A venue ready for the morning wellness program."
+      },
+      {
+        "src": "/media/galleries/sundance-scent.webp",
+        "project": "sundance",
+        "url": "https://eu-images.contentstack.com/v3/assets/blt725d5e066dc2264b/bltd5463e49260fb3f1/69810edf3923546a0a6c1c5e/GURU-HYATT-119.jpg",
+        "sourcePage": "https://www.bizbash.com/experiential-marketing/sundance-film-festival-2026-how-attendees-and-brands-bid-farewell-to-park-city",
+        "credit": "Courtesy of Guru House, published by BizBash",
+        "kind": "photo",
+        "width": 1067,
+        "height": 1600,
+        "alt": "Fragrance materials at the Scents of Sundance experience",
+        "caption": "Scents of Sundance: a closer look at the experience."
+      },
+      {
+        "src": "/media/galleries/sundance-frame-01.webp",
+        "project": "sundance",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 7,
+        "kind": "video still",
+        "alt": "World of Hyatt activation entrance on Park City’s Main Street",
+        "caption": "A new world behind a familiar Main Street entrance. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+        "sourceVideo": "qa/gallery-research/sundance-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/sundance-frame-03.webp",
+        "project": "sundance",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 15,
+        "kind": "video still",
+        "alt": "The production crew outside the World of Hyatt activation",
+        "caption": "The people behind the production. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+        "sourceVideo": "qa/gallery-research/sundance-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/sundance-frame-04.webp",
+        "project": "sundance",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 21,
+        "kind": "video still",
+        "alt": "Crew installing The Hollywood Reporter wall signage",
+        "caption": "The details coming together on site. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+        "sourceVideo": "qa/gallery-research/sundance-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/sundance-frame-05.webp",
+        "project": "sundance",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 27,
+        "kind": "video still",
+        "alt": "Guests participating in the activation’s wellness session",
+        "caption": "A full program, from morning onward. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+        "sourceVideo": "qa/gallery-research/sundance-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/sundance-frame-06.webp",
+        "project": "sundance",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 35,
+        "kind": "video still",
+        "alt": "DJ performing in the World of Hyatt activation",
+        "caption": "The experience shifts into the evening. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+        "sourceVideo": "qa/gallery-research/sundance-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/sundance-frame-07.webp",
+        "project": "sundance",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 45,
+        "kind": "video still",
+        "alt": "World of Hyatt director’s chair and branded display",
+        "caption": "A close-up of the finished environment. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_sundance-wrapped-two-months-ago-but-im-activity-7444358521594474496-kZuz",
+        "sourceVideo": "qa/gallery-research/sundance-reel.mp4"
+      }
+    ],
+    "nascar-billboard": [
+      {
+        "path": "public/media/galleries/nascar-01.webp",
+        "src": "/media/galleries/nascar-01.webp",
+        "project": "nascar-billboard",
+        "url": "https://unloop.agency/wp-content/uploads/2026/08/01-nascar-times-square-event.jpg",
+        "sourcePage": "https://unloop.agency/portfolios/nascar/",
+        "kind": "photo",
+        "width": 1920,
+        "height": 1080,
+        "originalDimensions": [1920, 1080],
+        "alt": "Completed NASCAR HELL YEAH billboard with an engine emerging from its center",
+        "caption": "The finished interactive billboard."
+      },
+      {
+        "path": "public/media/galleries/nascar-03.webp",
+        "src": "/media/galleries/nascar-03.webp",
+        "project": "nascar-billboard",
+        "url": "https://unloop.agency/wp-content/uploads/2026/08/03-nascar-engine-replica.jpg",
+        "sourcePage": "https://unloop.agency/portfolios/nascar/",
+        "kind": "photo",
+        "width": 1920,
+        "height": 1080,
+        "originalDimensions": [1920, 1080],
+        "alt": "Close-up of the engine and fractured surface of the NASCAR billboard",
+        "caption": "An engine built into the experience."
+      },
+      {
+        "path": "public/media/galleries/nascar-02.webp",
+        "src": "/media/galleries/nascar-02.webp",
+        "project": "nascar-billboard",
+        "url": "https://unloop.agency/wp-content/uploads/2026/08/02-nascar-installation-overview.jpg",
+        "sourcePage": "https://unloop.agency/portfolios/nascar/",
+        "kind": "photo",
+        "width": 1920,
+        "height": 1080,
+        "originalDimensions": [1920, 1080],
+        "alt": "The large NASCAR billboard installation in the fabrication workshop",
+        "caption": "From the workshop to the world outside."
+      },
+      {
+        "path": "public/media/galleries/nascar-04.webp",
+        "src": "/media/galleries/nascar-04.webp",
+        "project": "nascar-billboard",
+        "url": "https://unloop.agency/wp-content/uploads/2026/08/04-nascar-interactive-accelerator.jpg",
+        "sourcePage": "https://unloop.agency/portfolios/nascar/",
+        "kind": "photo",
+        "width": 1920,
+        "height": 1080,
+        "originalDimensions": [1920, 1080],
+        "alt": "Custom HELL YEAH accelerator control for the NASCAR installation",
+        "caption": "The interaction behind the roar."
+      }
+    ],
+    "stones": [
+      {
+        "path": "public/media/galleries/stones-display-06.webp",
+        "src": "/media/galleries/stones-display-06.webp",
+        "project": "stones",
+        "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_06.webp",
+        "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+        "kind": "photo",
+        "width": 900,
+        "height": 600,
+        "originalDimensions": [900, 600],
+        "alt": "NASCAR and Rolling Stones listening car at Navy Pier with its door open",
+        "caption": "The Racing Record Player, ready for fans."
+      },
+      {
+        "path": "public/media/galleries/stones-linkedin-01.webp",
+        "src": "/media/galleries/stones-linkedin-01.webp",
+        "project": "stones",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQFJU3tIlYN_ag/feedshare-shrink_800/B56Z9jubeOGUAc-/0/1784084543991?e=2147483647&v=beta&t=OK-yA_suXB-7crD8B1Sr2ltfEdqlp4PBMIFCGBb1aUE",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_earlier-this-month-in-chicago-we-brought-activity-7483162217434046465-_7Kn",
+        "kind": "photo",
+        "width": 800,
+        "height": 534,
+        "originalDimensions": [800, 534],
+        "alt": "Rolling Stones album graphics across the hood of the NASCAR show car",
+        "caption": "A complete transformation, inside and out."
+      },
+      {
+        "path": "public/media/galleries/stones-linkedin-07.webp",
+        "src": "/media/galleries/stones-linkedin-07.webp",
+        "project": "stones",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQH-XBV7UZRsKg/feedshare-shrink_800/B56Z9jubAaLAAc-/0/1784084541955?e=2147483647&v=beta&t=qwenREK2ImdSZN6pwJsJXw3C8GfgqXE35iL2Ocq0zu8",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_earlier-this-month-in-chicago-we-brought-activity-7483162217434046465-_7Kn",
+        "kind": "photo",
+        "width": 800,
+        "height": 450,
+        "originalDimensions": [800, 450],
+        "alt": "Custom wood dashboard, record player and seating inside the NASCAR listening car",
+        "caption": "A stock car becomes a listening lounge."
+      },
+      {
+        "path": "public/media/galleries/stones-linkedin-04.webp",
+        "src": "/media/galleries/stones-linkedin-04.webp",
+        "project": "stones",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQFX7EMNfTNWqg/feedshare-image-high-res/B56Z9jubSAG0AU-/0/1784084543215?e=2147483647&v=beta&t=kCq-JY_6xFyUM1EAO4s8EbO_u33wi9iIcowz2YXjqaE",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_earlier-this-month-in-chicago-we-brought-activity-7483162217434046465-_7Kn",
+        "kind": "photo",
+        "width": 1025,
+        "height": 1536,
+        "originalDimensions": [1025, 1536],
+        "alt": "A fan enjoying the Rolling Stones listening experience inside the car",
+        "caption": "Fans take the driver’s seat."
+      },
+      {
+        "path": "public/media/galleries/stones-linkedin-03.webp",
+        "src": "/media/galleries/stones-linkedin-03.webp",
+        "project": "stones",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQF3aIxm3qp8Iw/feedshare-shrink_800/B56Z9jubf.HYAc-/0/1784084544326?e=2147483647&v=beta&t=s8kGSNLuC67D2fPggxLlcK5nmbRJiOLmvWI1W7BnjW4",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_earlier-this-month-in-chicago-we-brought-activity-7483162217434046465-_7Kn",
+        "kind": "photo",
+        "width": 800,
+        "height": 534,
+        "originalDimensions": [800, 534],
+        "alt": "Rolling Stones and NASCAR branded activation cart",
+        "caption": "A traveling environment built around music and racing."
+      },
+      {
+        "path": "public/media/galleries/stones-linkedin-02.webp",
+        "src": "/media/galleries/stones-linkedin-02.webp",
+        "project": "stones",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQESQ9l9mmdqvw/feedshare-shrink_800/B56Z9jubYLJoAk-/0/1784084543586?e=2147483647&v=beta&t=NVli1fTQPlLXmlM3WMA-HJhbVw_j_FhB4QYQLMD9bBI",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_earlier-this-month-in-chicago-we-brought-activity-7483162217434046465-_7Kn",
+        "kind": "photo",
+        "width": 800,
+        "height": 534,
+        "originalDimensions": [800, 534],
+        "alt": "A collection of NASCAR and Rolling Stones collaboration graphics",
+        "caption": "Two worlds, brought together in the details."
+      },
+      {
+        "path": "public/media/galleries/stones-display-13.webp",
+        "src": "/media/galleries/stones-display-13.webp",
+        "project": "stones",
+        "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_13.webp",
+        "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+        "kind": "photo",
+        "width": 900,
+        "height": 600,
+        "originalDimensions": [900, 600],
+        "alt": "Production team reviewing the original NASCAR vehicle before its conversion",
+        "caption": "Planning the transformation with the build team."
+      },
+      {
+        "path": "public/media/galleries/stones-display-08.webp",
+        "src": "/media/galleries/stones-display-08.webp",
+        "project": "stones",
+        "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_08.webp",
+        "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+        "kind": "photo",
+        "width": 900,
+        "height": 600,
+        "originalDimensions": [900, 600],
+        "alt": "Rear three-quarter view of the listening car and activation footprint",
+        "caption": "The full experience, out in the world."
+      },
+      {
+        "path": "public/media/galleries/stones-display-09.webp",
+        "src": "/media/galleries/stones-display-09.webp",
+        "project": "stones",
+        "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_09.webp",
+        "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+        "kind": "photo",
+        "width": 900,
+        "height": 600,
+        "originalDimensions": [900, 600],
+        "alt": "Visitors gathering around the NASCAR and Rolling Stones activation at Navy Pier",
+        "caption": "Meeting fans where they are."
+      },
+      {
+        "path": "public/media/galleries/stones-display-12.webp",
+        "src": "/media/galleries/stones-display-12.webp",
+        "project": "stones",
+        "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_12.webp",
+        "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+        "kind": "photo",
+        "width": 900,
+        "height": 600,
+        "originalDimensions": [900, 600],
+        "alt": "The Racing Record Player activation at a race venue",
+        "caption": "Built to travel from the city to the speedway."
+      }
+    ],
+    "tictac": [
+      {
+        "path": "public/media/galleries/tictac-linkedin-01.webp",
+        "src": "/media/galleries/tictac-linkedin-01.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQHn2ch-3mkpxA/feedshare-shrink_800/B56aE6_MGwG4Ac-/0/1791991006103?e=2147483647&v=beta&t=28haFuz1acMEc8HjWpqqi5G9-g8v8I5V09ukpPA10sw",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 800,
+        "height": 533,
+        "originalDimensions": [800, 533],
+        "alt": "Tic Tac and Dr Pepper branded mobile cart outside Kyle Field",
+        "caption": "The Vibe Refresh Squad, on the move."
+      },
+      {
+        "path": "public/media/galleries/tictac-linkedin-03.webp",
+        "src": "/media/galleries/tictac-linkedin-03.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQGFz5rWy_Uqgg/feedshare-shrink_800/B56aE6_L_HGcAc-/0/1791991005935?e=2147483647&v=beta&t=691H2plIYXqB3gS8W-RoyOo3YVXjauGDL151sFELzaE",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 800,
+        "height": 533,
+        "originalDimensions": [800, 533],
+        "alt": "Two branded Tic Tac and Dr Pepper carts on a campus road",
+        "caption": "A mobile experience built to travel."
+      },
+      {
+        "path": "public/media/galleries/tictac-linkedin-05.webp",
+        "src": "/media/galleries/tictac-linkedin-05.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQG7aZtdPWLE2g/feedshare-image-high-res/B56aE6_L8jHQAU-/0/1791991005442?e=2147483647&v=beta&t=BbfiACQY40e9sqmNjHd-I11io7IJkg4VIUu7O6ubwek",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 1024,
+        "height": 1536,
+        "originalDimensions": [1024, 1536],
+        "alt": "Close-up of a guest using the branded mint dispenser",
+        "caption": "A small interaction with a big personality."
+      },
+      {
+        "path": "public/media/galleries/tictac-linkedin-04.webp",
+        "src": "/media/galleries/tictac-linkedin-04.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQGjVHPDXGT-zA/feedshare-image-high-res/B56aE6_L_1IAAU-/0/1791991005725?e=2147483647&v=beta&t=cpDn6euLMpXVJ1Owt0dqeXttDQeWuV_VT3YbNojVcHA",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 1024,
+        "height": 1536,
+        "originalDimensions": [1024, 1536],
+        "alt": "A brand ambassador welcoming a guest beside the mobile activation",
+        "caption": "Making the connection, one guest at a time."
+      },
+      {
+        "path": "public/media/galleries/tictac-linkedin-06.webp",
+        "src": "/media/galleries/tictac-linkedin-06.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQFmhHaSMH7xqw/feedshare-image-high-res/B56aE6_L_zGcAU-/0/1791991005626?e=2147483647&v=beta&t=KUxvcofiSOIZhzWKdEw4yW300cfLJ09vLHyAvdC3gXA",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 1024,
+        "height": 1536,
+        "originalDimensions": [1024, 1536],
+        "alt": "A group of guests posing beside the Tic Tac and Dr Pepper cart",
+        "caption": "A stop worth sharing."
+      },
+      {
+        "path": "public/media/galleries/tictac-linkedin-02.webp",
+        "src": "/media/galleries/tictac-linkedin-02.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQHlU_hyWNumMQ/feedshare-image-high-res/B56aE6_L1YHkAU-/0/1791991005341?e=2147483647&v=beta&t=hS7vZU9rTAJnuD90flUs_z9l_lD5AgzMmpuUDQSJzLE",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 864,
+        "height": 1536,
+        "originalDimensions": [864, 1536],
+        "alt": "Two guests with Tic Tac samples at the branded cart",
+        "caption": "Getting the product into people’s hands."
+      },
+      {
+        "path": "public/media/galleries/tictac-linkedin-07.webp",
+        "src": "/media/galleries/tictac-linkedin-07.webp",
+        "project": "tictac",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQHPWzPAOZa2ew/feedshare-shrink_800/B56aE6_MUBIEAg-/0/1791991007166?e=2147483647&v=beta&t=XlheW0Zit3u_mBwb8Wea9ztXGXu8N9oYnR4B2AVI8rA",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_100-layers-of-23-iconic-flavors-when-tic-activity-7516155058518982656-s_xy",
+        "kind": "photo",
+        "width": 800,
+        "height": 600,
+        "originalDimensions": [800, 600],
+        "alt": "Guests lining up for the Tic Tac and Dr Pepper activation on campus",
+        "caption": "Keeping the tour and the experience moving."
+      }
+    ],
+    "fourloko": [
+      {
+        "src": "/media/galleries/fourloko-frame-04.webp",
+        "project": "fourloko",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 10.5,
+        "kind": "video still",
+        "alt": "A guest posing against the Four Loko Party Store’s graphic wall",
+        "caption": "Inside the Party Store. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_size-does-matter-and-sometimes-a-small-package-activity-7340758903099412482-2Rwv",
+        "sourceVideo": "qa/gallery-research/fourloko-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/fourloko-frame-03.webp",
+        "project": "fourloko",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 8.5,
+        "kind": "video still",
+        "alt": "Festival guests interacting inside the Four Loko Party Store",
+        "caption": "A small footprint with plenty of personality. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_size-does-matter-and-sometimes-a-small-package-activity-7340758903099412482-2Rwv",
+        "sourceVideo": "qa/gallery-research/fourloko-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/fourloko-frame-05.webp",
+        "project": "fourloko",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 11.5,
+        "kind": "video still",
+        "alt": "Two guests posing with Four Loko at a nighttime music festival",
+        "caption": "Part of the festival experience. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_size-does-matter-and-sometimes-a-small-package-activity-7340758903099412482-2Rwv",
+        "sourceVideo": "qa/gallery-research/fourloko-reel.mp4"
+      },
+      {
+        "src": "/media/galleries/fourloko-frame-02.webp",
+        "project": "fourloko",
+        "width": 720,
+        "height": 1280,
+        "timestampSeconds": 6.5,
+        "kind": "video still",
+        "alt": "A guest raising a Four Loko can toward the illuminated festival stage",
+        "caption": "Made for a live crowd. Video still.",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_size-does-matter-and-sometimes-a-small-package-activity-7340758903099412482-2Rwv",
+        "sourceVideo": "qa/gallery-research/fourloko-reel.mp4"
+      }
+    ],
+    "keebler": [
+      {
+        "path": "public/media/galleries/keebler-linkedin-02.webp",
+        "src": "/media/galleries/keebler-linkedin-02.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQFfWyguPyRGhg/feedshare-shrink_800/B56Zz6Nz5jHcAc-/0/1773724451133?e=2147483647&v=beta&t=w5YN9iubtbTigmoC04BVilwVpsvMwdN65LjYl6QgRkg",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 573,
+        "originalDimensions": [800, 573],
+        "alt": "Completed Keebler Butterbeer cookie trolley in Grand Central’s Graybar Passage",
+        "caption": "A little Butterbeer magic at Grand Central."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-01.webp",
+        "src": "/media/galleries/keebler-linkedin-01.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQESz91D65VcMA/feedshare-shrink_800/B56Zz6NzipHcAc-/0/1773724449800?e=2147483647&v=beta&t=SBHh6zWULdU94h3-9oicnPD1AjCySYyWosbqLCpr9SE",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 543,
+        "originalDimensions": [800, 543],
+        "alt": "Close-up of a Keebler sign attached to the tree-textured trolley",
+        "caption": "The world comes alive in the details."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-03.webp",
+        "src": "/media/galleries/keebler-linkedin-03.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQHHYnEqQARXfw/feedshare-shrink_800/B56Zz6Nz6BHoAg-/0/1773724451364?e=2147483647&v=beta&t=KgrikwId_64Hz5tmRuVQqyius0SQeAi1KLTbg33akhU",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 534,
+        "originalDimensions": [800, 534],
+        "alt": "A group of guests taking a selfie beside the Butterbeer activation",
+        "caption": "A moment worth keeping."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-09.webp",
+        "src": "/media/galleries/keebler-linkedin-09.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQG94A3_yY9l3g/feedshare-shrink_800/B56Zz6Nz85H8Ag-/0/1773724451454?e=2147483647&v=beta&t=m1LzvkTUudSzjjgV0BWmRiTfeC-VoB3RO36J25Tv2tw",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 548,
+        "originalDimensions": [800, 548],
+        "alt": "A host welcoming guests to the Butterbeer cookie taps",
+        "caption": "The experience starts with the people."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-07.webp",
+        "src": "/media/galleries/keebler-linkedin-07.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQGKuyLbAYLjCA/feedshare-image-high-res/B56Zz6NzT5H0AU-/0/1773724448534?e=2147483647&v=beta&t=PwcrcN5YMnd-siIeihaxbcN3NYBeU2xz6ig4mfVjNWk",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 970,
+        "height": 1448,
+        "originalDimensions": [970, 1448],
+        "alt": "An adult and child interacting with the cookie tap",
+        "caption": "A hands-on moment for the next generation of fans."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-08.webp",
+        "src": "/media/galleries/keebler-linkedin-08.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQFoCpyX5f-Bng/feedshare-shrink_800/B56Zz6NzuYH0Ac-/0/1773724450327?e=2147483647&v=beta&t=N1m5k0fzwqFQPl2vK2fJBbVXWjoDChAXnt6RBxZDDAE",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 661,
+        "originalDimensions": [800, 661],
+        "alt": "Rear view of the branded Keebler Butterbeer trolley",
+        "caption": "A complete environment, from every side."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-06.webp",
+        "src": "/media/galleries/keebler-linkedin-06.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQFFit8fkCf4Xw/feedshare-shrink_800/B56Zz6Nz9rH8Ag-/0/1773724451501?e=2147483647&v=beta&t=yJZNKubIZom0yHGQhUTyQOHJYyCAWrH55u9ydUyxmps",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 559,
+        "originalDimensions": [800, 559],
+        "alt": "Guests taking a selfie after visiting the Butterbeer trolley",
+        "caption": "Cookies, company, and a little magic."
+      },
+      {
+        "path": "public/media/galleries/keebler-linkedin-05.webp",
+        "src": "/media/galleries/keebler-linkedin-05.webp",
+        "project": "keebler",
+        "url": "https://media.licdn.com/dms/image/v2/D5622AQEkyC0fhRvLeg/feedshare-shrink_800/B56Zz6Nz0vHcAc-/0/1773724450907?e=2147483647&v=beta&t=m7nYp-_Bx8jtN3XBNP9Nf0BP5fOq3PCdab0xvKyurfA",
+        "sourcePage": "https://www.linkedin.com/posts/nick-wirsching_all-aboard-for-butterbeer-cookies-to-celebrate-activity-7439660578186403840-qAvT",
+        "kind": "photo",
+        "width": 800,
+        "height": 523,
+        "originalDimensions": [800, 523],
+        "alt": "A visitor photographing the Butterbeer trolley and its illuminated taps",
+        "caption": "An unexpected stop in the middle of the city."
+      }
+    ]
+  },
+  "covers": {
+    "wcdonalds": "/media/galleries/wcdonalds-5.webp",
+    "starry": "/media/galleries/starry-02.webp",
+    "crumbl": "/media/galleries/crumbl-01.webp",
+    "sundance": "/media/galleries/sundance.webp",
+    "nascar-billboard": "/media/galleries/nascar-01.webp",
+    "stones": "/media/galleries/stones-display-06.webp",
+    "tictac": "/media/galleries/tictac-linkedin-03.webp",
+    "fourloko": "/media/galleries/fourloko-frame-05.webp",
+    "keebler": "/media/galleries/keebler-linkedin-02.webp"
+  },
+  "coverPositions": {
+    "wcdonalds": "50% 42%",
+    "starry": "50% 52%",
+    "crumbl": "50% 50%",
+    "sundance": "10% 32%",
+    "nascar-billboard": "50% 55%",
+    "stones": "50% 57%",
+    "tictac": "50% 55%",
+    "fourloko": "50% 30%",
+    "keebler": "50% 18%"
+  },
+  "photoRecommendations": {
+    "services": [
+      {
+        "title": "Project management",
+        "src": "/media/conference.webp",
+        "position": "50% 48%",
+        "reason": "Already a strong landscape overall-environment image. Keep."
+      },
+      {
+        "title": "Logistics + operations",
+        "src": "/media/galleries/recommendations-04.webp",
+        "position": "50% 50%",
+        "reason": "Wide expo floor, people and multiple booths. Replaces current image with harsh window flare."
+      },
+      {
+        "title": "Strategy + concepting",
+        "src": "/media/galleries/recommendations-02.webp",
+        "position": "50% 48%",
+        "reason": "A whole concept expressed as a staged pink classroom, framed by lockers. Landscape replaces severely cropped portrait."
+      },
+      {
+        "title": "Specialized staffing",
+        "src": "/media/galleries/service-people.webp",
+        "position": "50% 40%",
+        "reason": "Wide participant packing activity. Use alt identifying Comfort Cases event activity, without claiming the pictured participant is staff."
+      },
+      {
+        "title": "Design + build",
+        "src": "/media/galleries/stones-display-14.webp",
+        "position": "50% 48%",
+        "reason": "Real fabrication work in progress, wide and visually clear; reserved outside Stones popup to reduce repetition."
+      },
+      {
+        "title": "And then some",
+        "src": "/media/outdoor.webp",
+        "position": "50% 58%",
+        "reason": "Keep the quirky courtyard installation. Full composition has a near-square aspect, so an intrinsic-ratio display is preferable to a severe wide crop."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Daniel Gibbons",
+        "src": "/media/galleries/recommendations-05.webp",
+        "position": "50% 72%",
+        "projectLabel": "Outdoor installations",
+        "reason": "Wide source view of mirror installation; replaces portrait mirrors.webp."
+      },
+      {
+        "name": "Shane Peet",
+        "src": "/media/galleries/stones-display-16.webp",
+        "position": "50% 48%",
+        "projectLabel": "Behind the build",
+        "reason": "Real team working on a custom build, wide source. Reserved outside popup to reduce repetition."
+      },
+      {
+        "name": "Haley",
+        "src": "/media/review-event.webp",
+        "position": "50% 35%",
+        "projectLabel": "Crumbl event experience",
+        "reason": "Keep; original is landscape. Upper-third positioning keeps faces intact."
+      },
+      {
+        "name": "GR3NGASHO",
+        "src": "/media/galleries/review-live-experience.webp",
+        "position": "50% 45%",
+        "projectLabel": "Live brand experiences",
+        "reason": "Wide live-activation view replaces a square sculpture image that cannot show sculpture and people simultaneously in a wide crop."
+      },
+      {
+        "name": "Ty Shane",
+        "src": "/media/review-crumbl.webp",
+        "position": "50% 35%",
+        "projectLabel": "Crumbl conference",
+        "reason": "Keep; original is landscape. Keep faces in the frame."
+      }
+    ]
+  },
+  "knownLimits": [
+    "Four Loko has four carefully selected genuine frames from Nick’s supplied video, not standalone photographs. They preserve the original portrait frame and embedded letterboxing. Its cover position deliberately frames both faces for a wide card.",
+    "Sundance combines three attributed photographs and six identified real video stills from Nick’s supplied reel.",
+    "LinkedIn sources publish several photos at 800px width. They remain at their source resolution, rather than being artificially enlarged.",
+    "WcDonald’s gallery combines its primary agency case-study photo with credited McDonald’s press photographs published by Anime Trending. Credits and source pages are retained per image."
+  ],
+  "gaps": [
+    "No full exterior photograph of the Four Loko Party Store was found in the supplied public post; selected reel frames show real guest interactions and interior branding. No unrelated older Four Loko Bodega images were used."
+  ],
+  "recommendationSources": {
+    "/media/galleries/recommendations-04.webp": {
+      "src": "/media/galleries/recommendations-04.webp",
+      "project": "recommendations",
+      "width": 2000,
+      "height": 1333,
+      "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-073.jpg",
+      "archiveId": 120,
+      "originalDimensions": [6000, 4000]
+    },
+    "/media/galleries/recommendations-02.webp": {
+      "src": "/media/galleries/recommendations-02.webp",
+      "project": "recommendations",
+      "width": 2000,
+      "height": 1334,
+      "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference73.jpg",
+      "archiveId": 84,
+      "originalDimensions": [8192, 5464]
+    },
+    "/media/galleries/service-people.webp": {
+      "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5376.jpg",
+      "kind": "photo",
+      "credit": "User-provided IMMRSV project archive"
+    },
+    "/media/galleries/stones-display-14.webp": {
+      "path": "public/media/galleries/stones-display-14.webp",
+      "src": "/media/galleries/stones-display-14.webp",
+      "project": "stones",
+      "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_14.webp",
+      "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+      "kind": "photo",
+      "width": 900,
+      "height": 600,
+      "originalDimensions": [900, 600]
+    },
+    "/media/galleries/recommendations-05.webp": {
+      "src": "/media/galleries/recommendations-05.webp",
+      "project": "recommendations",
+      "width": 1888,
+      "height": 1416,
+      "source": "ASSETS/IMMRSV PAST PROJECTS/Photos/DSC03343.jpg",
+      "archiveId": 122,
+      "originalDimensions": [1888, 1416]
+    },
+    "/media/galleries/stones-display-16.webp": {
+      "path": "public/media/galleries/stones-display-16.webp",
+      "src": "/media/galleries/stones-display-16.webp",
+      "project": "stones",
+      "url": "https://displaygroup.com/wp-content/uploads/2026/09/NASCAR_CS_16.webp",
+      "sourcePage": "https://displaygroup.com/case-studies/guru-house-and-display-group-collaboration/",
+      "kind": "photo",
+      "width": 900,
+      "height": 600,
+      "originalDimensions": [900, 600]
+    },
+    "/media/galleries/review-live-experience.webp": {
+      "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 5.jpeg",
+      "kind": "photo",
+      "credit": "User-provided IMMRSV project archive"
+    }
+  }
+}

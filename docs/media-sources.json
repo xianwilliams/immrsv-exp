@@ -1,0 +1,498 @@
+{
+  "retrievedAt": "2026-11-13",
+  "purpose": "Authentic recent project media source record for IMMRSV website. Roles supplied by owner brief; project source pages identify project, not sole agency-of-record status.",
+  "preprocessing": "Orientation normalized, full source aspect ratio preserved, maximum dimension 2000 pixels, WebP quality 89 for photos and 90 for video stills. No AI-generated or synthetic imagery. No upscaling.",
+  "projects": [
+    {
+      "id": "wcdonalds",
+      "title": "McDonald’s — WcDonald’s Immersive Dining Experience",
+      "galleryImageCount": 8,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.wcdonalds",
+      "storyManifest": "docs/project-story-sources.json#projects.wcdonalds",
+      "role": "Fabrication Oversight, Install/Dismantle Management & Staffing",
+      "images": [
+        {
+          "path": "/media/galleries/wcdonalds-5.webp",
+          "kind": "photo",
+          "description": "A shared table inside the WcDonald’s experience."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-10.webp",
+          "kind": "photo",
+          "description": "An anime city, projected across the room and tables."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-08.webp",
+          "kind": "photo",
+          "description": "A different world with every sequence."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-11.webp",
+          "kind": "photo",
+          "description": "An immersive environment from wall to tabletop."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-07.webp",
+          "kind": "photo",
+          "description": "The dining room transformed by light and animation."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-06.webp",
+          "kind": "photo",
+          "description": "The experience carries through to every place setting."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-02.webp",
+          "kind": "photo",
+          "description": "WcDonald’s, brought into the real world."
+        },
+        {
+          "path": "/media/galleries/wcdonalds-press-04.webp",
+          "kind": "photo",
+          "description": "The dining environment, ready for guests."
+        }
+      ]
+    },
+    {
+      "id": "starry",
+      "title": "Starry — Brand Activation",
+      "galleryImageCount": 5,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.starry",
+      "storyManifest": "docs/project-story-sources.json#projects.starry",
+      "images": [
+        {
+          "path": "/media/galleries/starry-01.webp",
+          "kind": "photo",
+          "description": "A brand experience built around the game."
+        },
+        {
+          "path": "/media/galleries/starry-02.webp",
+          "kind": "photo",
+          "description": "The court in action."
+        },
+        {
+          "path": "/media/galleries/starry-03.webp",
+          "kind": "photo",
+          "description": "Putting fans in the middle of the experience."
+        },
+        {
+          "path": "/media/galleries/starry-04.webp",
+          "kind": "photo",
+          "description": "A complete branded environment on the event floor."
+        },
+        {
+          "path": "/media/galleries/starry-05.webp",
+          "kind": "photo",
+          "description": "Built for the energy of a live audience."
+        }
+      ],
+      "notes": "User archive identifies this project. Exact role details were not supplied; case-study sections describe visible features instead of assigning unverified responsibilities."
+    },
+    {
+      "id": "crumbl",
+      "title": "Crumbl — Headquarters Environments",
+      "galleryImageCount": 10,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.crumbl",
+      "storyManifest": "docs/project-story-sources.json#projects.crumbl",
+      "images": [
+        {
+          "path": "/media/galleries/crumbl-01.webp",
+          "kind": "photo",
+          "description": "A first impression that feels unmistakably Crumbl."
+        },
+        {
+          "path": "/media/galleries/crumbl-02.webp",
+          "kind": "photo",
+          "description": "Everyday ingredients, at a completely different scale."
+        },
+        {
+          "path": "/media/galleries/crumbl-03.webp",
+          "kind": "photo",
+          "description": "An environment people can step inside."
+        },
+        {
+          "path": "/media/galleries/crumbl-04.webp",
+          "kind": "photo",
+          "description": "A larger-than-life centerpiece."
+        },
+        {
+          "path": "/media/galleries/crumbl-05.webp",
+          "kind": "photo",
+          "description": "Bringing a playful point of view to shared space."
+        },
+        {
+          "path": "/media/galleries/crumbl-06.webp",
+          "kind": "photo",
+          "description": "Details that carry the brand throughout the building."
+        },
+        {
+          "path": "/media/galleries/crumbl-07.webp",
+          "kind": "photo",
+          "description": "Turning a hallway into a brand story."
+        },
+        {
+          "path": "/media/galleries/crumbl-08.webp",
+          "kind": "photo",
+          "description": "A familiar product becomes an immersive moment."
+        },
+        {
+          "path": "/media/galleries/crumbl-09.webp",
+          "kind": "photo",
+          "description": "Designed for the people who bring it to life."
+        },
+        {
+          "path": "/media/galleries/crumbl-10.webp",
+          "kind": "photo",
+          "description": "Custom fabrication, down to the details."
+        }
+      ],
+      "notes": "User archive identifies this project. Exact role details were not supplied; case-study sections describe visible features instead of assigning unverified responsibilities."
+    },
+    {
+      "id": "sundance",
+      "title": "Sundance Film Festival 2024–2026",
+      "galleryImageCount": 9,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.sundance",
+      "storyManifest": "docs/project-story-sources.json#projects.sundance",
+      "role": "Fabrication Management, Event Production & Specialty Staffing",
+      "userSource": "https://lnkd.in/p/gFMXmsqD",
+      "images": [
+        {
+          "path": "/media/galleries/sundance.webp",
+          "kind": "photo",
+          "description": "World of Hyatt at Sundance Film Festival 2026."
+        },
+        {
+          "path": "/media/galleries/sundance-wellness.webp",
+          "kind": "photo",
+          "description": "A venue ready for the morning wellness program."
+        },
+        {
+          "path": "/media/galleries/sundance-scent.webp",
+          "kind": "photo",
+          "description": "Scents of Sundance: a closer look at the experience."
+        },
+        {
+          "path": "/media/galleries/sundance-frame-01.webp",
+          "kind": "video still",
+          "description": "A new world behind a familiar Main Street entrance. Video still."
+        },
+        {
+          "path": "/media/galleries/sundance-frame-03.webp",
+          "kind": "video still",
+          "description": "The people behind the production. Video still."
+        },
+        {
+          "path": "/media/galleries/sundance-frame-04.webp",
+          "kind": "video still",
+          "description": "The details coming together on site. Video still."
+        },
+        {
+          "path": "/media/galleries/sundance-frame-05.webp",
+          "kind": "video still",
+          "description": "A full program, from morning onward. Video still."
+        },
+        {
+          "path": "/media/galleries/sundance-frame-06.webp",
+          "kind": "video still",
+          "description": "The experience shifts into the evening. Video still."
+        },
+        {
+          "path": "/media/galleries/sundance-frame-07.webp",
+          "kind": "video still",
+          "description": "A close-up of the finished environment. Video still."
+        }
+      ],
+      "notes": "Selected media documents the 2026 World of Hyatt activation. Owner brief confirms support across 2024–2026; do not imply festival-wide production."
+    },
+    {
+      "id": "nascar-billboard",
+      "title": "NASCAR — World’s Loudest Billboard",
+      "galleryImageCount": 4,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.nascar-billboard",
+      "storyManifest": "docs/project-story-sources.json#projects.nascar-billboard",
+      "role": "Fabrication Management, Specialty Staffing & Logistics",
+      "userSource": "https://lnkd.in/p/g_N_8yXf",
+      "images": [
+        {
+          "path": "/media/galleries/nascar-01.webp",
+          "kind": "photo",
+          "description": "The finished interactive billboard."
+        },
+        {
+          "path": "/media/galleries/nascar-03.webp",
+          "kind": "photo",
+          "description": "An engine built into the experience."
+        },
+        {
+          "path": "/media/galleries/nascar-02.webp",
+          "kind": "photo",
+          "description": "From the workshop to the world outside."
+        },
+        {
+          "path": "/media/galleries/nascar-04.webp",
+          "kind": "photo",
+          "description": "The interaction behind the roar."
+        }
+      ]
+    },
+    {
+      "id": "stones",
+      "title": "NASCAR x The Rolling Stones",
+      "galleryImageCount": 10,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.stones",
+      "storyManifest": "docs/project-story-sources.json#projects.stones",
+      "role": "Fabrication Management, Event Production, Logistics & Staffing",
+      "userSource": "https://lnkd.in/p/gbyaWvQ8",
+      "images": [
+        {
+          "path": "/media/galleries/stones-display-06.webp",
+          "kind": "photo",
+          "description": "The Racing Record Player, ready for fans."
+        },
+        {
+          "path": "/media/galleries/stones-linkedin-01.webp",
+          "kind": "photo",
+          "description": "A complete transformation, inside and out."
+        },
+        {
+          "path": "/media/galleries/stones-linkedin-07.webp",
+          "kind": "photo",
+          "description": "A stock car becomes a listening lounge."
+        },
+        {
+          "path": "/media/galleries/stones-linkedin-04.webp",
+          "kind": "photo",
+          "description": "Fans take the driver’s seat."
+        },
+        {
+          "path": "/media/galleries/stones-linkedin-03.webp",
+          "kind": "photo",
+          "description": "A traveling environment built around music and racing."
+        },
+        {
+          "path": "/media/galleries/stones-linkedin-02.webp",
+          "kind": "photo",
+          "description": "Two worlds, brought together in the details."
+        },
+        {
+          "path": "/media/galleries/stones-display-13.webp",
+          "kind": "photo",
+          "description": "Planning the transformation with the build team."
+        },
+        {
+          "path": "/media/galleries/stones-display-08.webp",
+          "kind": "photo",
+          "description": "The full experience, out in the world."
+        },
+        {
+          "path": "/media/galleries/stones-display-09.webp",
+          "kind": "photo",
+          "description": "Meeting fans where they are."
+        },
+        {
+          "path": "/media/galleries/stones-display-12.webp",
+          "kind": "photo",
+          "description": "Built to travel from the city to the speedway."
+        }
+      ]
+    },
+    {
+      "id": "tictac",
+      "title": "Tic Tac x Dr Pepper — Vibe Refresh Squad",
+      "galleryImageCount": 7,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.tictac",
+      "storyManifest": "docs/project-story-sources.json#projects.tictac",
+      "role": "Remote Tour Production, Staffing, Routing & Site Negotiation",
+      "userSource": "https://lnkd.in/p/gMKNy4r4",
+      "images": [
+        {
+          "path": "/media/galleries/tictac-linkedin-01.webp",
+          "kind": "photo",
+          "description": "The Vibe Refresh Squad, on the move."
+        },
+        {
+          "path": "/media/galleries/tictac-linkedin-03.webp",
+          "kind": "photo",
+          "description": "A mobile experience built to travel."
+        },
+        {
+          "path": "/media/galleries/tictac-linkedin-05.webp",
+          "kind": "photo",
+          "description": "A small interaction with a big personality."
+        },
+        {
+          "path": "/media/galleries/tictac-linkedin-04.webp",
+          "kind": "photo",
+          "description": "Making the connection, one guest at a time."
+        },
+        {
+          "path": "/media/galleries/tictac-linkedin-06.webp",
+          "kind": "photo",
+          "description": "A stop worth sharing."
+        },
+        {
+          "path": "/media/galleries/tictac-linkedin-02.webp",
+          "kind": "photo",
+          "description": "Getting the product into people’s hands."
+        },
+        {
+          "path": "/media/galleries/tictac-linkedin-07.webp",
+          "kind": "photo",
+          "description": "Keeping the tour and the experience moving."
+        }
+      ]
+    },
+    {
+      "id": "fourloko",
+      "title": "Four Loko Party Store — LiveNation Festival Circuit",
+      "galleryImageCount": 4,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.fourloko",
+      "storyManifest": "docs/project-story-sources.json#projects.fourloko",
+      "role": "Fabrication Management, Event Production & Logistics",
+      "userSource": "https://lnkd.in/p/gxfa4Ywb",
+      "images": [
+        {
+          "path": "/media/galleries/fourloko-frame-04.webp",
+          "kind": "video still",
+          "description": "Inside the Party Store. Video still."
+        },
+        {
+          "path": "/media/galleries/fourloko-frame-03.webp",
+          "kind": "video still",
+          "description": "A small footprint with plenty of personality. Video still."
+        },
+        {
+          "path": "/media/galleries/fourloko-frame-05.webp",
+          "kind": "video still",
+          "description": "Part of the festival experience. Video still."
+        },
+        {
+          "path": "/media/galleries/fourloko-frame-02.webp",
+          "kind": "video still",
+          "description": "Made for a live crowd. Video still."
+        }
+      ],
+      "notes": "Four genuine frames from Nick’s project recap. No verified full exterior photo was found; unrelated Four Loko activations are excluded."
+    },
+    {
+      "id": "keebler",
+      "title": "Keebler Butterbeer Pop-Up",
+      "galleryImageCount": 8,
+      "mediaManifest": "docs/project-gallery-sources.json#projects.keebler",
+      "storyManifest": "docs/project-story-sources.json#projects.keebler",
+      "role": "Fabrication Management, Event Production & Site Negotiation",
+      "userSource": "https://lnkd.in/p/gymb7R7a",
+      "images": [
+        {
+          "path": "/media/galleries/keebler-linkedin-02.webp",
+          "kind": "photo",
+          "description": "A little Butterbeer magic at Grand Central."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-01.webp",
+          "kind": "photo",
+          "description": "The world comes alive in the details."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-03.webp",
+          "kind": "photo",
+          "description": "A moment worth keeping."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-09.webp",
+          "kind": "photo",
+          "description": "The experience starts with the people."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-07.webp",
+          "kind": "photo",
+          "description": "A hands-on moment for the next generation of fans."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-08.webp",
+          "kind": "photo",
+          "description": "A complete environment, from every side."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-06.webp",
+          "kind": "photo",
+          "description": "Cookies, company, and a little magic."
+        },
+        {
+          "path": "/media/galleries/keebler-linkedin-05.webp",
+          "kind": "photo",
+          "description": "An unexpected stop in the middle of the city."
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "source": "https://www.immrsv-exp.com/",
+    "email": "nick@immrsv-exp.com",
+    "requiredFields": [
+      "Name (first and last)",
+      "Email Address",
+      "Subject",
+      "What’s Up? (textarea)"
+    ],
+    "submitLabel": "Submit",
+    "fieldSource": "Squarespace form configuration embedded in public page HTML"
+  },
+  "gaps": [
+    "A complete exterior photograph of Four Loko Party Store; its gallery uses authentic recap stills.",
+    "Detailed responsibility credits for the Starry and Crumbl archive projects."
+  ],
+  "logos": [
+    {
+      "brand": "mcdonalds",
+      "path": "/media/logos/mcdonalds.svg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svg",
+      "treatment": "Original geometry; monochrome black/white conversion. SVG active content and external hrefs removed."
+    },
+    {
+      "brand": "nascar",
+      "path": "/media/logos/nascar.svg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/67/NASCAR_logo_2017.svg",
+      "treatment": "Original geometry; monochrome black/white conversion. SVG active content and external hrefs removed."
+    },
+    {
+      "brand": "drpepper",
+      "path": "/media/logos/drpepper.svg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/en/1/19/Dr_Pepper_modern.svg",
+      "treatment": "Original geometry; monochrome black/white conversion. SVG active content and external hrefs removed."
+    },
+    {
+      "brand": "fourloko",
+      "path": "/media/logos/fourloko.svg",
+      "sourceImage": "https://s3.amazonaws.com/four-loko-assets/shared/fl_logo.svg",
+      "treatment": "Original geometry; monochrome black/white conversion. SVG active content and external hrefs removed."
+    },
+    {
+      "brand": "tictac",
+      "path": "/media/logos/tictac.png",
+      "sourceImage": "https://www.tictac.com/us/static/tt_logo-a6ef35820d334d8fefef5d6fe1ab2177.png",
+      "treatment": "Original geometry; monochrome black/white conversion. SVG active content and external hrefs removed."
+    },
+    {
+      "brand": "keebler",
+      "path": "/media/logos/keebler.png",
+      "sourceImage": "https://www.keebler.com/assets/images/Logo/Keebler_Logo_2024.png",
+      "treatment": "Original geometry; monochrome black/white conversion. SVG active content and external hrefs removed."
+    },
+    {
+      "brand": "sundance",
+      "path": "/media/logos/sundance.png",
+      "sourceImage": "https://www.sundance.org/wp-content/uploads/2023/09/SFF24_FillWordmark_BLK_TXTKO-1-e1697151616506.png",
+      "treatment": "Official 2024 festival logo (year specific)"
+    },
+    {
+      "brand": "rollingstones",
+      "path": "/media/logos/rollingstones.svg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/en/5/5c/The_Rolling_Stones%27_logo.svg",
+      "treatment": "Wikimedia logo geometry; sanitized SVG; monochrome conversion"
+    }
+  ],
+  "galleryManifest": "docs/project-gallery-sources.json",
+  "storyManifest": "docs/project-story-sources.json"
+}
