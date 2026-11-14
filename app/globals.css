@@ -1596,7 +1596,7 @@ footer > .brand {
   gap: 5vw;
   align-items: start;
   height: auto;
-  min-height: 375px;
+  min-height: 500px;
   max-height: none;
   padding: 40px var(--gutter) 84px;
 }
@@ -1669,7 +1669,7 @@ footer > .brand {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 28px 24px 76px;
-    min-height: 400px;
+    min-height: 533px;
     align-content: start;
   }
   .friends .friends-heading h2 {

@@ -18,4 +18,4 @@ Current photo refinements: project popup accordions show 47 selected installatio
 
 Accent refinement: the original site’s heading red (#E64833) now appears in CTA arrows and the service progress line. Small section labels, service counters and service icons use a contrast-adjusted shade (#C43B29 on white, #F27665 on dark). Navigation and text-link hover states echo it. Display headlines and photographs retain their established treatment.
 
-Final spacing/type refinement: testimonial height is halved to 375px on desktop and 400px on mobile, with tighter spacing and responsive quote sizes that accommodate all five reviews. The photo scrim keeps white text readable. Service accordion panel labels are uppercase IBM Plex Mono 600; the larger service titles below remain uppercase weight 300.
+Final spacing/type refinement: testimonial height is one-third shorter than the original, at 500px on desktop and 533px on mobile, with tighter spacing and responsive quote sizes that accommodate all five reviews. The photo scrim keeps white text readable. Service accordion panel labels are uppercase IBM Plex Mono 600; the larger service titles below remain uppercase weight 300.
