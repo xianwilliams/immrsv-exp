@@ -56,7 +56,7 @@ export function ProjectBanner({
   return (
     <section
       ref={root}
-      className="case-contact"
+      className={`case-contact${home ? " case-contact-home" : ""}`}
       aria-labelledby="case-contact-title"
       onFocusCapture={() => setFocused(true)}
       onBlurCapture={(event) => {
@@ -83,11 +83,7 @@ export function ProjectBanner({
         ))}
       </div>
       <div className="case-contact-content">
-        <p className="mono">
-          {home
-            ? "FROM A QUICK GUT CHECK TO THE WHOLE THING."
-            : "YOUR TEAM, EXTENDED."}
-        </p>
+        {!home && <p className="mono">YOUR TEAM, EXTENDED.</p>}
         <h2 id="case-contact-title">
           <TypedHeading>
             {home ? "LET’S MAKE" : "YOUR NEXT IDEA."}

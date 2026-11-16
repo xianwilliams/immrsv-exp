@@ -6,7 +6,7 @@ import PixelBlast from "./PixelBlast";
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Contact } from "./contact-dialog";
-import { Arrow, Brand, Close } from "./site-ui";
+import { Arrow, Close } from "./site-ui";
 import Link from "next/link";
 import { ProjectGallery } from "./project-gallery";
 import { ProjectPhotos } from "./project-photos";
@@ -220,8 +220,7 @@ export default function Experience() {
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         if (!sessionStorage.getItem("immrsv-intro")) {
           gsap.set(intro.current, { display: "grid", autoAlpha: 1 });
-          const mark = document.querySelector(".intro-box");
-          const palette = getComputedStyle(document.documentElement);
+          const mark = document.querySelector(".intro-mark");
           const target = document
             .querySelector(".hero-film")!
             .getBoundingClientRect();
@@ -241,32 +240,22 @@ export default function Experience() {
             .fromTo(
               mark,
               { autoAlpha: 0, scale: 0.94 },
-              { autoAlpha: 1, scale: 1, duration: 0.45, ease: "power2.out" },
-            )
-            .to(
-              ".intro-box",
               {
-                backgroundColor: palette.getPropertyValue("--paper").trim(),
-                duration: 0.25,
+                autoAlpha: 1,
+                scale: 1,
+                duration: 0.45,
+                ease: "power2.out",
+                force3D: false,
               },
-              0.6,
-            )
-            .to(
-              ".intro-box .brand",
-              {
-                backgroundColor: palette.getPropertyValue("--ink").trim(),
-                duration: 0.25,
-              },
-              0.6,
             )
             .to(
               mark,
               {
                 y,
                 width: logoWidth,
-                padding: 0,
                 duration: 1.05,
                 ease: "power4.inOut",
+                force3D: false,
               },
               0.95,
             )
@@ -365,8 +354,15 @@ export default function Experience() {
         Skip to content
       </a>
       <div ref={intro} className="intro" aria-hidden="true">
-        <div className="intro-box">
-          <Brand />
+        <div className="intro-mark">
+          <img
+            className="intro-logo"
+            src="/media/wordmark.svg"
+            width={1087}
+            height={190}
+            alt=""
+            fetchPriority="high"
+          />
         </div>
       </div>
       <header className="hero" id="home">
@@ -597,16 +593,16 @@ export default function Experience() {
           </div>
         </section>
 
-        <section className="about" id="about">
+        <section className="about" id="about" aria-labelledby="about-title">
           <div className="about-top" data-reveal>
             <span className="mono">BIG IDEAS. REAL-WORLD EXPERIENCES.</span>
-            <p>
+            <h2 id="about-title">
               <TypedHeading>
                 WE BRING THE RIGHT
                 <br />
                 <em>PEOPLE TOGETHER.</em>
               </TypedHeading>
-            </p>
+            </h2>
           </div>
           <div className="about-bottom" data-reveal>
             <div
@@ -635,8 +631,8 @@ export default function Experience() {
                 loading="lazy"
               />
             </div>
-            <div>
-              <h2>Your team, extended.</h2>
+            <div className="about-copy">
+              <h3>Your team, extended.</h3>
               <p>
                 IMMRSV is Nick Wirsching, an independent production lead with a
                 trusted network of creative specialists, fabricators, and event
@@ -651,14 +647,10 @@ export default function Experience() {
                 coordinate production from concept through execution. We don’t
                 need to be the agency of record to be a partner you count on.
               </p>
+              <button className="text-button about-cta" onClick={openContact}>
+                WORK WITH US <Arrow diagonal />
+              </button>
             </div>
-            <button
-              className="circle-link"
-              onClick={openContact}
-              aria-label="Work with IMMRSV"
-            >
-              <Arrow diagonal />
-            </button>
           </div>
         </section>
 
