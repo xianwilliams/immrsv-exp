@@ -1,4 +1,5 @@
 "use client";
+import { TypedHeading } from "./typed-heading";
 
 import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/content";
@@ -107,16 +108,18 @@ export function Services({ onContact }: { onContact: () => void }) {
       <div className="services-heading" data-reveal>
         <span className="mono">HOW WE CAN HELP</span>
         <h2 id="services-title">
-          BUILT AROUND
-          <br />
-          WHAT YOUR
-          <br />
-          <em>PROJECT NEEDS.</em>
+          <TypedHeading>
+            BUILT AROUND
+            <br />
+            WHAT YOUR
+            <br />
+            <em>PROJECT NEEDS.</em>
+          </TypedHeading>
         </h2>
         <p>
-          One production lead. A few extra hands. The whole experience.
-          <br />
-          Explore where we can fit into your team.
+          Need a production lead for a few days? A 10–20-hour pitch sprint? A
+          full team to take it all the way? Small assignments and larger
+          productions are equally welcome.
         </p>
       </div>
       <div

@@ -445,8 +445,22 @@ textarea {
 .trust {
   background: var(--ink);
   color: var(--paper);
-  padding: var(--section) var(--gutter);
+  padding: clamp(64px, 7vw, 110px) var(--gutter);
   position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+.trust-pixels {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.18;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-pixels {
+    display: none;
+  }
 }
 .trust h2 {
   font-size: clamp(34px, 5.2vw, 80px);
@@ -459,6 +473,96 @@ textarea {
   font-size: 15px;
   color: var(--inverse-soft);
   max-width: 540px;
+}
+.partner-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+.partner-kicker {
+  font-size: 10px;
+  margin-bottom: 22px;
+  color: var(--inverse-soft);
+}
+.partner-intro h2 {
+  font-size: clamp(38px, 4.3vw, 68px);
+  line-height: 1.04;
+}
+.partner-copy p {
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 1.55;
+  max-width: 560px;
+}
+.partner-copy p + p {
+  margin-top: 18px;
+  color: var(--inverse-soft);
+}
+.partner-cta {
+  margin-top: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 52px;
+  padding: 16px 22px;
+  gap: 32px;
+}
+.partner-cta:hover {
+  background: var(--line);
+}
+.partner-cta > .arrow {
+  color: inherit;
+}
+.partner-cta:focus-visible {
+  outline-color: var(--paper);
+}
+.trust-proof {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+}
+.trust-proof-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.trust .trust-proof h2 {
+  font-size: clamp(28px, 2.8vw, 42px);
+  line-height: 1.05;
+  flex-shrink: 0;
+}
+.trust-proof .trust-note {
+  margin: 0;
+  max-width: 470px;
+}
+.trust-proof .client-marks {
+  margin-top: 40px;
+}
+@media (max-width: 899px) {
+  .partner-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .trust-proof-heading {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 599px) {
+  .trust .partner-intro h2 {
+    font-size: clamp(32px, 8.5vw, 48px);
+  }
+  .trust-proof {
+    margin-top: 40px;
+    padding-top: 28px;
+  }
+  .trust-proof-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .trust .trust-proof .trust-note {
+    margin: 0;
+    font-size: 14px;
+  }
 }
 .client-marks {
   display: grid;
@@ -551,17 +655,17 @@ textarea {
 .project-row .arrow {
   width: 20px;
 }
-.friends-heading {
+.clients-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
   padding: 0 var(--gutter) 50px;
 }
-.friends-heading h2,
+.clients-heading h2,
 .closing h2 {
   font-size: clamp(44px, 6vw, 92px);
 }
-.friends-heading > .mono {
+.clients-heading > .mono {
   padding-bottom: 8px;
 }
 .review-stage {
@@ -598,9 +702,10 @@ textarea {
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.83),
-      rgba(0, 0, 0, 0.65) 55%,
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.64),
+      rgba(0, 0, 0, 0.54) 42%,
+      rgba(0, 0, 0, 0.76) 72%,
+      rgba(0, 0, 0, 0.72)
     ),
     linear-gradient(transparent 65%, rgba(0, 0, 0, 0.65));
 }
@@ -653,26 +758,6 @@ textarea {
 .review-image-credit {
   text-transform: uppercase;
   font-size: 9px;
-}
-.review-controls {
-  display: flex;
-  gap: 10px;
-}
-.review-controls button {
-  border: 1px solid #ffffff80;
-  background: transparent;
-  color: #fff;
-  border-radius: 50%;
-  width: 46px;
-  height: 46px;
-  font-size: 19px;
-  transition:
-    background 0.2s,
-    color 0.2s;
-}
-.review-controls button:hover {
-  background: #fff;
-  color: #000;
 }
 @keyframes quote-in {
   from {
@@ -1093,7 +1178,7 @@ footer > .brand {
   .recent-work {
     padding-top: 50px;
   }
-  .friends-heading > .mono {
+  .clients-heading > .mono {
     display: none;
   }
   .review-stage {
@@ -1285,10 +1370,10 @@ footer > .brand {
     grid-row: 1/3;
     width: 18px;
   }
-  .friends-heading {
+  .clients-heading {
     padding: 0 24px 32px;
   }
-  .friends-heading h2 {
+  .clients-heading h2 {
     font-size: 46px;
   }
   .review-stage {
@@ -1329,13 +1414,6 @@ footer > .brand {
     font-size: 7px;
     max-width: 140px;
     line-height: 1.5;
-  }
-  .review-controls {
-    gap: 7px;
-  }
-  .review-controls button {
-    width: 38px;
-    height: 38px;
   }
   .closing {
     padding: 85px 24px;
@@ -1590,26 +1668,28 @@ footer > .brand {
   }
 }
 
-.friends .review-stage {
+.clients .review-stage {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 5vw;
+  gap: 24px 5vw;
   align-items: start;
+  align-content: center;
   height: auto;
-  min-height: 500px;
+  min-height: 320px;
   max-height: none;
-  padding: 40px var(--gutter) 84px;
+  padding: 32px var(--gutter) 24px;
 }
-.friends .friends-heading {
+.clients .clients-heading {
   position: relative;
   z-index: 1;
   padding: 0;
   display: block;
 }
-.friends .friends-heading h2 {
+.clients .clients-heading h2 {
   font-size: clamp(44px, 5.4vw, 88px);
 }
-.friends .review-content {
+.clients .review-content {
+  display: grid;
   position: relative;
   left: auto;
   right: auto;
@@ -1617,27 +1697,38 @@ footer > .brand {
   width: auto;
   max-width: none;
 }
-.friends .quote-mark {
-  display: none;
+.review-slide {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
 }
-.friends .review-content blockquote {
-  font-size: clamp(24px, 2.1vw, 32px);
+.review-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+.review-slide.is-active blockquote {
+  animation: quote-in 0.6s var(--ease);
+}
+.clients .review-content blockquote {
+  font-size: clamp(22px, 2vw, 30px);
   line-height: 1.3;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
-.friends .review-content blockquote.long-quote {
-  font-size: clamp(20px, 1.7vw, 26px);
+.clients .review-content blockquote.long-quote {
+  font-size: clamp(20px, 1.6vw, 24px);
 }
-.friends .review-attribution {
+.clients .review-attribution {
   gap: 5px;
   font-size: 12px;
 }
-.friends .review-footer {
-  bottom: 20px;
-}
-.friends .review-controls button {
-  width: 40px;
-  height: 40px;
+.clients .review-footer {
+  position: relative;
+  grid-column: 1 / -1;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  gap: 20px;
+  align-items: center;
 }
 
 /* Small editorial markers carry the brand accent; display type stays monochrome. */
@@ -1650,37 +1741,213 @@ footer > .brand {
   color: var(--accent-text);
 }
 @media (max-width: 899px) {
-  .friends .review-stage {
+  .clients .review-stage {
     gap: 24px;
-    padding-top: 32px;
   }
-  .friends .friends-heading h2 {
+  .clients .clients-heading h2 {
     font-size: 5.5vw;
   }
-  .friends .review-content blockquote {
+  .clients .review-content blockquote {
     font-size: 22px;
   }
-  .friends .review-content blockquote.long-quote {
+  .clients .review-content blockquote.long-quote {
     font-size: 18px;
   }
 }
 @media (max-width: 599px) {
-  .friends .review-stage {
+  .clients .review-stage {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 28px 24px 76px;
-    min-height: 533px;
+    gap: 20px;
+    padding: 28px 24px 24px;
+    min-height: 0;
     align-content: start;
   }
-  .friends .friends-heading h2 {
+  .clients .clients-heading h2 {
     font-size: 34px;
   }
-  .friends .review-content blockquote {
+  .clients .review-content blockquote {
     font-size: 20px;
     line-height: 1.35;
     margin-bottom: 16px;
   }
-  .friends .review-content blockquote.long-quote {
+  .clients .review-content blockquote.long-quote {
     font-size: 17px;
+  }
+}
+
+/* The opaque content sheet travels over the slower-moving hero. */
+.hero {
+  z-index: 0;
+}
+.home-content {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+}
+.home-content + .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.client-mark {
+  position: relative;
+}
+.client-mark.is-previewing {
+  z-index: 5;
+}
+.client-logo-button {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: none;
+  display: grid;
+  place-items: center;
+  transition: transform 0.25s var(--ease);
+}
+.client-mark .client-logo-button img {
+  grid-area: 1/1;
+  transition: opacity 0.25s;
+}
+.client-mark .client-logo-color {
+  filter: none;
+  opacity: 0;
+}
+.client-mark.is-previewing .client-logo-button {
+  transform: scale(1.07);
+}
+.client-mark.is-previewing .client-logo-mono {
+  opacity: 0;
+}
+.client-mark.is-previewing .client-logo-color {
+  opacity: 1;
+}
+.client-event-preview {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 220px;
+  transform: translate(-50%, 8px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    visibility 0.2s;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 12px 36px #0005;
+  padding: 8px;
+  pointer-events: none;
+}
+.client-mark.is-previewing .client-event-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+.client-mark .client-event-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  max-width: none;
+  object-fit: cover;
+  filter: none;
+}
+.client-event-preview p {
+  font-family: var(--font-plex-mono), monospace;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  padding: 12px 4px 4px;
+}
+@media (max-width: 599px) {
+  .client-event-preview {
+    width: min(220px, 70vw);
+  }
+  .client-mark:nth-child(odd) .client-event-preview {
+    left: 0;
+    transform: translate(0, 8px);
+  }
+  .client-mark:nth-child(even) .client-event-preview {
+    left: auto;
+    right: 0;
+    transform: translate(0, 8px);
+  }
+  .client-mark.is-previewing .client-event-preview {
+    transform: translate(0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-logo-button,
+  .client-mark .client-logo-button img,
+  .client-event-preview {
+    transition: none;
+  }
+}
+
+/* Keep the monochrome Sundance mark legible on the dark client wall. */
+.client-mark:first-child .client-logo-color {
+  filter: invert(1);
+}
+@media (min-width: 600px) {
+  .client-mark:nth-child(4n) .client-event-preview {
+    left: auto;
+    right: 0;
+    transform: translateY(8px);
+  }
+  .client-mark:nth-child(4n + 1) .client-event-preview {
+    left: 0;
+    transform: translateY(8px);
+  }
+  .client-mark:nth-child(4n).is-previewing .client-event-preview,
+  .client-mark:nth-child(4n + 1).is-previewing .client-event-preview {
+    transform: translateY(0);
+  }
+}
+
+.about-people {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.about-people img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+.about-people img:first-child {
+  grid-column: 1 / -1;
+  max-height: 340px;
+  object-fit: contain;
+}
+.about-bottom:has(.about-people) {
+  grid-template-columns: minmax(240px, 1fr) minmax(0, 1.6fr) 70px;
+  gap: 36px;
+}
+@media (max-width: 899px) {
+  .about-bottom:has(.about-people) {
+    grid-template-columns: minmax(200px, 0.85fr) minmax(0, 1.4fr);
+    gap: 28px;
+  }
+  .about-bottom:has(.about-people) > .circle-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+@media (max-width: 599px) {
+  .about-bottom:has(.about-people) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-people {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+  .about-bottom:has(.about-people) > .circle-link {
+    grid-column: 1;
   }
 }

@@ -1,4 +1,5 @@
 "use client";
+import { SiteFooter } from "./site-footer";
 
 import { useRef, useState } from "react";
 import Link from "next/link";
@@ -168,15 +169,7 @@ export function CaseStudy({
           />
         </Link>
       </main>
-      <footer className="case-footer">
-        <Link href="/" aria-label="IMMRSV home">
-          <Brand />
-        </Link>
-        <span className="mono">INDEPENDENT MINDS. REAL-WORLD EXPERIENCES.</span>
-        <a className="mono" href="mailto:nick@immrsv-exp.com">
-          nick@immrsv-exp.com ↗
-        </a>
-      </footer>
+      <SiteFooter />
       <Contact
         open={contact}
         onOpenChange={setContact}

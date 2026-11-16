@@ -16,17 +16,21 @@ const plexMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.SITE_URL || "https://www.immrsv-exp.com"),
   title: "IMMRSV | Experiences, brought to life.",
   description:
-    "Independent experiential production. One production lead or a full collective. IMMRSV brings the right people together to turn your vision into a real-world experience.",
+    "Independent experiential production for agencies, internal brand teams, and creative partners. From a short planning sprint to a full production team.",
   openGraph: {
     title: "IMMRSV | Experiences, brought to life.",
-    description: "Your vision. The right people. Real-world experiences.",
+    description:
+      "Your project. The right support. Independent experiential production, from one production lead to a full team.",
     type: "website",
     images: ["/media/starry.webp"],
   },
-  robots: { index: false, follow: false },
+  robots: {
+    index: process.env.SITE_INDEXABLE === "true",
+    follow: process.env.SITE_INDEXABLE === "true",
+  },
 };
 export default function RootLayout({
   children,

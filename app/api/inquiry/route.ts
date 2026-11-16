@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         from: process.env.INQUIRY_FROM,
-        to: [process.env.INQUIRY_TO || "nick@immrsv-exp.com"],
+        to: [process.env.INQUIRY_TO || "xian.williams@gmail.com"],
         reply_to: data.email,
         subject: `IMMRSV inquiry: ${data.subject}`,
         text: `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`,

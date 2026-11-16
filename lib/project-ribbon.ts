@@ -21,7 +21,7 @@ export function createProjectRibbon(
   onOpen: (project: Project) => void,
 ) {
   const stage = section.querySelector<HTMLElement>(".work-stage")!;
-  const canvas = section.querySelector<HTMLCanvasElement>("canvas")!;
+  const canvas = section.querySelector<HTMLCanvasElement>(".work-canvas")!;
   const gridElement = section.querySelector<HTMLElement>(".work-grid")!;
   const building = section.querySelector<HTMLElement>(".building")!;
   const experiences = section.querySelector<HTMLElement>(".experiences")!;

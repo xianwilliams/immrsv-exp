@@ -121,8 +121,8 @@ export function Contact({
                 <span className="success-mark">↗</span>
                 <h3>You’re on our radar.</h3>
                 <p>
-                  Your message has been sent to Nick. Thanks for bringing us
-                  into the conversation.
+                  Your message has been sent. Thanks for bringing us into the
+                  conversation.
                 </p>
                 <button
                   className="text-button"

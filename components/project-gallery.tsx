@@ -1,5 +1,6 @@
 "use client";
 
+import PixelBlast from "./PixelBlast";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -107,6 +108,22 @@ export function ProjectGallery({
       ref={sectionRef}
     >
       <div className="work-stage">
+        <div className="work-pixels" aria-hidden="true">
+          <PixelBlast
+            color="#777777"
+            accentColor="#777777"
+            pixelSize={3}
+            patternDensity={0.9}
+            speed={0.2}
+            drift={0.15}
+            glow={0.15}
+            twinkle={0.1}
+            edgeFade={0.2}
+            enableRipples={false}
+            hoverEffect="none"
+            dpr={1}
+          />
+        </div>
         <h2 className="work-title" id="work-title">
           <span className="building">
             <span>BUILDING</span>

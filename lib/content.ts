@@ -14,7 +14,7 @@ export type Project = {
 export const services = [
   {
     title: "Project management",
-    text: "Budgets, timelines, permits, vendors, and the people who make it happen. A steady production lead who keeps your project moving and your team in the loop.",
+    text: "Detailed budgets, permits, vendor selection, and a coordinated production schedule. Nick leads execution and keeps your team updated from kickoff through load-out.",
     image: "/media/conference.webp",
     width: 1920,
     height: 1281,
@@ -28,7 +28,7 @@ export const services = [
   },
   {
     title: "Logistics + operations",
-    text: "Transportation, shipping, equipment, venue coordination, storage, and the plan behind it all. We handle the moving parts so you can focus on the experience.",
+    text: "Transportation, shipping, heavy equipment rentals, staff training, venue coordination, and off-season storage. We coordinate every moving part, from the first arrival to the final departure.",
     image: "/media/galleries/recommendations-04.webp",
     width: 2000,
     height: 1333,
@@ -38,7 +38,7 @@ export const services = [
   },
   {
     title: "Strategy + concepting",
-    text: "Feasibility, preliminary budgets, location recommendations, KPI strategies, and activation ideas. A focused 10–20-hour sprint can turn an early brainstorm into a proposal ready to pitch.",
+    text: "Feasibility, preliminary budgets, location recommendations, KPI strategies, activation ideas, and early concept drawings that align the look, feel, and impact. A focused 10–20-hour sprint can turn an early brainstorm into a proposal ready to pitch.",
     image: "/media/galleries/recommendations-02.webp",
     width: 2000,
     height: 1334,
@@ -52,7 +52,7 @@ export const services = [
   },
   {
     title: "Specialized staffing",
-    text: "Tour managers, experienced producers, install crews, and brand ambassadors. We bring together the people your project needs, exactly when it needs them.",
+    text: "Experienced producers, coast-to-coast tour managers, installation crews, and brand ambassadors. Our national network brings the right specialists to the job, from shipping-container structures to welcoming your guests.",
     image: "/media/galleries/service-people.webp",
     width: 2000,
     height: 1333,
@@ -66,7 +66,7 @@ export const services = [
   },
   {
     title: "Design + build",
-    text: "Concept drawings, 3D design, production artwork, and custom fabrication. We connect the right creative and build partners to bring your vision into the real world.",
+    text: "Our partners develop concept drawings, 3D renderings, and print-ready artwork, including vehicle wraps. We coordinate engineer-stamped drawings with qualified partners and work with specialist fabricators to build your custom asset.",
     image: "/media/galleries/stones-display-14.webp",
     width: 900,
     height: 600,
@@ -228,35 +228,35 @@ export const reviews = [
     date: "November 7, 2023",
     quote:
       "IMMRSV is a great company! Imaginative, engaging, and reliable. You can count on them to get your ideas created.",
-    image: "/media/galleries/recommendations-05.webp",
-    position: "50% 72%",
-    project: "Outdoor installations",
+    image: "/media/galleries/wcdonalds-press-08.webp",
+    position: "50% 20%",
+    project: "WcDonald’s immersive dining",
   },
   {
     name: "Shane Peet",
     date: "November 10, 2023",
     quote:
       "Great customer to work with. Very talented and unique project. We love when we get the opportunity to work for IMMRSV.",
-    image: "/media/galleries/stones-display-16.webp",
-    position: "50% 48%",
-    project: "Behind the build",
+    image: "/media/galleries/stones-display-09.webp",
+    position: "50% 47%",
+    project: "NASCAR × The Rolling Stones",
   },
   {
     name: "Haley",
     date: "October 19, 2023",
     quote:
       "IMMRSV was EXCEPTIONAL to work with. I would highly recommend and look forward to working with them for future projects.",
-    image: "/media/review-event.webp",
-    position: "50% 35%",
-    project: "Crumbl event experience",
+    image: "/media/galleries/starry-02.webp",
+    position: "50% 40%",
+    project: "Starry basketball activation",
   },
   {
     name: "GR3NGASHO",
     date: "October 17, 2023",
     quote: "Hard working, fast to respond, and responsable! BEST IN TOWN",
-    image: "/media/galleries/review-live-experience.webp",
-    position: "50% 45%",
-    project: "Live brand experiences",
+    image: "/media/galleries/keebler-linkedin-06.webp",
+    position: "50% 22%",
+    project: "Keebler Butterbeer pop-up",
   },
   {
     name: "Ty Shane",
@@ -264,7 +264,7 @@ export const reviews = [
     quote:
       "IMMRSV team is exceptional. As always, there's a bit of hesitancy when working with someone new for marketing. However, their professionalism and communication transcend any previous experiences of ours. Thanks Nick & team, y'all were exceptional.",
     image: "/media/review-crumbl.webp",
-    position: "50% 35%",
+    position: "50% 25%",
     project: "Crumbl conference",
   },
 ];

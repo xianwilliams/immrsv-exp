@@ -60,7 +60,7 @@ try {
     pausedService,
   );
   await page.locator(".service-accordion .ag-panel").first().click();
-  for (const selector of [".services", ".trust", ".closing", ".friends"]) {
+  for (const selector of [".services", ".trust", ".closing", ".clients"]) {
     await page.locator(selector).scrollIntoViewIfNeeded();
     await page.waitForTimeout(1000);
     await page.screenshot({ path: `qa/theme/dark-${selector.slice(1)}.png` });

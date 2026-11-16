@@ -1,4 +1,7 @@
 "use client";
+import { TypedHeading } from "./typed-heading";
+import { SiteFooter } from "./site-footer";
+import PixelBlast from "./PixelBlast";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -8,6 +11,7 @@ import Link from "next/link";
 import { ProjectGallery } from "./project-gallery";
 import { ProjectPhotos } from "./project-photos";
 import { HeroCarousel } from "./hero-carousel";
+import { ProjectBanner } from "./project-banner";
 import { Services } from "./services";
 import { ThemeToggle } from "./theme-toggle";
 import { projectPreviews } from "@/lib/project-previews";
@@ -95,27 +99,104 @@ function ProjectDialog({
 }
 
 function ClientMarks() {
+  const [active, setActive] = useState<string | null>(null);
   const clients = [
-    ["sundance.png", "Sundance Film Festival"],
-    ["mcdonalds.svg", "McDonald’s"],
-    ["nascar.svg", "NASCAR"],
-    ["tictac.png", "Tic Tac"],
-    ["drpepper.svg", "Dr Pepper"],
-    ["fourloko.svg", "Four Loko"],
-    ["rollingstones.svg", "The Rolling Stones"],
-    ["keebler.png", "Keebler"],
+    [
+      "sundance.png",
+      "Sundance Film Festival",
+      "sundance",
+      "Sundance Film Festival 2024–2026",
+    ],
+    [
+      "mcdonalds.svg",
+      "McDonald’s",
+      "wcdonalds",
+      "McDonald’s WcDonald’s Immersive Dining Experience",
+    ],
+    [
+      "nascar.svg",
+      "NASCAR",
+      "nascar-billboard",
+      "NASCAR — World’s Loudest Billboard",
+    ],
+    [
+      "tictac.png",
+      "Tic Tac",
+      "tictac",
+      "Tic Tac × Dr Pepper Vibe Refresh Squad",
+    ],
+    [
+      "drpepper.svg",
+      "Dr Pepper",
+      "tictac",
+      "Tic Tac × Dr Pepper Vibe Refresh Squad",
+    ],
+    [
+      "fourloko.svg",
+      "Four Loko",
+      "fourloko",
+      "Four Loko Party Store — Live Nation Festival Circuit",
+    ],
+    [
+      "rollingstones.svg",
+      "The Rolling Stones",
+      "stones",
+      "NASCAR × The Rolling Stones",
+    ],
+    ["keebler.png", "Keebler", "keebler", "Keebler Butterbeer Pop-Up"],
   ];
   return (
     <div className="client-marks">
-      {clients.map(([file, name]) => (
-        <div className="client-mark" key={file}>
-          <img
-            src={`/media/logos/${file}`}
-            alt={name}
-            loading="lazy"
-            width={200}
-            height={100}
-          />
+      {clients.map(([file, name, project, title], index) => (
+        <div
+          className={`client-mark ${active === file ? "is-previewing" : ""}`}
+          key={file}
+          onMouseEnter={() => setActive(file)}
+          onMouseLeave={() => setActive(null)}
+          onFocus={() => setActive(file)}
+          onBlur={() => setActive(null)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setActive(null);
+          }}
+        >
+          <Link
+            href={"/work/" + project}
+            className="client-logo-button"
+            aria-label={name + ": " + title}
+            aria-controls={`brand-preview-${index}`}
+          >
+            <img
+              className="client-logo-mono"
+              src={`/media/logos/${file}`}
+              alt=""
+              width={200}
+              height={100}
+              loading="lazy"
+            />
+            <img
+              className="client-logo-color"
+              src={`/media/logos/color/${file}`}
+              alt=""
+              width={200}
+              height={100}
+              loading="lazy"
+            />
+          </Link>
+          <div
+            className="client-event-preview"
+            id={`brand-preview-${index}`}
+            aria-hidden={active !== file}
+          >
+            <img
+              src={projectPreviews[project][0].src}
+              alt=""
+              width={320}
+              height={320}
+              loading="lazy"
+              style={{ objectPosition: projectPreviews[project][0].position }}
+            />
+            <p>{title}</p>
+          </div>
         </div>
       ))}
     </div>
@@ -129,10 +210,8 @@ export default function Experience() {
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [review, setReview] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [mediaPaused, setMediaPaused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [autoReviews, setAutoReviews] = useState(true);
   const reviewsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -193,6 +272,16 @@ export default function Experience() {
             )
             .to(intro.current, { autoAlpha: 0, duration: 0.45 }, 2);
         }
+        ScrollTrigger.create({
+          trigger: ".hero",
+          start: "top top",
+          end: () =>
+            "+=" + document.querySelector<HTMLElement>(".hero")!.offsetHeight,
+          pin: true,
+          pinSpacing: false,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        });
         gsap.from(".hero-nav > *", {
           y: -14,
           opacity: 0,
@@ -231,7 +320,6 @@ export default function Experience() {
     }, root);
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const applyMotion = () => {
-      setAutoReviews(!motion.matches);
       if (motion.matches) {
         setMediaPaused(true);
       }
@@ -245,14 +333,14 @@ export default function Experience() {
   }, []);
 
   useEffect(() => {
-    if (!autoReviews || paused || contactOpen || selectedProject) return;
+    if (contactOpen || selectedProject) return;
     const timer = setInterval(() => {
       const box = reviewsRef.current?.getBoundingClientRect();
       if (!document.hidden && box && box.top < innerHeight && box.bottom > 0)
         setReview((i) => (i + 1) % reviews.length);
     }, 7500);
     return () => clearInterval(timer);
-  }, [autoReviews, paused, contactOpen, selectedProject]);
+  }, [contactOpen, selectedProject]);
 
   function openContact() {
     if (!selectedProject)
@@ -269,10 +357,6 @@ export default function Experience() {
   }
   function toggleHeroMedia() {
     setMediaPaused((paused) => !paused);
-  }
-  function moveReview(delta: number) {
-    setReview((i) => (i + delta + reviews.length) % reviews.length);
-    setPaused(true);
   }
 
   return (
@@ -291,11 +375,9 @@ export default function Experience() {
             <a href="#work">WORK</a>
             <a href="#about">ABOUT</a>
             <a href="#services">SERVICES</a>
-            <a href="#friends">OUR FRIENDS</a>
+            <a href="#clients">OUR CLIENTS</a>
           </div>
-          <span className="nav-line">
-            BRINGING YOUR BRAND INTO THE REAL WORLD.
-          </span>
+          <span className="nav-line">YOUR TEAM. OUR PRODUCTION SUPPORT.</span>
           <div className="nav-actions">
             <ThemeToggle />
             <button className="button nav-cta" onClick={openContact}>
@@ -318,7 +400,7 @@ export default function Experience() {
               ["WORK", "#work"],
               ["ABOUT", "#about"],
               ["SERVICES", "#services"],
-              ["OUR FRIENDS", "#friends"],
+              ["OUR CLIENTS", "#clients"],
             ].map(([title, href]) => (
               <a href={href} key={href} onClick={() => setMenuOpen(false)}>
                 {title}
@@ -350,22 +432,72 @@ export default function Experience() {
         </div>
       </header>
 
-      <main>
-        <section className="trust" aria-labelledby="trust-title">
-          <h2 id="trust-title" data-reveal>
-            TRUSTED BY SOME OF
-            <br />
-            THE BIGGEST COMPANIES
-            <br />
-            IN THE WORLD.
-          </h2>
-          <p className="trust-note" data-reveal>
-            Big brands. Great partners. Shared ambition.
-            <br />
-            Experience supporting these brands alongside agency and production
-            teams.
-          </p>
-          <ClientMarks />
+      <main className="home-content">
+        <section className="trust" aria-labelledby="support-title">
+          <div className="trust-pixels" aria-hidden="true">
+            <PixelBlast
+              color="#888888"
+              accentColor="#888888"
+              pixelSize={3}
+              patternDensity={0.9}
+              speed={0.2}
+              drift={0.15}
+              glow={0.15}
+              twinkle={0.1}
+              edgeFade={0.2}
+              enableRipples={false}
+              hoverEffect="none"
+              dpr={1}
+            />
+          </div>
+          <div className="partner-intro">
+            <div data-reveal>
+              <p className="mono partner-kicker">
+                INDEPENDENT EXPERIENTIAL PRODUCTION
+              </p>
+              <h2 id="support-title">
+                <TypedHeading>
+                  YOUR PROJECT.
+                  <br />
+                  <em>THE RIGHT SUPPORT.</em>
+                </TypedHeading>
+              </h2>
+            </div>
+            <div className="partner-copy" data-reveal>
+              <p>
+                Independent experiential production, built around what your
+                project needs. One production lead, a short planning sprint, or
+                a full team—from the first idea to the final load-out.
+              </p>
+              <p>
+                We work alongside agencies, internal brand teams, and creative
+                partners. Bring us in for the piece you need—or the whole
+                production.
+              </p>
+              <button className="button partner-cta" onClick={openContact}>
+                TELL US WHAT YOU NEED <Arrow diagonal />
+              </button>
+            </div>
+          </div>
+          <div
+            className="trust-proof"
+            role="group"
+            aria-labelledby="trust-title"
+          >
+            <div className="trust-proof-heading" data-reveal>
+              <h2 id="trust-title">
+                BIG BRANDS.
+                <br />
+                <em>SHARED EFFORT.</em>
+              </h2>
+              <p className="trust-note">
+                Selected brands and experiences supported alongside agency,
+                creative, and production partners. Roles vary by project;
+                explore the case studies for the details.
+              </p>
+            </div>
+            <ClientMarks />
+          </div>
         </section>
 
         <Services onContact={openContact} />
@@ -404,17 +536,13 @@ export default function Experience() {
         </section>
 
         <section
-          className="friends"
-          id="friends"
+          className="clients"
+          id="clients"
           ref={reviewsRef}
-          aria-labelledby="friends-heading"
+          aria-labelledby="clients-heading"
           aria-roledescription="carousel"
         >
-          <div
-            className="review-stage"
-            onMouseEnter={() => setPaused(true)}
-            onFocus={() => setPaused(true)}
-          >
+          <div className="review-stage">
             {reviews.map((r, i) => (
               <div
                 key={r.name}
@@ -432,62 +560,39 @@ export default function Experience() {
               </div>
             ))}
             <div className="review-scrim" />
-            <div className="friends-heading">
-              <h2 id="friends-heading">
-                WHAT OUR
-                <br />
-                <em>FRIENDS SAY.</em>
+            <div className="clients-heading">
+              <h2 id="clients-heading">
+                <TypedHeading>
+                  WHAT OUR
+                  <br />
+                  <em>CLIENTS SAY.</em>
+                </TypedHeading>
               </h2>
             </div>
 
-            <div
-              className="review-content"
-              aria-live={paused ? "polite" : "off"}
-            >
-              <span className="quote-mark" aria-hidden="true">
-                “
-              </span>
-              <blockquote
-                key={review}
-                className={
-                  reviews[review].quote.length > 220 ? "long-quote" : ""
-                }
-              >
-                {reviews[review].quote}
-              </blockquote>
-              <div className="review-attribution">
-                <strong>{reviews[review].name}</strong>
-                <span>ON GOOGLE · {reviews[review].date}</span>
-              </div>
+            <div className="review-content" aria-live="off">
+              {reviews.map((item, index) => (
+                <div
+                  key={item.name}
+                  className={`review-slide ${review === index ? "is-active" : ""}`}
+                  aria-hidden={review !== index}
+                >
+                  <blockquote
+                    className={item.quote.length > 220 ? "long-quote" : ""}
+                  >
+                    {item.quote}
+                  </blockquote>
+                  <div className="review-attribution">
+                    <strong>{item.name}</strong>
+                    <span>ON GOOGLE · {item.date}</span>
+                  </div>
+                </div>
+              ))}
             </div>
             <div className="review-footer">
               <span className="review-image-credit mono">
                 FROM THE ARCHIVE / {reviews[review].project}
               </span>
-              <div className="review-controls">
-                <button
-                  onClick={() => moveReview(-1)}
-                  aria-label="Previous review"
-                >
-                  <span aria-hidden="true">←</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setPaused(autoReviews && !paused);
-                    setAutoReviews(true);
-                  }}
-                  aria-label={
-                    paused || !autoReviews
-                      ? "Resume review carousel"
-                      : "Pause review carousel"
-                  }
-                >
-                  {paused || !autoReviews ? "▷" : "Ⅱ"}
-                </button>
-                <button onClick={() => moveReview(1)} aria-label="Next review">
-                  <span aria-hidden="true">→</span>
-                </button>
-              </div>
             </div>
           </div>
         </section>
@@ -496,25 +601,55 @@ export default function Experience() {
           <div className="about-top" data-reveal>
             <span className="mono">BIG IDEAS. REAL-WORLD EXPERIENCES.</span>
             <p>
-              We bring the right
-              <br />
-              <em>people together.</em>
+              <TypedHeading>
+                WE BRING THE RIGHT
+                <br />
+                <em>PEOPLE TOGETHER.</em>
+              </TypedHeading>
             </p>
           </div>
           <div className="about-bottom" data-reveal>
-            <span className="tiny-brand">
-              <Brand />
-            </span>
+            <div
+              className="about-people"
+              aria-label="People and production from the project archive"
+            >
+              <img
+                src="/media/people/installation.jpg"
+                alt="Three people standing among a mirrored outdoor installation"
+                width={1094}
+                height={1375}
+                loading="lazy"
+              />
+              <img
+                src="/media/people/prop-build.png"
+                alt="Two people beside oversized sculptural props in a workshop"
+                width={1218}
+                height={1180}
+                loading="lazy"
+              />
+              <img
+                src="/media/people/workshop.png"
+                alt="Two people beside a colorful octopus sculpture during fabrication"
+                width={1206}
+                height={1108}
+                loading="lazy"
+              />
+            </div>
             <div>
               <h2>Your team, extended.</h2>
               <p>
-                IMMRSV is Nick Wirsching and a collective of people who know how
-                to make things happen. One production lead, a focused sprint, or
-                a full supporting cast. We fit around what your project needs.
+                IMMRSV is Nick Wirsching, an independent production lead with a
+                trusted network of creative specialists, fabricators, and event
+                professionals. Work directly with Nick or let him assemble the
+                right people around your brief. Less agency overhead means
+                quicker responses, faster delivery, and competitive rates.
               </p>
               <p>
-                Alongside your agency. Inside your brand team. From the first
-                “what if” to the final load-out.
+                Based in Salt Lake City, with production partners across the
+                country and the flexibility to work around the world. We can
+                slot into your existing team, lead a specific workstream, or
+                coordinate production from concept through execution. We don’t
+                need to be the agency of record to be a partner you count on.
               </p>
             </div>
             <button
@@ -527,45 +662,9 @@ export default function Experience() {
           </div>
         </section>
 
-        <section className="closing">
-          <p className="mono" data-reveal>
-            FROM A QUICK GUT CHECK TO THE WHOLE THING.
-          </p>
-          <h2 data-reveal>
-            LET’S MAKE
-            <br />
-            <em>SOMETHING HAPPEN.</em>
-          </h2>
-          <button className="button closing-cta" onClick={openContact}>
-            WORK WITH US
-            <Arrow diagonal />
-          </button>
-          <a href="mailto:nick@immrsv-exp.com" className="closing-email">
-            nick@immrsv-exp.com
-          </a>
-        </section>
+        <ProjectBanner onContact={openContact} home />
       </main>
-      <footer>
-        <div className="footer-top">
-          <span>
-            INDEPENDENT IN SPIRIT.
-            <br />
-            COLLECTIVE BY NATURE.
-          </span>
-          <div>
-            <a
-              href="https://www.linkedin.com/in/nick-wirsching/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LINKEDIN ↗
-            </a>
-            <a href="#home">BACK TO TOP ↑</a>
-          </div>
-          <span>© {new Date().getFullYear()} IMMRSV</span>
-        </div>
-        <Brand />
-      </footer>
+      <SiteFooter />
       <Contact
         open={contactOpen}
         onOpenChange={setContactOpen}

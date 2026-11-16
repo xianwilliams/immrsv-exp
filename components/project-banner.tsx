@@ -1,10 +1,18 @@
 "use client";
+import { TypedHeading } from "./typed-heading";
 
 import { useEffect, useRef, useState } from "react";
 import { projectBannerImages } from "@/lib/project-previews";
 import { Arrow } from "./site-ui";
+import "./project-banner.css";
 
-export function ProjectBanner({ onContact }: { onContact: () => void }) {
+export function ProjectBanner({
+  onContact,
+  home = false,
+}: {
+  onContact: () => void;
+  home?: boolean;
+}) {
   const root = useRef<HTMLElement>(null);
   const photos = useRef<(HTMLImageElement | null)[]>([]);
   const [active, setActive] = useState(0);
@@ -75,16 +83,22 @@ export function ProjectBanner({ onContact }: { onContact: () => void }) {
         ))}
       </div>
       <div className="case-contact-content">
-        <p className="mono">YOUR TEAM, EXTENDED.</p>
+        <p className="mono">
+          {home
+            ? "FROM A QUICK GUT CHECK TO THE WHOLE THING."
+            : "YOUR TEAM, EXTENDED."}
+        </p>
         <h2 id="case-contact-title">
-          YOUR NEXT IDEA.
-          <br />
-          <em>OUT IN THE WORLD.</em>
+          <TypedHeading>
+            {home ? "LET’S MAKE" : "YOUR NEXT IDEA."}
+            <br />
+            <em>{home ? "SOMETHING HAPPEN." : "OUT IN THE WORLD."}</em>
+          </TypedHeading>
         </h2>
         <p>
-          One production lead or the whole supporting cast.
+          A few days of support or the whole production.
           <br />
-          Let’s talk about what your project needs.
+          Bring us in wherever your team needs us.
         </p>
         <button className="button" onClick={onContact}>
           WORK WITH US <Arrow diagonal />

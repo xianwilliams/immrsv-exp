@@ -62,7 +62,7 @@ report.desktop.heroCarousel = await page
     state: getComputedStyle(el).animationPlayState,
     photos: el.querySelectorAll("img").length,
   }));
-for (const name of ["trust", "services", "friends"]) {
+for (const name of ["trust", "services", "clients"]) {
   await page.locator("." + name).scrollIntoViewIfNeeded();
   await page.waitForTimeout(1100);
   await page.screenshot({ path: `qa/desktop-${name}.png` });

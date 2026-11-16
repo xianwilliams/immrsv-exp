@@ -231,3 +231,20 @@
     font-size: 8px;
   }
 }
+
+.work-stage {
+  isolation: isolate;
+}
+.work-pixels {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.085;
+  pointer-events: none;
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-pixels {
+    display: none;
+  }
+}

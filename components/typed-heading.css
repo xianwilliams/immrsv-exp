@@ -1,0 +1,23 @@
+.typed-heading {
+  display: block;
+  position: relative;
+}
+.typed-heading-layout {
+  opacity: 0;
+}
+.typed-heading-animation {
+  position: absolute;
+  inset: 0;
+}
+.typed-heading-animation .text-type {
+  display: inline;
+  white-space: normal;
+}
+@media (prefers-reduced-motion: reduce) {
+  .typed-heading-layout {
+    opacity: 1;
+  }
+  .typed-heading-animation {
+    display: none;
+  }
+}
