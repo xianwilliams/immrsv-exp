@@ -80,10 +80,10 @@ export function Contact({
               muted
               loop
               playsInline
-              poster="/media/contact-poster.jpg"
+              poster="/media/contact-reel-poster.jpg"
               aria-hidden="true"
             >
-              <source src="/media/contact.mp4" type="video/mp4" />
+              <source src="/media/contact-reel.mp4" type="video/mp4" />
             </video>
             <div className="contact-logo">
               <Brand />

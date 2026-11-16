@@ -594,8 +594,7 @@ export default function Experience() {
         </section>
 
         <section className="about" id="about" aria-labelledby="about-title">
-          <div className="about-top" data-reveal>
-            <span className="mono">BIG IDEAS. REAL-WORLD EXPERIENCES.</span>
+          <div className="about-layout" data-reveal>
             <h2 id="about-title">
               <TypedHeading>
                 WE BRING THE RIGHT
@@ -603,34 +602,34 @@ export default function Experience() {
                 <em>PEOPLE TOGETHER.</em>
               </TypedHeading>
             </h2>
-          </div>
-          <div className="about-bottom" data-reveal>
-            <div
-              className="about-people"
-              aria-label="People and production from the project archive"
-            >
-              <img
-                src="/media/people/installation.jpg"
-                alt="Three people standing among a mirrored outdoor installation"
-                width={1094}
-                height={1375}
-                loading="lazy"
-              />
-              <img
-                src="/media/people/prop-build.png"
-                alt="Two people beside oversized sculptural props in a workshop"
-                width={1218}
-                height={1180}
-                loading="lazy"
-              />
-              <img
-                src="/media/people/workshop.png"
-                alt="Two people beside a colorful octopus sculpture during fabrication"
-                width={1206}
-                height={1108}
-                loading="lazy"
-              />
-            </div>
+            <figure className="about-photos">
+              <div className="about-people">
+                <img
+                  src="/media/people/installation.jpg"
+                  alt="Three people standing among a mirrored outdoor installation"
+                  width={1094}
+                  height={1375}
+                  loading="lazy"
+                />
+                <img
+                  src="/media/people/prop-build.png"
+                  alt="Two people beside oversized sculptural props in a workshop"
+                  width={1218}
+                  height={1180}
+                  loading="lazy"
+                />
+                <img
+                  src="/media/people/workshop.png"
+                  alt="Two people beside a colorful octopus sculpture during fabrication"
+                  width={1206}
+                  height={1108}
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="mono">
+                BIG IDEAS. REAL-WORLD EXPERIENCES.
+              </figcaption>
+            </figure>
             <div className="about-copy">
               <h3>Your team, extended.</h3>
               <p>

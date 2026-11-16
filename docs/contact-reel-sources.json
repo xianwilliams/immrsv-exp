@@ -1,0 +1,44 @@
+{
+  "updatedAt": "2026-11-16",
+  "output": "/media/contact-reel.mp4",
+  "poster": "/media/contact-reel-poster.jpg",
+  "encoding": "720 × 1280, H.264, 30 fps, muted, fast-start MP4. Original frame composition retained.",
+  "clips": [
+    {
+      "source": "We meant to share this sooner since it’s been about a month, but we’re looking back at our trip .mp4",
+      "startSeconds": 2.65,
+      "durationSeconds": 5.25,
+      "description": "Crumbl branding and oversized cookie installations"
+    },
+    {
+      "source": "We meant to share this sooner since it’s been about a month, but we’re looking back at our trip .mp4",
+      "startSeconds": 20.4,
+      "durationSeconds": 1.25,
+      "description": "Crumbl exterior sign and sculptural display"
+    },
+    {
+      "source": "Triumph Annual Awards Show - Fight Night 🥊🏆@pinkbirdpro.mp4",
+      "startSeconds": 2.55,
+      "durationSeconds": 2.1,
+      "description": "Triumph branded environment and car display"
+    },
+    {
+      "source": "Triumph Annual Awards Show - Fight Night 🥊🏆@pinkbirdpro.mp4",
+      "startSeconds": 11.3,
+      "durationSeconds": 1.8,
+      "description": "Fight Night ring and live event staging"
+    },
+    {
+      "source": "We’ve been working on a lot of fun projects recently, and this one was no exception. We worked w.mp4",
+      "startSeconds": 0,
+      "durationSeconds": 4.6,
+      "description": "ProHEMP branded booth and event team"
+    },
+    {
+      "source": "public/media/contact.mp4",
+      "startSeconds": 0,
+      "durationSeconds": 5.213542,
+      "description": "Existing contact video, retained after the new clips"
+    }
+  ]
+}
