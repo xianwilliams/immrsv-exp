@@ -4,6 +4,8 @@
   --soft: #5b5b5b;
   --line: #d5d5d5;
   --surface: #f2f2f2;
+  --dark-surface: #000;
+  --on-dark: #fff;
   --muted: #707070;
   --inverse-soft: #c8c8c8;
   --button-hover: #292929;
@@ -447,8 +449,8 @@ textarea {
   min-height: 44px;
 }
 .trust {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--dark-surface);
+  color: var(--on-dark);
   padding: clamp(64px, 7vw, 110px) var(--gutter);
   position: relative;
   z-index: 2;
@@ -504,20 +506,20 @@ textarea {
 }
 .partner-cta {
   margin-top: 24px;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--on-dark);
+  color: var(--dark-surface);
   min-height: 52px;
   padding: 16px 22px;
   gap: 32px;
 }
 .partner-cta:hover {
-  background: var(--line);
+  background: #d5d5d5;
 }
 .partner-cta > .arrow {
   color: inherit;
 }
 .partner-cta:focus-visible {
-  outline-color: var(--paper);
+  outline-color: var(--on-dark);
 }
 .trust-proof {
   margin-top: 64px;
@@ -580,14 +582,14 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--paper);
+  color: var(--on-dark);
 }
 .client-mark img {
   width: 100%;
   max-width: 180px;
   height: 88px;
   object-fit: contain;
-  filter: invert(var(--logo-invert));
+  filter: invert(1);
 }
 .client-mark:nth-child(2) img {
   max-width: 83px;
@@ -795,8 +797,8 @@ textarea {
 }
 footer {
   padding: 30px 24px 22px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--dark-surface);
+  color: var(--on-dark);
   overflow: hidden;
 }
 .footer-top {
@@ -815,7 +817,7 @@ footer {
 }
 footer > .brand {
   width: 100%;
-  color: var(--paper);
+  color: inherit;
 }
 .dialog-overlay {
   position: fixed;
@@ -1080,8 +1082,8 @@ footer > .brand {
 }
 .project-detail-type {
   height: 250px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--dark-surface);
+  color: var(--on-dark);
   border-radius: 18px;
   display: flex;
   flex-direction: column;
@@ -1586,7 +1588,7 @@ footer > .brand {
   }
 }
 
-/* UI colors reverse; photographs, footage and their legibility overlays stay true. */
+/* Light surfaces darken; dark sections and photography retain their palette. */
 :root[data-theme="dark"] {
   --paper: #0b0b0b;
   --ink: #f2f2ef;
@@ -1594,7 +1596,6 @@ footer > .brand {
   --muted: #a0a09c;
   --line: #383838;
   --surface: #191919;
-  --inverse-soft: #505050;
   --button-hover: #d5d5d0;
   --accent-text: #f27665;
   --logo-invert: 0;

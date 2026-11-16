@@ -1,7 +1,7 @@
 .site-footer {
   padding: clamp(64px, 6vw, 100px) var(--gutter) 40px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--dark-surface);
+  color: var(--on-dark);
 }
 .site-footer-main {
   display: grid;
