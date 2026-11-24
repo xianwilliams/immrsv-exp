@@ -1,69 +1,102 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
-import type { CSSProperties } from "react";
-import { projectGalleries } from "@/lib/project-galleries";
-
-const heroImages = [
-  projectGalleries.wcdonalds[1],
-  projectGalleries["nascar-billboard"][0],
-  projectGalleries.starry[0],
-  projectGalleries.crumbl[0],
-  projectGalleries.stones[0],
-  projectGalleries.tictac[0],
-  projectGalleries.keebler[0],
-];
-
+import { heroSlides as slides } from "@/lib/hero-slides";
 export function HeroCarousel({ paused }: { paused: boolean }) {
-  const root = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(true);
+  const images = useRef<(HTMLImageElement | null)[]>([]);
+  const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    const media = matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setPlaying(!media.matches);
+    apply();
+    media.addEventListener("change", apply);
     const observer = new IntersectionObserver(([entry]) =>
       setVisible(entry.isIntersecting),
     );
     observer.observe(root.current!);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      media.removeEventListener("change", apply);
+    };
   }, []);
+  useEffect(() => {
+    if (!playing || paused || !visible) return;
+    const timer = setInterval(() => {
+      if (document.hidden) return;
+      setActive((current) => {
+        const next = (current + 1) % slides.length;
+        return images.current[next]?.complete &&
+          images.current[next]!.naturalWidth > 0
+          ? next
+          : current;
+      });
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [playing, paused, visible]);
   return (
     <div
-      className="hero-film"
+      className="hero-slideshow"
       ref={root}
-      aria-label="Selected IMMRSV project photography"
+      aria-roledescription="carousel"
+      aria-label="Approved project highlights"
     >
-      <div
-        className="hero-photo-track"
-        style={{
-          animationPlayState: paused || !visible ? "paused" : "running",
-        }}
-      >
-        {[0, 1].map((copy) => (
-          <div
-            className="hero-photo-group"
-            key={copy}
-            aria-hidden={copy === 1 || undefined}
-          >
-            {heroImages.map((image, i) => (
-              <div
-                className="hero-photo"
-                key={image.src}
-                style={
-                  {
-                    "--photo-aspect": `${image.width}/${image.height}`,
-                  } as CSSProperties
-                }
-              >
-                <img
-                  src={image.src}
-                  alt={copy ? "" : image.alt}
-                  width={image.width}
-                  height={image.height}
-                  loading="eager"
-                  fetchPriority={i === 0 && copy === 0 ? "high" : "auto"}
-                />
-              </div>
-            ))}
-          </div>
+      <div className="hero-slideshow-frame">
+        {slides.map(({ image, project }, index) => (
+          <img
+            key={project.id}
+            ref={(node) => {
+              images.current[index] = node;
+            }}
+            src={image.src}
+            alt={index === active ? image.alt : ""}
+            aria-hidden={index !== active}
+            className={index === active ? "active" : ""}
+            width={image.width}
+            height={image.height}
+            style={{ objectPosition: image.position }}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            loading={index < 2 ? "eager" : "lazy"}
+          />
         ))}
+      </div>
+      <div className="hero-slideshow-footer mono">
+        <p aria-live={playing ? "off" : "polite"}>
+          <span>
+            {String(active + 1).padStart(2, "0")} /{" "}
+            {String(slides.length).padStart(2, "0")}
+          </span>
+          {slides[active].project.client} — {slides[active].project.title}
+        </p>
+        <div className="hero-slideshow-controls">
+          <button
+            aria-label="Previous featured project"
+            onClick={() => {
+              setPlaying(false);
+              setActive((i) => (i - 1 + slides.length) % slides.length);
+            }}
+          >
+            ←
+          </button>
+          <button
+            aria-label={
+              playing ? "Pause featured projects" : "Play featured projects"
+            }
+            onClick={() => setPlaying((value) => !value)}
+          >
+            {playing ? "PAUSE" : "PLAY"}
+          </button>
+          <button
+            aria-label="Next featured project"
+            onClick={() => {
+              setPlaying(false);
+              setActive((i) => (i + 1) % slides.length);
+            }}
+          >
+            →
+          </button>
+        </div>
       </div>
     </div>
   );

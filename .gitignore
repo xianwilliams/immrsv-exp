@@ -25,6 +25,7 @@ next-env.d.ts
 /concepts/
 /qa/
 /scrollcraft/
+/deliverables/
 
 # Local agent/editor state and OS clutter
 .codex/

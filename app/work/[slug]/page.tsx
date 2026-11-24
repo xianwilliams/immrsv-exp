@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { allProjects } from "@/lib/content";
 import { projectGalleries } from "@/lib/project-galleries";
-import { projectStories } from "@/lib/project-stories";
 import { CaseStudy } from "@/components/case-study";
 
 export const dynamicParams = false;
@@ -38,7 +37,6 @@ export default async function ProjectPage({
   return (
     <CaseStudy
       project={allProjects[index]}
-      story={projectStories[slug]}
       images={projectGalleries[slug]}
       next={allProjects[(index + 1) % allProjects.length]}
     />

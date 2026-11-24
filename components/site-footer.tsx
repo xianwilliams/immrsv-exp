@@ -35,20 +35,6 @@ export function SiteFooter() {
               <br />
               Let’s bring the right support to your next experience.
             </p>
-            <a
-              href="https://inevent.com/en/eventmarket.php"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="InEvent Certified Partner"
-            >
-              <img
-                src="/media/inevent-partner.png"
-                alt="InEvent Certified Partner"
-                width="587"
-                height="734"
-                loading="lazy"
-              />
-            </a>
           </div>
         </div>
       </div>

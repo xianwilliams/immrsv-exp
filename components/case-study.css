@@ -339,3 +339,9 @@
     width: 100px;
   }
 }
+
+.case-overview > .case-credit {
+  font-size: 12px;
+  color: var(--soft);
+  margin-top: 22px;
+}

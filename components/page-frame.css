@@ -1,0 +1,35 @@
+body {
+  background: #151515;
+}
+.page-frame {
+  margin-inline: 12px;
+  background: var(--paper);
+  border-radius: 0 0 22px 22px;
+  overflow: clip;
+}
+@supports (animation-timeline: scroll()) {
+  .page-frame {
+    animation: page-border-reveal linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 240px;
+  }
+  @keyframes page-border-reveal {
+    from {
+      margin-inline: 0;
+    }
+    to {
+      margin-inline: 12px;
+    }
+  }
+}
+@media (max-width: 599px) {
+  .page-frame {
+    margin-inline: 6px;
+    border-radius: 0 0 14px 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-frame {
+    animation: none;
+  }
+}

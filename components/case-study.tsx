@@ -5,8 +5,6 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import type { Project } from "@/lib/content";
 import type { ProjectImage } from "@/lib/project-galleries";
-import type { ProjectStory } from "@/lib/project-stories";
-import { Contact } from "./contact-dialog";
 import { Arrow, Brand } from "./site-ui";
 import { ImageViewer } from "./image-viewer";
 import { ThemeToggle } from "./theme-toggle";
@@ -15,22 +13,17 @@ import "./case-study.css";
 
 export function CaseStudy({
   project,
-  story,
   images,
   next,
 }: {
   project: Project;
-  story: ProjectStory;
   images: ProjectImage[];
   next: Project;
 }) {
-  const [contact, setContact] = useState(false);
   const [image, setImage] = useState<number | null>(null);
-  const contactOpener = useRef<HTMLElement | null>(null);
   const imageOpener = useRef<HTMLElement | null>(null);
   function openContact() {
-    contactOpener.current = document.activeElement as HTMLElement;
-    setContact(true);
+    window.location.assign("/#contact");
   }
   function openImage(index: number) {
     imageOpener.current = document.activeElement as HTMLElement;
@@ -93,42 +86,20 @@ export function CaseStudy({
         {photo(0, true)}
         <section className="case-story" id="project-story">
           <div className="case-title">
-            <p className="mono">{story.eyebrow}</p>
+            <p className="mono">{project.category}</p>
             <h1>{project.title}</h1>
             <span className="case-client">{project.client}</span>
           </div>
           <div className="case-overview">
-            <p>{story.summary}</p>
-            <ul className="case-role-tags">
-              {project.roles.map((role) => (
-                <li key={role}>{role}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-        <section className="case-scope" aria-labelledby="scope-title">
-          <div>
-            <span className="mono">
-              {["starry", "crumbl"].includes(project.id)
-                ? "A CLOSER LOOK"
-                : "THE ROLE WE PLAYED"}
-            </span>
-            <h2 id="scope-title">
-              {["starry", "crumbl"].includes(project.id)
-                ? "Inside the experience."
-                : "What we brought to it."}
-            </h2>
-          </div>
-          <div className="case-scope-list">
-            {story.scope.map((item, i) => (
-              <article key={item.title}>
-                <span className="mono">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
+            <p>{project.description}</p>
+            {project.roles.length > 0 && (
+              <ul className="case-role-tags">
+                {project.roles.map((role) => (
+                  <li key={role}>{role}</li>
+                ))}
+              </ul>
+            )}
+            {project.credit && <p className="case-credit">{project.credit}</p>}
           </div>
         </section>
         <section
@@ -170,14 +141,6 @@ export function CaseStudy({
         </Link>
       </main>
       <SiteFooter />
-      <Contact
-        open={contact}
-        onOpenChange={setContact}
-        onRestoreFocus={(event) => {
-          event.preventDefault();
-          contactOpener.current?.focus({ preventScroll: true });
-        }}
-      />
       <ImageViewer
         images={images}
         index={image}

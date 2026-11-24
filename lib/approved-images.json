@@ -1,0 +1,534 @@
+{
+  "starry": [
+    {
+      "src": "/media/approved/starry/01.webp",
+      "width": 2048,
+      "height": 1365,
+      "alt": "The Starry court and live audience at NBA All-Star.",
+      "caption": "The Starry court and live audience at NBA All-Star.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/starry/02.webp",
+      "width": 2048,
+      "height": 1365,
+      "alt": "Starry branding across the court.",
+      "caption": "Starry branding across the court.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/starry/03.webp",
+      "width": 1200,
+      "height": 628,
+      "alt": "The shooting area and branded backdrop.",
+      "caption": "The shooting area and branded backdrop.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/starry/04.webp",
+      "width": 1200,
+      "height": 628,
+      "alt": "A view across the event floor.",
+      "caption": "A view across the event floor.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/starry/05.webp",
+      "width": 1200,
+      "height": 628,
+      "alt": "Fans around the Starry court.",
+      "caption": "Fans around the Starry court.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/starry/06.webp",
+      "width": 1200,
+      "height": 628,
+      "alt": "The activation within the wider event.",
+      "caption": "The activation within the wider event.",
+      "position": "50% 50%"
+    }
+  ],
+  "crumbl": [
+    {
+      "src": "/media/approved/crumbl/01.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "The entrance to Crumbl headquarters.",
+      "caption": "The entrance to Crumbl headquarters.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/02.webp",
+      "width": 2200,
+      "height": 1760,
+      "alt": "Dimensional cookies and Crumbl HQ branding.",
+      "caption": "Dimensional cookies and Crumbl HQ branding.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/03.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "Oversized baking ingredients in the headquarters.",
+      "caption": "Oversized baking ingredients in the headquarters.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/04.webp",
+      "width": 1760,
+      "height": 2200,
+      "alt": "A larger-than-life pink mixer.",
+      "caption": "A larger-than-life pink mixer.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/05.webp",
+      "width": 1760,
+      "height": 2200,
+      "alt": "Dimensional cookie displays along the corridor.",
+      "caption": "Dimensional cookie displays along the corridor.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/06.webp",
+      "width": 1760,
+      "height": 2200,
+      "alt": "Branded swings around a communal table.",
+      "caption": "Branded swings around a communal table.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/07.webp",
+      "width": 2200,
+      "height": 1760,
+      "alt": "Pink mailboxes and wall graphics.",
+      "caption": "Pink mailboxes and wall graphics.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl/08.webp",
+      "width": 1760,
+      "height": 2200,
+      "alt": "An oversized cookie box becomes a place to sit.",
+      "caption": "An oversized cookie box becomes a place to sit.",
+      "position": "50% 50%"
+    }
+  ],
+  "pandora-las-vegas": [
+    {
+      "src": "/media/approved/pandora-las-vegas/01.webp",
+      "width": 1024,
+      "height": 683,
+      "alt": "The Pandora Lucky in Love launch experience.",
+      "caption": "The Pandora Lucky in Love launch experience.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/pandora-las-vegas/02.webp",
+      "width": 1024,
+      "height": 1535,
+      "alt": "The custom Jewel-ette wheel and Pandora backdrop.",
+      "caption": "The custom Jewel-ette wheel and Pandora backdrop.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/pandora-las-vegas/03.webp",
+      "width": 1024,
+      "height": 683,
+      "alt": "Guests interacting with the roulette installation.",
+      "caption": "Guests interacting with the roulette installation.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/pandora-las-vegas/04.webp",
+      "width": 1024,
+      "height": 683,
+      "alt": "The flagship store ribbon cutting.",
+      "caption": "The flagship store ribbon cutting.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/pandora-las-vegas/05.webp",
+      "width": 1024,
+      "height": 1535,
+      "alt": "Details of the Jewel-ette wheel.",
+      "caption": "Details of the Jewel-ette wheel.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/pandora-las-vegas/06.webp",
+      "width": 1024,
+      "height": 1535,
+      "alt": "The installation outside Pandora\u2019s Las Vegas store.",
+      "caption": "The installation outside Pandora\u2019s Las Vegas store.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/pandora-las-vegas/07.webp",
+      "width": 1024,
+      "height": 1535,
+      "alt": "Guests inside the flagship store.",
+      "caption": "Guests inside the flagship store.",
+      "position": "50% 50%"
+    }
+  ],
+  "foam-sculptures": [
+    {
+      "src": "/media/approved/foam-sculptures/01.webp",
+      "width": 1206,
+      "height": 1108,
+      "alt": "An octopus sculpture during fabrication.",
+      "caption": "An octopus sculpture during fabrication.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/foam-sculptures/02.webp",
+      "width": 996,
+      "height": 1220,
+      "alt": "An oversized pumpkin taking shape in the workshop.",
+      "caption": "An oversized pumpkin taking shape in the workshop.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/foam-sculptures/03.webp",
+      "width": 1218,
+      "height": 1180,
+      "alt": "Large sculptural props with the fabrication team.",
+      "caption": "Large sculptural props with the fabrication team.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/foam-sculptures/04.webp",
+      "width": 1190,
+      "height": 1024,
+      "alt": "Sculptural details in a mini-golf installation.",
+      "caption": "Sculptural details in a mini-golf installation.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/foam-sculptures/05.webp",
+      "width": 1650,
+      "height": 2200,
+      "alt": "Oversized sculptural features in an outdoor environment.",
+      "caption": "Oversized sculptural features in an outdoor environment.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/foam-sculptures/06.webp",
+      "width": 512,
+      "height": 512,
+      "alt": "A larger-than-life cookie sculpture.",
+      "caption": "A larger-than-life cookie sculpture.",
+      "position": "50% 50%"
+    }
+  ],
+  "brandless-summit": [
+    {
+      "src": "/media/approved/brandless-summit/01.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "Brandless signage and displays at the Consumer Summit.",
+      "caption": "Brandless signage and displays at the Consumer Summit.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/brandless-summit/02.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "The summit\u2019s product display environment.",
+      "caption": "The summit\u2019s product display environment.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/brandless-summit/03.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "A Sutera product display.",
+      "caption": "A Sutera product display.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/brandless-summit/04.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "A Zeal product display.",
+      "caption": "A Zeal product display.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/brandless-summit/05.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "A Planta product display.",
+      "caption": "A Planta product display.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/brandless-summit/06.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "The display area in its event setting.",
+      "caption": "The display area in its event setting.",
+      "position": "50% 50%"
+    }
+  ],
+  "crumbl-conference": [
+    {
+      "src": "/media/approved/crumbl-conference/01.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "The classroom environment at Crumbl\u2019s manager conference.",
+      "caption": "The classroom environment at Crumbl\u2019s manager conference.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-conference/02.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "A view through the Class of 2023 installation.",
+      "caption": "A view through the Class of 2023 installation.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-conference/03.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "Guests at the branded photo moment.",
+      "caption": "Guests at the branded photo moment.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-conference/04.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "An oversized cookie display.",
+      "caption": "An oversized cookie display.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-conference/05.webp",
+      "width": 1467,
+      "height": 2200,
+      "alt": "The line of custom lockers.",
+      "caption": "The line of custom lockers.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-conference/06.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "Personalized details inside a locker.",
+      "caption": "Personalized details inside a locker.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-conference/07.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "Inside the classroom set.",
+      "caption": "Inside the classroom set.",
+      "position": "50% 50%"
+    }
+  ],
+  "crumbl-edmonton": [
+    {
+      "src": "/media/approved/crumbl-edmonton/01.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "A giant cookie on the Edmonton skyline.",
+      "caption": "A giant cookie on the Edmonton skyline.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-edmonton/02.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "The cookie installation with guests.",
+      "caption": "The cookie installation with guests.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-edmonton/03.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "The launch installation on an Edmonton street.",
+      "caption": "The launch installation on an Edmonton street.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-edmonton/04.webp",
+      "width": 1179,
+      "height": 1474,
+      "alt": "A sculptural cookie against a colorful mural.",
+      "caption": "A sculptural cookie against a colorful mural.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-edmonton/05.webp",
+      "width": 1179,
+      "height": 1474,
+      "alt": "An oversized cookie in the city.",
+      "caption": "An oversized cookie in the city.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/crumbl-edmonton/06.webp",
+      "width": 1467,
+      "height": 2200,
+      "alt": "Visitors with the cookie installation.",
+      "caption": "Visitors with the cookie installation.",
+      "position": "50% 50%"
+    }
+  ],
+  "comfort-cases": [
+    {
+      "src": "/media/approved/comfort-cases/01.webp",
+      "width": 2200,
+      "height": 1238,
+      "alt": "The Comfort Cases event with Lisa Barlow and guests.",
+      "caption": "The Comfort Cases event with Lisa Barlow and guests.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/comfort-cases/02.webp",
+      "width": 2200,
+      "height": 1467,
+      "alt": "Packing essentials at the event.",
+      "caption": "Packing essentials at the event.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/comfort-cases/03.webp",
+      "width": 1467,
+      "height": 2200,
+      "alt": "Lisa Barlow with a Comfort Cases backpack.",
+      "caption": "Lisa Barlow with a Comfort Cases backpack.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/comfort-cases/04.webp",
+      "width": 1467,
+      "height": 2200,
+      "alt": "Preparing a backpack for the program.",
+      "caption": "Preparing a backpack for the program.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/comfort-cases/05.webp",
+      "width": 1467,
+      "height": 2200,
+      "alt": "A hands-on moment at the packing table.",
+      "caption": "A hands-on moment at the packing table.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/comfort-cases/06.webp",
+      "width": 2200,
+      "height": 1238,
+      "alt": "Conversations during the event.",
+      "caption": "Conversations during the event.",
+      "position": "50% 50%"
+    }
+  ],
+  "dreamy-draw": [
+    {
+      "src": "/media/approved/dreamy-draw/01.webp",
+      "width": 944,
+      "height": 1416,
+      "alt": "Reflective sculptural forms in the outdoor installation.",
+      "caption": "Reflective sculptural forms in the outdoor installation.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/dreamy-draw/02.webp",
+      "width": 1888,
+      "height": 1416,
+      "alt": "The installation in its outdoor setting.",
+      "caption": "The installation in its outdoor setting.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/dreamy-draw/03.webp",
+      "width": 1768,
+      "height": 1326,
+      "alt": "A close view of a reflective sculptural element.",
+      "caption": "A close view of a reflective sculptural element.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/dreamy-draw/04.webp",
+      "width": 1094,
+      "height": 1375,
+      "alt": "The team alongside the finished installation.",
+      "caption": "The team alongside the finished installation.",
+      "position": "50% 50%"
+    }
+  ],
+  "maison-margiela": [
+    {
+      "src": "/media/approved/maison-margiela/01.webp",
+      "width": 1440,
+      "height": 1920,
+      "alt": "The REPLICA fragrance cart and summer event setting.",
+      "caption": "The REPLICA fragrance cart and summer event setting.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/02.webp",
+      "width": 1440,
+      "height": 1919,
+      "alt": "Maison Margiela signage on the fragrance cart.",
+      "caption": "Maison Margiela signage on the fragrance cart.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/03.webp",
+      "width": 1440,
+      "height": 1916,
+      "alt": "Guests exploring the summer activation.",
+      "caption": "Guests exploring the summer activation.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/04.webp",
+      "width": 1440,
+      "height": 1920,
+      "alt": "Branded popsicles at the fragrance cart.",
+      "caption": "Branded popsicles at the fragrance cart.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/05.webp",
+      "width": 1440,
+      "height": 1916,
+      "alt": "Fragrance sampling among citrus displays.",
+      "caption": "Fragrance sampling among citrus displays.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/06.webp",
+      "width": 1440,
+      "height": 1920,
+      "alt": "A REPLICA fragrance display.",
+      "caption": "A REPLICA fragrance display.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/07.webp",
+      "width": 1440,
+      "height": 1916,
+      "alt": "Branded popsicles prepared for guests.",
+      "caption": "Branded popsicles prepared for guests.",
+      "position": "50% 50%"
+    },
+    {
+      "src": "/media/approved/maison-margiela/08.webp",
+      "width": 1440,
+      "height": 1916,
+      "alt": "Citrus-inspired details at the activation.",
+      "caption": "Citrus-inspired details at the activation.",
+      "position": "50% 50%"
+    }
+  ]
+}

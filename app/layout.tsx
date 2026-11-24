@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import localFont from "next/font/local";
 import "./globals.css";
+import "@/components/page-frame.css";
 
 const plexMono = localFont({
   src: [
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Your project. The right support. Independent experiential production, from one production lead to a full team.",
     type: "website",
-    images: ["/media/starry.webp"],
+    images: ["/media/approved/starry/01.webp"],
   },
   robots: {
     index: process.env.SITE_INDEXABLE === "true",
@@ -50,7 +51,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="page-frame">{children}</div>
+      </body>
     </html>
   );
 }

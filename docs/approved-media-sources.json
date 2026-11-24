@@ -1,0 +1,282 @@
+{
+  "approval": "Nick\u2019s November 19, 2026 revision email",
+  "projects": {
+    "starry": [
+      {
+        "path": "public/media/approved/starry/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 2.jpeg"
+      },
+      {
+        "path": "public/media/approved/starry/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 1.jpeg"
+      },
+      {
+        "path": "public/media/approved/starry/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 3.jpeg"
+      },
+      {
+        "path": "public/media/approved/starry/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 4.jpeg"
+      },
+      {
+        "path": "public/media/approved/starry/05.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 5.jpeg"
+      },
+      {
+        "path": "public/media/approved/starry/06.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/PHOTOS 2/Starry Court 6.jpeg"
+      }
+    ],
+    "crumbl": [
+      {
+        "path": "public/media/approved/crumbl/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (53 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (43 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (70 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (100 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/05.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (59 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/06.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (80 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/07.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation (75 of 101).jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl/08.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/HQ Photos/2023_HQ_BuildingInstallation_LindseySpotLight (14 of 15).jpg"
+      }
+    ],
+    "pandora-las-vegas": [
+      {
+        "path": "public/media/approved/pandora-las-vegas/01.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-08.jpg"
+      },
+      {
+        "path": "public/media/approved/pandora-las-vegas/02.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-01.jpg"
+      },
+      {
+        "path": "public/media/approved/pandora-las-vegas/03.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-10.jpg"
+      },
+      {
+        "path": "public/media/approved/pandora-las-vegas/04.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-02.jpg"
+      },
+      {
+        "path": "public/media/approved/pandora-las-vegas/05.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-05.jpg"
+      },
+      {
+        "path": "public/media/approved/pandora-las-vegas/06.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-06.jpg"
+      },
+      {
+        "path": "public/media/approved/pandora-las-vegas/07.webp",
+        "source": "ASSETS/approved-nov19/pandora/pandora-09.jpg"
+      }
+    ],
+    "foam-sculptures": [
+      {
+        "path": "public/media/approved/foam-sculptures/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Foam Work/Screen Shot 2023-08-17 at 1.59.21 PM.png"
+      },
+      {
+        "path": "public/media/approved/foam-sculptures/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Foam Work/Screen Shot 2023-08-17 at 2.00.48 PM.png"
+      },
+      {
+        "path": "public/media/approved/foam-sculptures/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Foam Work/Screen Shot 2023-08-17 at 2.01.50 PM.png"
+      },
+      {
+        "path": "public/media/approved/foam-sculptures/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Foam Work/Screen Shot 2023-08-17 at 2.00.09 PM.png"
+      },
+      {
+        "path": "public/media/approved/foam-sculptures/05.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Foam Work/IMG-0527.jpg"
+      },
+      {
+        "path": "public/media/approved/foam-sculptures/06.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Foam Work/IMG-1362.jpg"
+      }
+    ],
+    "brandless-summit": [
+      {
+        "path": "public/media/approved/brandless-summit/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-34.jpg"
+      },
+      {
+        "path": "public/media/approved/brandless-summit/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-073.jpg"
+      },
+      {
+        "path": "public/media/approved/brandless-summit/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-085.jpg"
+      },
+      {
+        "path": "public/media/approved/brandless-summit/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-097.jpg"
+      },
+      {
+        "path": "public/media/approved/brandless-summit/05.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-098.jpg"
+      },
+      {
+        "path": "public/media/approved/brandless-summit/06.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Event Photos/Summit2023-088.jpg"
+      }
+    ],
+    "crumbl-conference": [
+      {
+        "path": "public/media/approved/crumbl-conference/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference73.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-conference/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference88.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-conference/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference206.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-conference/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference200.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-conference/05.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference34.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-conference/06.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference52.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-conference/07.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/2023 Manager_s Conference/Crumbl Class of 23 Managers Conference96.jpg"
+      }
+    ],
+    "crumbl-edmonton": [
+      {
+        "path": "public/media/approved/crumbl-edmonton/01.webp",
+        "source": "ASSETS/approved-nov19/edmonton/DSC07662.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-edmonton/02.webp",
+        "source": "ASSETS/approved-nov19/edmonton/DSC07324.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-edmonton/03.webp",
+        "source": "ASSETS/approved-nov19/edmonton/DSC08007.jpg"
+      },
+      {
+        "path": "public/media/approved/crumbl-edmonton/04.webp",
+        "source": "ASSETS/approved-nov19/edmonton/Crumbl Canada 3.jpeg"
+      },
+      {
+        "path": "public/media/approved/crumbl-edmonton/05.webp",
+        "source": "ASSETS/approved-nov19/edmonton/Crumbl Canada 4.jpeg"
+      },
+      {
+        "path": "public/media/approved/crumbl-edmonton/06.webp",
+        "source": "ASSETS/approved-nov19/edmonton/DSC08374.jpg"
+      }
+    ],
+    "comfort-cases": [
+      {
+        "path": "public/media/approved/comfort-cases/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5585.jpg"
+      },
+      {
+        "path": "public/media/approved/comfort-cases/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5376.jpg"
+      },
+      {
+        "path": "public/media/approved/comfort-cases/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5477.jpg"
+      },
+      {
+        "path": "public/media/approved/comfort-cases/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5502.jpg"
+      },
+      {
+        "path": "public/media/approved/comfort-cases/05.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5531.jpg"
+      },
+      {
+        "path": "public/media/approved/comfort-cases/06.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Comfort Cases SLC/_DSC5210.jpg"
+      }
+    ],
+    "dreamy-draw": [
+      {
+        "path": "public/media/approved/dreamy-draw/01.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Photos/DSC03269.jpg"
+      },
+      {
+        "path": "public/media/approved/dreamy-draw/02.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Photos/DSC03343.jpg"
+      },
+      {
+        "path": "public/media/approved/dreamy-draw/03.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Photos/DSC03338.jpg"
+      },
+      {
+        "path": "public/media/approved/dreamy-draw/04.webp",
+        "source": "ASSETS/IMMRSV PAST PROJECTS/Photos/IMG_2120.jpg"
+      }
+    ],
+    "maison-margiela": [
+      {
+        "path": "public/media/approved/maison-margiela/01.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-10.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/02.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-01.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/03.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-03.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/04.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-04.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/05.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-05.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/06.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-07.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/07.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-08.jpg"
+      },
+      {
+        "path": "public/media/approved/maison-margiela/08.webp",
+        "source": "ASSETS/approved-nov19/maison/maison-09.jpg"
+      }
+    ]
+  },
+  "note": "Dreamy Draw uses the exact Photos folder linked by Nick. The supplied project title says Cactus Installation; photos show reflective forms. No cactus imagery or project responsibilities have been invented."
+}

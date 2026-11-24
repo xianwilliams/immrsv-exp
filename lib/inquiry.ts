@@ -34,3 +34,62 @@ export function validateInquiry(input: unknown): {
     };
   return { data };
 }
+
+/** Send from the browser: Web3Forms requires this for its free spam checks. */
+export async function submitInquiry(
+  input: unknown,
+  accessKey: string,
+  send: typeof fetch = fetch,
+): Promise<void> {
+  const { data, error } = validateInquiry(input);
+  if (!data) throw new Error(error);
+  if (data.website)
+    throw new Error(
+      "We could not send that message. Please email us directly.",
+    );
+  if (!accessKey.trim())
+    throw new Error(
+      "Please send your message directly using the email link below.",
+    );
+
+  let response: Response;
+  let result: unknown;
+  try {
+    response = await send("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: accessKey.trim(),
+        from_name: "IMMRSV Website",
+        subject: `IMMRSV inquiry: ${data.subject}`,
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        botcheck: false,
+      }),
+      signal: AbortSignal.timeout(15000),
+    });
+    result = await response.json();
+  } catch {
+    throw new Error(
+      "We couldn’t confirm your submission. Your message is still here; please try again or email us directly.",
+    );
+  }
+  if (response.status === 429)
+    throw new Error(
+      "The form is temporarily unavailable. Please try again later or email us directly.",
+    );
+  if (
+    !response.ok ||
+    !result ||
+    typeof result !== "object" ||
+    !("success" in result) ||
+    result.success !== true
+  )
+    throw new Error(
+      "Your message wasn’t sent. Please try again or use the email link below.",
+    );
+}

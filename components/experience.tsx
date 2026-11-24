@@ -5,19 +5,19 @@ import PixelBlast from "./PixelBlast";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Contact } from "./contact-dialog";
-import { Arrow, Close } from "./site-ui";
+import { ContactSection } from "./contact-section";
+import { Arrow, Brand, Close } from "./site-ui";
 import Link from "next/link";
 import { ProjectGallery } from "./project-gallery";
 import { ProjectPhotos } from "./project-photos";
 import { HeroCarousel } from "./hero-carousel";
-import { ProjectBanner } from "./project-banner";
 import { Services } from "./services";
 import { ThemeToggle } from "./theme-toggle";
 import { projectPreviews } from "@/lib/project-previews";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { recentProjects, reviews, type Project } from "@/lib/content";
+import { type Project } from "@/lib/content";
+import "./home-revision.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,14 +66,19 @@ function ProjectDialog({
                 </span>
                 <Dialog.Title>{project.title}</Dialog.Title>
                 <Dialog.Description>{project.description}</Dialog.Description>
-                <div className="project-roles">
-                  <span className="mono">OUR INVOLVEMENT</span>
-                  <ul>
-                    {project.roles.map((role) => (
-                      <li key={role}>{role}</li>
-                    ))}
-                  </ul>
-                </div>
+                {project.roles.length > 0 && (
+                  <div className="project-roles">
+                    <span className="mono">OUR INVOLVEMENT</span>
+                    <ul>
+                      {project.roles.map((role) => (
+                        <li key={role}>{role}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {project.credit && (
+                  <p className="project-credit">{project.credit}</p>
+                )}
                 <div className="project-actions">
                   <Link className="text-button" href={`/work/${project.id}`}>
                     EXPLORE THE FULL PROJECT <Arrow diagonal />
@@ -102,48 +107,31 @@ function ClientMarks() {
   const [active, setActive] = useState<string | null>(null);
   const clients = [
     [
-      "sundance.png",
-      "Sundance Film Festival",
-      "sundance",
-      "Sundance Film Festival 2024–2026",
+      "starry.svg",
+      "Starry",
+      "starry",
+      "Starry NBA All-Star Branding & Operations",
+    ],
+    ["crumbl.svg", "Crumbl", "crumbl", "Crumbl HQ Build Out & Branding"],
+    ["pandora.svg", "Pandora", "pandora-las-vegas", "Pandora Las Vegas Launch"],
+    [
+      "brandless.png",
+      "Brandless",
+      "brandless-summit",
+      "Brandless Consumer Summit",
     ],
     [
-      "mcdonalds.svg",
-      "McDonald’s",
-      "wcdonalds",
-      "McDonald’s WcDonald’s Immersive Dining Experience",
+      "maison-margiela.svg",
+      "Maison Margiela",
+      "maison-margiela",
+      "Maison Margiela REPLICA Summer Experience",
     ],
     [
-      "nascar.svg",
-      "NASCAR",
-      "nascar-billboard",
-      "NASCAR — World’s Loudest Billboard",
+      "comfort-cases.png",
+      "Comfort Cases",
+      "comfort-cases",
+      "Comfort Cases × Lisa Barlow",
     ],
-    [
-      "tictac.png",
-      "Tic Tac",
-      "tictac",
-      "Tic Tac × Dr Pepper Vibe Refresh Squad",
-    ],
-    [
-      "drpepper.svg",
-      "Dr Pepper",
-      "tictac",
-      "Tic Tac × Dr Pepper Vibe Refresh Squad",
-    ],
-    [
-      "fourloko.svg",
-      "Four Loko",
-      "fourloko",
-      "Four Loko Party Store — Live Nation Festival Circuit",
-    ],
-    [
-      "rollingstones.svg",
-      "The Rolling Stones",
-      "stones",
-      "NASCAR × The Rolling Stones",
-    ],
-    ["keebler.png", "Keebler", "keebler", "Keebler Butterbeer Pop-Up"],
   ];
   return (
     <div className="client-marks">
@@ -151,6 +139,7 @@ function ClientMarks() {
         <div
           className={`client-mark ${active === file ? "is-previewing" : ""}`}
           key={file}
+          data-brand={project}
           onMouseEnter={() => setActive(file)}
           onMouseLeave={() => setActive(null)}
           onFocus={() => setActive(file)}
@@ -167,7 +156,7 @@ function ClientMarks() {
           >
             <img
               className="client-logo-mono"
-              src={`/media/logos/${file}`}
+              src={`/media/brands/${file === "comfort-cases.png" ? "comfort-cases-white.png" : file}`}
               alt=""
               width={200}
               height={100}
@@ -175,7 +164,7 @@ function ClientMarks() {
             />
             <img
               className="client-logo-color"
-              src={`/media/logos/color/${file}`}
+              src={`/media/brands/${file}`}
               alt=""
               width={200}
               height={100}
@@ -207,92 +196,70 @@ export default function Experience() {
   const root = useRef<HTMLDivElement>(null);
   const intro = useRef<HTMLDivElement>(null);
   const dialogOpener = useRef<HTMLElement | null>(null);
-  const [contactOpen, setContactOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [review, setReview] = useState(0);
-  const [mediaPaused, setMediaPaused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const reviewsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        if (!sessionStorage.getItem("immrsv-intro")) {
-          gsap.set(intro.current, { display: "grid", autoAlpha: 1 });
-          const mark = document.querySelector(".intro-mark");
-          const target = document
-            .querySelector(".hero-film")!
+        let seen = false;
+        try {
+          seen = !!sessionStorage.getItem("immrsv-intro");
+        } catch {}
+        if (!seen && !window.location.hash) {
+          const target = root
+            .current!.querySelector(".header-brand")!
             .getBoundingClientRect();
-          const logoWidth =
-            window.innerWidth * (window.innerWidth < 600 ? 0.92 : 0.84);
-          const y =
-            target.top +
-            (logoWidth * (190 / 1087)) / 2 -
-            window.innerHeight / 2;
+          gsap.set(intro.current, { display: "grid", autoAlpha: 1 });
           gsap
             .timeline({
               onComplete: () => {
-                sessionStorage.setItem("immrsv-intro", "seen");
+                try {
+                  sessionStorage.setItem("immrsv-intro", "seen");
+                } catch {}
                 gsap.set(intro.current, { display: "none" });
               },
             })
             .fromTo(
-              mark,
-              { autoAlpha: 0, scale: 0.94 },
-              {
-                autoAlpha: 1,
-                scale: 1,
-                duration: 0.45,
-                ease: "power2.out",
-                force3D: false,
-              },
+              ".intro-mark",
+              { autoAlpha: 0, scale: 0.96 },
+              { autoAlpha: 1, scale: 1, duration: 0.35, force3D: false },
             )
             .to(
-              mark,
+              ".intro-mark",
               {
-                y,
-                width: logoWidth,
-                duration: 1.05,
-                ease: "power4.inOut",
+                x: target.left + target.width / 2 - innerWidth / 2,
+                y: target.top + target.height / 2 - innerHeight / 2,
+                width: target.width,
+                duration: 0.8,
+                ease: "power3.inOut",
                 force3D: false,
               },
-              0.95,
+              0.6,
             )
-            .to(intro.current, { autoAlpha: 0, duration: 0.45 }, 2);
+            .to(intro.current, { autoAlpha: 0, duration: 0.3 }, 1.35);
         }
         ScrollTrigger.create({
           trigger: ".hero",
           start: "top top",
           end: () =>
-            "+=" + document.querySelector<HTMLElement>(".hero")!.offsetHeight,
+            "+=" +
+            root.current!.querySelector<HTMLElement>(".hero")!.offsetHeight,
           pin: true,
           pinSpacing: false,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         });
-        gsap.from(".hero-nav > *", {
-          y: -14,
-          opacity: 0,
-          duration: 0.7,
-          stagger: 0.08,
-          delay: sessionStorage.getItem("immrsv-intro") ? 0 : 1.6,
-        });
-        gsap.from(".hero-line", {
-          y: 18,
-          opacity: 0,
-          duration: 1,
-          delay: sessionStorage.getItem("immrsv-intro") ? 0.2 : 2,
-        });
-        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) =>
+        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
           gsap.from(element, {
-            y: 36,
+            y: 24,
             opacity: 0,
-            duration: 0.85,
+            duration: 0.7,
             ease: "power3.out",
-            scrollTrigger: { trigger: element, start: "top 90%", once: true },
-          }),
-        );
+            scrollTrigger: { trigger: element, start: "top 94%", once: true },
+          });
+        });
         gsap.from(".client-mark", {
           y: 20,
           opacity: 0,
@@ -307,79 +274,84 @@ export default function Experience() {
       });
       return () => mm.revert();
     }, root);
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const applyMotion = () => {
-      if (motion.matches) {
-        setMediaPaused(true);
-      }
-    };
-    applyMotion();
-    motion.addEventListener("change", applyMotion);
+    // Restore a case-study anchor after the hero pin and local fonts settle.
+    // ScrollTrigger's initial refresh can otherwise reset the browser's jump.
+    let cancelled = false;
+    let anchorFrame = 0;
+    const initialHash = window.location.hash;
+    if (initialHash) {
+      void document.fonts.ready.then(() => {
+        if (cancelled) return;
+        anchorFrame = requestAnimationFrame(() => {
+          if (window.location.hash !== initialHash) return;
+          const target = document.getElementById(initialHash.slice(1));
+          if (!target || !root.current?.contains(target)) return;
+          ScrollTrigger.refresh();
+          target.scrollIntoView({ behavior: "instant", block: "start" });
+          if (initialHash === "#contact") {
+            target
+              .querySelector<HTMLInputElement>('input[name="name"]')
+              ?.focus({ preventScroll: true });
+          }
+        });
+      });
+    }
     return () => {
+      cancelled = true;
+      cancelAnimationFrame(anchorFrame);
       ctx.revert();
-      motion.removeEventListener("change", applyMotion);
     };
   }, []);
 
-  useEffect(() => {
-    if (contactOpen || selectedProject) return;
-    const timer = setInterval(() => {
-      const box = reviewsRef.current?.getBoundingClientRect();
-      if (!document.hidden && box && box.top < innerHeight && box.bottom > 0)
-        setReview((i) => (i + 1) % reviews.length);
-    }, 7500);
-    return () => clearInterval(timer);
-  }, [contactOpen, selectedProject]);
-
   function openContact() {
-    if (!selectedProject)
-      dialogOpener.current = document.activeElement as HTMLElement;
-    setContactOpen(true);
+    setSelectedProject(null);
+    requestAnimationFrame(() => {
+      document.getElementById("contact")?.scrollIntoView({
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
+      document
+        .querySelector<HTMLInputElement>('#contact input[name="name"]')
+        ?.focus({ preventScroll: true });
+    });
   }
   const openProject = useCallback((project: Project) => {
     dialogOpener.current = document.activeElement as HTMLElement;
     setSelectedProject(project);
   }, []);
-  function restoreFocus(event: Event) {
-    event.preventDefault();
-    dialogOpener.current?.focus({ preventScroll: true });
-  }
-  function toggleHeroMedia() {
-    setMediaPaused((paused) => !paused);
-  }
 
   return (
-    <div ref={root}>
+    <div ref={root} className="home-revision">
       <a className="skip-link" href="#about">
         Skip to content
       </a>
       <div ref={intro} className="intro" aria-hidden="true">
-        <div className="intro-mark">
-          <img
-            className="intro-logo"
-            src="/media/wordmark.svg"
-            width={1087}
-            height={190}
-            alt=""
-            fetchPriority="high"
-          />
+        <div className="intro-mark block-brand">
+          <Brand />
         </div>
       </div>
       <header className="hero" id="home">
         <nav className="hero-nav" aria-label="Main navigation">
+          <a
+            href="#home"
+            className="header-brand block-brand"
+            aria-label="IMMRSV home"
+          >
+            <Brand />
+          </a>
           <div className="nav-links">
-            <a href="#work">WORK</a>
             <a href="#about">ABOUT</a>
             <a href="#services">SERVICES</a>
-            <a href="#clients">OUR CLIENTS</a>
+            <a href="#clients">CLIENTS</a>
+            <a href="#work">WORK</a>
           </div>
-          <span className="nav-line">YOUR TEAM. OUR PRODUCTION SUPPORT.</span>
           <div className="nav-actions">
             <ThemeToggle />
-            <button className="button nav-cta" onClick={openContact}>
+            <a className="button nav-cta" href="#contact">
               <span>WORK WITH US</span>
               <Arrow diagonal />
-            </button>
+            </a>
           </div>
           <button
             className="mobile-menu-button"
@@ -393,43 +365,79 @@ export default function Experience() {
         {menuOpen && (
           <nav className="mobile-menu" aria-label="Mobile navigation">
             {[
-              ["WORK", "#work"],
               ["ABOUT", "#about"],
               ["SERVICES", "#services"],
-              ["OUR CLIENTS", "#clients"],
-            ].map(([title, href]) => (
-              <a href={href} key={href} onClick={() => setMenuOpen(false)}>
-                {title}
+              ["CLIENTS", "#clients"],
+              ["WORK", "#work"],
+              ["CONTACT", "#contact"],
+            ].map(([label, href]) => (
+              <a key={href} href={href} onClick={() => setMenuOpen(false)}>
+                {label}
                 <Arrow diagonal />
               </a>
             ))}
           </nav>
         )}
         <h1 className="sr-only">
-          IMMRSV. Creating one-of-a-kind experiences since 2016.
+          IMMRSV. Independent experiential production.
         </h1>
-        <HeroCarousel
-          paused={mediaPaused || contactOpen || !!selectedProject}
-        />
-        <div className="hero-bottom">
-          <p className="hero-line">
-            CREATING <strong>ONE-OF-A-KIND EXPERIENCES</strong> SINCE 2016
-          </p>
-          <button
-            className="video-control"
-            onClick={toggleHeroMedia}
-            aria-label={
-              mediaPaused ? "Play project carousel" : "Pause project carousel"
-            }
-          >
-            {mediaPaused ? "PLAY" : "PAUSE"}
-            <span aria-hidden="true">{mediaPaused ? "▷" : "Ⅱ"}</span>
-          </button>
-        </div>
+        <HeroCarousel paused={!!selectedProject} />
       </header>
-
       <main className="home-content">
-        <section className="trust" aria-labelledby="support-title">
+        <section className="about" id="about" aria-labelledby="about-title">
+          <div className="about-layout" data-reveal>
+            <h2 id="about-title">
+              <TypedHeading>
+                YOUR PROJECT.
+                <br />
+                <em>THE RIGHT SUPPORT.</em>
+              </TypedHeading>
+            </h2>
+            <figure className="about-photos">
+              <div className="about-people">
+                <img
+                  src="/media/people/installation.jpg"
+                  alt="The team at an outdoor mirrored installation"
+                  width={1094}
+                  height={1375}
+                  loading="lazy"
+                />
+                <img
+                  src="/media/people/prop-build.png"
+                  alt="Oversized sculptural props taking shape in the workshop"
+                  width={1218}
+                  height={1180}
+                  loading="lazy"
+                />
+                <img
+                  src="/media/people/workshop.png"
+                  alt="The team beside a colorful octopus sculpture during fabrication"
+                  width={1206}
+                  height={1108}
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="mono">
+                BIG IDEAS. REAL-WORLD EXPERIENCES.
+              </figcaption>
+            </figure>
+            <div className="about-copy">
+              <p>
+                IMMRSV is an independent experiential production partner based
+                in Salt Lake City and working around the world. One production
+                lead, a short planning sprint, or a full team—we fit around your
+                project.
+              </p>
+              <p>
+                Led by Nick Wirsching, we work alongside agencies, brand teams,
+                and creative partners, bringing the people and resources needed
+                for one part of a project or the whole production.
+              </p>
+            </div>
+          </div>
+        </section>
+        <Services />
+        <section className="trust" id="clients" aria-labelledby="trust-title">
           <div className="trust-pixels" aria-hidden="true">
             <PixelBlast
               color="#888888"
@@ -446,228 +454,24 @@ export default function Experience() {
               dpr={1}
             />
           </div>
-          <div className="partner-intro">
-            <div data-reveal>
-              <p className="mono partner-kicker">
-                INDEPENDENT EXPERIENTIAL PRODUCTION
-              </p>
-              <h2 id="support-title">
-                <TypedHeading>
-                  YOUR PROJECT.
-                  <br />
-                  <em>THE RIGHT SUPPORT.</em>
-                </TypedHeading>
-              </h2>
-            </div>
-            <div className="partner-copy" data-reveal>
-              <p>
-                Independent experiential production, built around what your
-                project needs. One production lead, a short planning sprint, or
-                a full team—from the first idea to the final load-out.
-              </p>
-              <p>
-                We work alongside agencies, internal brand teams, and creative
-                partners. Bring us in for the piece you need—or the whole
-                production.
-              </p>
-              <button className="button partner-cta" onClick={openContact}>
-                TELL US WHAT YOU NEED <Arrow diagonal />
-              </button>
-            </div>
-          </div>
-          <div
-            className="trust-proof"
-            role="group"
-            aria-labelledby="trust-title"
-          >
-            <div className="trust-proof-heading" data-reveal>
-              <h2 id="trust-title">
-                BIG BRANDS.
-                <br />
-                <em>SHARED EFFORT.</em>
-              </h2>
-              <p className="trust-note">
-                Selected brands and experiences supported alongside agency,
-                creative, and production partners. Roles vary by project;
-                explore the case studies for the details.
-              </p>
-            </div>
+          <div className="trust-proof">
+            <h2 id="trust-title" data-reveal>
+              WHO WE’VE <em>WORKED WITH.</em>
+            </h2>
             <ClientMarks />
           </div>
         </section>
-
-        <Services onContact={openContact} />
-
         <ProjectGallery onOpen={openProject} />
-
-        <section className="recent-work">
-          <div className="recent-heading" data-reveal>
-            <span className="mono">A FEW RECENT COLLABORATIONS</span>
-            <p>
-              Different scales.
-              <br />
-              Same commitment.
-            </p>
-          </div>
-          <div className="project-list">
-            {recentProjects.map((p, i) => (
-              <button
-                className="project-row"
-                key={p.id}
-                onClick={() => openProject(p)}
-              >
-                <span className="project-row-client">{p.client}</span>
-                <span className="project-row-title">
-                  {p.id === "wcdonalds"
-                    ? "WcDonald’s immersive dining experience"
-                    : p.title}
-                </span>
-                <span className="project-row-role">
-                  {p.roles.slice(0, 2).join(" / ")}
-                </span>
-                <Arrow diagonal />
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section
-          className="clients"
-          id="clients"
-          ref={reviewsRef}
-          aria-labelledby="clients-heading"
-          aria-roledescription="carousel"
-        >
-          <div className="review-stage">
-            {reviews.map((r, i) => (
-              <div
-                key={r.name}
-                className={`review-background ${review === i ? "active" : ""}`}
-                aria-hidden="true"
-              >
-                <img
-                  src={r.image}
-                  alt=""
-                  width={1600}
-                  height={1000}
-                  loading="lazy"
-                  style={{ objectPosition: r.position }}
-                />
-              </div>
-            ))}
-            <div className="review-scrim" />
-            <div className="clients-heading">
-              <h2 id="clients-heading">
-                <TypedHeading>
-                  WHAT OUR
-                  <br />
-                  <em>CLIENTS SAY.</em>
-                </TypedHeading>
-              </h2>
-            </div>
-
-            <div className="review-content" aria-live="off">
-              {reviews.map((item, index) => (
-                <div
-                  key={item.name}
-                  className={`review-slide ${review === index ? "is-active" : ""}`}
-                  aria-hidden={review !== index}
-                >
-                  <blockquote
-                    className={item.quote.length > 220 ? "long-quote" : ""}
-                  >
-                    {item.quote}
-                  </blockquote>
-                  <div className="review-attribution">
-                    <strong>{item.name}</strong>
-                    <span>ON GOOGLE · {item.date}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="review-footer">
-              <span className="review-image-credit mono">
-                FROM THE ARCHIVE / {reviews[review].project}
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <section className="about" id="about" aria-labelledby="about-title">
-          <div className="about-layout" data-reveal>
-            <h2 id="about-title">
-              <TypedHeading>
-                WE BRING THE RIGHT
-                <br />
-                <em>PEOPLE TOGETHER.</em>
-              </TypedHeading>
-            </h2>
-            <figure className="about-photos">
-              <div className="about-people">
-                <img
-                  src="/media/people/installation.jpg"
-                  alt="Three people standing among a mirrored outdoor installation"
-                  width={1094}
-                  height={1375}
-                  loading="lazy"
-                />
-                <img
-                  src="/media/people/prop-build.png"
-                  alt="Two people beside oversized sculptural props in a workshop"
-                  width={1218}
-                  height={1180}
-                  loading="lazy"
-                />
-                <img
-                  src="/media/people/workshop.png"
-                  alt="Two people beside a colorful octopus sculpture during fabrication"
-                  width={1206}
-                  height={1108}
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="mono">
-                BIG IDEAS. REAL-WORLD EXPERIENCES.
-              </figcaption>
-            </figure>
-            <div className="about-copy">
-              <h3>Your team, extended.</h3>
-              <p>
-                IMMRSV is Nick Wirsching, an independent production lead with a
-                trusted network of creative specialists, fabricators, and event
-                professionals. Work directly with Nick or let him assemble the
-                right people around your brief. Less agency overhead means
-                quicker responses, faster delivery, and competitive rates.
-              </p>
-              <p>
-                Based in Salt Lake City, with production partners across the
-                country and the flexibility to work around the world. We can
-                slot into your existing team, lead a specific workstream, or
-                coordinate production from concept through execution. We don’t
-                need to be the agency of record to be a partner you count on.
-              </p>
-              <button className="text-button about-cta" onClick={openContact}>
-                WORK WITH US <Arrow diagonal />
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <ProjectBanner onContact={openContact} home />
+        <ContactSection />
       </main>
       <SiteFooter />
-      <Contact
-        open={contactOpen}
-        onOpenChange={setContactOpen}
-        onRestoreFocus={restoreFocus}
-      />
       <ProjectDialog
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onContact={openContact}
         onRestoreFocus={(event) => {
           event.preventDefault();
-          if (!contactOpen)
+          if (!document.activeElement?.closest("#contact"))
             dialogOpener.current?.focus({ preventScroll: true });
         }}
       />
