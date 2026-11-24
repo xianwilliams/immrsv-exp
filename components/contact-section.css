@@ -56,24 +56,6 @@
   display: inline-block;
   margin-top: 24px;
 }
-.contact-delivery-note {
-  color: var(--soft);
-  font-size: 11px;
-}
-.email-draft {
-  padding: 18px;
-  background: var(--surface);
-  font-size: 13px;
-}
-.email-draft .button {
-  margin: 14px 0;
-  font-size: 10px;
-}
-.email-draft > span {
-  display: block;
-  font-size: 11px;
-  color: var(--soft);
-}
 @media (max-width: 699px) {
   .embedded-contact {
     grid-template-columns: 1fr;

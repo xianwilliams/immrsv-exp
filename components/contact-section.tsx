@@ -8,26 +8,17 @@ import "./contact-section.css";
 export function ContactSection() {
   // Web3Forms' submission key is public by design; it identifies the recipient.
   const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() || "";
-  const emailDeliveryEnabled = Boolean(accessKey);
   const submitting = useRef(false);
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "sent" | "draft" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
   const [error, setError] = useState("");
-  const [mail, setMail] = useState("mailto:nick@immrsv-exp.com");
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting.current) return;
     const data = Object.fromEntries(
       new FormData(event.currentTarget).entries(),
     );
-    setMail(
-      `mailto:nick@immrsv-exp.com?subject=${encodeURIComponent(String(data.subject))}&body=${encodeURIComponent(`${data.message}\n\n${data.name}\n${data.email}`)}`,
-    );
-    if (!emailDeliveryEnabled) {
-      setStatus("draft");
-      return;
-    }
     submitting.current = true;
     setStatus("sending");
     setError("");
@@ -36,7 +27,9 @@ export function ContactSection() {
       setStatus("sent");
     } catch (e) {
       setError(
-        e instanceof Error ? e.message : "Please send your message by email.",
+        e instanceof Error
+          ? e.message
+          : "Your message wasn’t sent. Please try again.",
       );
       setStatus("error");
     } finally {
@@ -116,41 +109,16 @@ export function ContactSection() {
             {status === "error" && (
               <div className="form-error" role="alert">
                 <p>{error}</p>
-                <a href={mail}>
-                  SEND DIRECTLY BY EMAIL <Arrow diagonal />
-                </a>
-              </div>
-            )}
-            {status === "draft" && (
-              <div className="email-draft" role="status">
-                <p>
-                  Your draft is ready. Open it in your email app, then send it
-                  to Nick.
-                </p>
-                <a className="button" href={mail}>
-                  OPEN EMAIL DRAFT <Arrow diagonal />
-                </a>
-                <span>Your message has not been sent yet.</span>
               </div>
             )}
             <button
+              type="submit"
               className="button submit-button"
               disabled={status === "sending"}
             >
-              {status === "sending"
-                ? "SENDING…"
-                : emailDeliveryEnabled
-                  ? "SEND MESSAGE"
-                  : status === "draft"
-                    ? "UPDATE EMAIL DRAFT"
-                    : "PREPARE EMAIL"}
+              {status === "sending" ? "SENDING…" : "SEND MESSAGE"}
               <Arrow diagonal />
             </button>
-            {!emailDeliveryEnabled && status !== "draft" && (
-              <p className="contact-delivery-note">
-                Prepare a draft to send from your email app.
-              </p>
-            )}
           </form>
         )}
         <a className="contact-email" href="mailto:nick@immrsv-exp.com">

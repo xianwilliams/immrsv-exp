@@ -139,33 +139,13 @@ try {
       .getByRole("textbox", { name: "What’s up?" })
       .fill("Local verification. Do not send.");
     // No actual emails are sent during local verification.
-    if (
-      await page
-        .getByRole("button", { name: "PREPARE EMAIL", exact: true })
-        .count()
-    ) {
-      await page
-        .getByRole("button", { name: "PREPARE EMAIL", exact: true })
-        .click();
-      const draft = page.getByRole("link", { name: "OPEN EMAIL DRAFT" });
-      await draft.waitFor();
-      assert(
-        (await draft.getAttribute("href")).startsWith(
-          "mailto:nick@immrsv-exp.com?",
-        ),
-      );
-      assert.match(
-        await page.locator(".email-draft").innerText(),
-        /not been sent/,
-      );
-    } else {
-      await page
-        .getByRole("button", { name: "SEND MESSAGE", exact: true })
-        .click();
-      await page
-        .getByRole("heading", { name: "Thanks for reaching out." })
-        .waitFor();
-    }
+    await page
+      .getByRole("button", { name: "SEND MESSAGE", exact: true })
+      .click();
+    await page
+      .getByRole("heading", { name: "Thanks for reaching out." })
+      .waitFor();
+    assert.equal(await page.locator(".email-draft").count(), 0);
     report.viewports.push(layout);
     await page.context().close();
   }

@@ -57,9 +57,36 @@ try {
     assert.equal(
       await submit.count(),
       1,
-      "Configure a form key before this check.",
+      "The form must always offer direct submission, never an email draft.",
     );
+    assert.equal(await form.locator('a[href^="mailto:"]').count(), 0);
+    const initialUrl = page.url();
     await submit.click();
+    if (process.env.EXPECT_MISSING_FORM_KEY === "1") {
+      await form.getByRole("alert").waitFor();
+      assert.match(
+        await form.getByRole("alert").innerText(),
+        /hasn’t been sent/,
+      );
+      assert.equal(requests, 0);
+      assert.equal(
+        await page.locator(".email-draft, .form-success").count(),
+        0,
+      );
+      assert.equal(await form.locator('a[href^="mailto:"]').count(), 0);
+      for (const [name, value] of Object.entries(fields)) {
+        assert.equal(
+          await form.locator(`[name="${name}"]`).inputValue(),
+          value,
+        );
+      }
+      assert.equal(page.url(), initialUrl);
+      await page.close();
+      console.log(
+        `Missing-key check passed at ${width}px: stays on-page, retains input, never opens a mail app.`,
+      );
+      continue;
+    }
     await page.getByRole("button", { name: "SENDING…" }).waitFor();
     assert(await page.getByRole("button", { name: "SENDING…" }).isDisabled());
     // Repeated form submission while the request is pending must be ignored.
@@ -87,6 +114,8 @@ try {
       .getByRole("heading", { name: "Thanks for reaching out." })
       .waitFor();
     assert.equal(requests, 2);
+    assert.equal(page.url(), initialUrl);
+    assert.equal(await page.locator(".email-draft").count(), 0);
     assert.equal(await page.locator("#contact form").count(), 0);
     assert(
       await page.evaluate(

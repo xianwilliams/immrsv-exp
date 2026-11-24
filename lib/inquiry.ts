@@ -45,11 +45,11 @@ export async function submitInquiry(
   if (!data) throw new Error(error);
   if (data.website)
     throw new Error(
-      "We could not send that message. Please email us directly.",
+      "We couldn’t send your message. Please refresh the page and try again.",
     );
   if (!accessKey.trim())
     throw new Error(
-      "Please send your message directly using the email link below.",
+      "The form is temporarily unavailable. Your message hasn’t been sent. Please try again later.",
     );
 
   let response: Response;
@@ -75,12 +75,12 @@ export async function submitInquiry(
     result = await response.json();
   } catch {
     throw new Error(
-      "We couldn’t confirm your submission. Your message is still here; please try again or email us directly.",
+      "We couldn’t confirm your submission. Your message is still here; please try again.",
     );
   }
   if (response.status === 429)
     throw new Error(
-      "The form is temporarily unavailable. Please try again later or email us directly.",
+      "The form is temporarily unavailable. Please try again later.",
     );
   if (
     !response.ok ||
@@ -89,7 +89,5 @@ export async function submitInquiry(
     !("success" in result) ||
     result.success !== true
   )
-    throw new Error(
-      "Your message wasn’t sent. Please try again or use the email link below.",
-    );
+    throw new Error("Your message wasn’t sent. Please try again.");
 }
