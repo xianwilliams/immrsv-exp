@@ -151,6 +151,9 @@ try {
   }
   const page = await newPage(1440, 900, "no-preference");
   await page.goto(baseURL, { waitUntil: "networkidle" });
+  const heroSlideCount = await page
+    .locator(".hero-slideshow-frame img")
+    .count();
   await page.waitForFunction(
     () => getComputedStyle(document.querySelector(".intro")).display === "none",
   );
@@ -205,7 +208,11 @@ try {
       await img.scrollIntoViewIfNeeded();
       await img.evaluate((el) => el.decode());
     }
-    assert.equal(await page.locator(".case-contact-photos img").count(), 6);
+    assert.equal(
+      await page.locator(".case-contact-photos img").count(),
+      heroSlideCount,
+      "Project banners should use the same CMS selection as the hero",
+    );
     assert.equal(await page.locator('img[src*="inevent"]').count(), 0);
     assert.equal(
       await page.evaluate(

@@ -1,22 +1,32 @@
 "use client";
 
-import { projects, type Project } from "@/lib/content";
-import { projectCoverPositions } from "@/lib/project-galleries";
+import type { CmsProject, Homepage } from "@/lib/cms/types";
+import { contentLines } from "./content-lines";
 import "./project-gallery.css";
 
 export function ProjectGallery({
   onOpen,
+  projects,
+  content,
 }: {
-  onOpen: (project: Project) => void;
+  projects: CmsProject[];
+  content: Homepage["work"];
+  onOpen: (project: CmsProject) => void;
 }) {
   return (
     <section className="work" id="work" aria-labelledby="work-title">
       <div className="work-stage">
         <div className="work-caption">
           <h2 id="work-title" className="work-title">
-            CASE <em>STUDIES</em>
+            {contentLines(content.title)}
+            {content.emphasis && (
+              <>
+                {" "}
+                <em>{contentLines(content.emphasis)}</em>
+              </>
+            )}
           </h2>
-          <span className="mono">SELECTED EXPERIENCES</span>
+          <span className="mono">{content.eyebrow}</span>
         </div>
         <div className="work-grid">
           {projects.map((project) => (
@@ -27,12 +37,14 @@ export function ProjectGallery({
             >
               <div className="work-card-image">
                 <img
-                  src={project.image}
-                  alt={`${project.client}: ${project.title}`}
-                  width={1200}
-                  height={754}
+                  src={project.cover.src}
+                  alt={
+                    project.cover.alt || `${project.client}: ${project.title}`
+                  }
+                  width={project.cover.width}
+                  height={project.cover.height}
                   loading="lazy"
-                  style={{ objectPosition: projectCoverPositions[project.id] }}
+                  style={{ objectPosition: project.cover.position }}
                 />
                 <span className="work-card-open" aria-hidden="true">
                   ↗

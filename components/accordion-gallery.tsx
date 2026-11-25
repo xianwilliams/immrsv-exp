@@ -28,7 +28,8 @@ export function AccordionGallery({
   const root = useRef<HTMLDivElement>(null);
   const firstRun = useRef(true);
   useEffect(() => {
-    const element = root.current!;
+    const element = root.current;
+    if (!element || !images.length) return;
     const panels = [
       ...element.querySelectorAll<HTMLButtonElement>(".ag-panel"),
     ];
@@ -38,18 +39,22 @@ export function AccordionGallery({
       const vertical = window.matchMedia("(max-width: 599px)").matches;
       const total = vertical ? element.clientHeight : element.clientWidth;
       const usable = Math.max(total - 8 * (images.length - 1), 120);
-      const imageAspect = images[active].width / images[active].height;
+      const currentImage = images[active] || images[0];
+      const imageAspect = currentImage.width / currentImage.height;
       const desiredSize = vertical
         ? element.clientWidth / imageAspect
         : element.clientHeight * imageAspect;
-      const ratio = adaptToImage
-        ? Math.min(
-            vertical ? 0.76 : 0.72,
-            Math.max(vertical ? 0.55 : 0.36, desiredSize / usable),
-          )
-        : vertical
-          ? 0.58
-          : 0.64;
+      const ratio =
+        images.length === 1
+          ? 1
+          : adaptToImage
+            ? Math.min(
+                vertical ? 0.76 : 0.72,
+                Math.max(vertical ? 0.55 : 0.36, desiredSize / usable),
+              )
+            : vertical
+              ? 0.58
+              : 0.64;
       element.style.setProperty("--ag-media-size", `${usable * ratio}px`);
       timeline?.kill();
       timeline = gsap.timeline();
@@ -62,9 +67,10 @@ export function AccordionGallery({
         timeline.to(
           panel,
           {
-            flexGrow: selected
-              ? (ratio * (images.length - 1)) / (1 - ratio)
-              : 1,
+            flexGrow:
+              selected && images.length > 1
+                ? (ratio * (images.length - 1)) / (1 - ratio)
+                : 1,
             rotateY: vertical ? 0 : rotation,
             duration,
             ease: "power3.out",
@@ -124,7 +130,7 @@ export function AccordionGallery({
     >
       {images.map((image, i) => (
         <button
-          key={image.src}
+          key={`${image.src}-${i}`}
           className={`ag-panel${i === active ? " ag-panel--active" : ""}`}
           aria-label={
             labels

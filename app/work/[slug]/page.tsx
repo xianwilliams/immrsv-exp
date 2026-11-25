@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allProjects } from "@/lib/content";
-import { projectGalleries } from "@/lib/project-galleries";
+import { getSiteContent } from "@/lib/cms/server";
+import { featuredSlides } from "@/lib/cms/types";
 import { CaseStudy } from "@/components/case-study";
 
-export const dynamicParams = false;
-export function generateStaticParams() {
-  return allProjects.map((project) => ({ slug: project.id }));
-}
+export const dynamicParams = true;
+export const revalidate = 30;
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = allProjects.find((item) => item.id === slug);
+  const content = await getSiteContent();
+  const project = content.projects.find((item) => item.id === slug);
   if (!project) return {};
   return {
-    title: `${project.client} — ${project.title} | IMMRSV`,
-    description: project.description,
+    title: project.seoTitle || `${project.client} — ${project.title} | IMMRSV`,
+    description: project.seoDescription || project.description,
     openGraph: {
       title: `${project.client} | IMMRSV`,
-      description: project.description,
+      description: project.seoDescription || project.description,
       images: [project.image!],
     },
   };
@@ -32,13 +31,26 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const index = allProjects.findIndex((project) => project.id === slug);
+  const content = await getSiteContent();
+  const index = content.projects.findIndex((project) => project.id === slug);
   if (index < 0) notFound();
   return (
     <CaseStudy
-      project={allProjects[index]}
-      images={projectGalleries[slug]}
-      next={allProjects[(index + 1) % allProjects.length]}
+      project={content.projects[index]}
+      images={content.projects[index].gallery}
+      next={
+        content.projects.length > 1
+          ? content.projects[(index + 1) % content.projects.length]
+          : null
+      }
+      settings={content.settings}
+      bannerSlides={featuredSlides(content)}
+      contactAvailable={content.home.sections.some(
+        (section) => section.section === "contact" && section.enabled,
+      )}
+      workAvailable={content.home.sections.some(
+        (section) => section.section === "work" && section.enabled,
+      )}
     />
   );
 }

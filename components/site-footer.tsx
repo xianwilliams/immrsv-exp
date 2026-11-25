@@ -3,8 +3,10 @@ import PixelBlast from "./PixelBlast";
 import Link from "next/link";
 import { Brand } from "./site-ui";
 import "./site-footer.css";
+import type { SiteSettings } from "@/lib/cms/types";
+import { contentLines } from "./content-lines";
 
-export function SiteFooter() {
+export function SiteFooter({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="site-footer">
       <div className="footer-pixels" aria-hidden="true">
@@ -29,22 +31,17 @@ export function SiteFooter() {
         </Link>
         <div className="site-footer-info">
           <div className="site-footer-description">
-            <p>
-              IMMRSV is an independent experiential production partner based in
-              Salt Lake City and working around the world.
-              <br />
-              Let’s bring the right support to your next experience.
-            </p>
+            <p>{contentLines(settings.footerDescription)}</p>
           </div>
         </div>
       </div>
       <div className="site-footer-bottom mono">
-        <span>SALT LAKE CITY, UT &amp; BEYOND</span>
+        <span>{settings.footerLocation}</span>
         <nav
           className="site-footer-socials"
           aria-label="Social and email links"
         >
-          <a href="mailto:nick@immrsv-exp.com" aria-label="Email Nick">
+          <a href={`mailto:${settings.contactEmail}`} aria-label="Email IMMRSV">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path
                 d="M3 5h18v14H3z m0 0 9 8 9-8"
@@ -53,43 +50,47 @@ export function SiteFooter() {
               />
             </svg>
           </a>
-          <a
-            href="https://www.instagram.com/immrsv_exp"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="IMMRSV on Instagram"
-          >
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="5"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                r="4"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/immrsv/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="IMMRSV on LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <circle cx="5" cy="5" r="2" />
-              <path d="M3.3 9h3.4v12H3.3zM10 9h3.3v1.6c1-1.5 2.3-2 3.8-2 3.2 0 4.2 2 4.2 5V21h-3.5v-6.6c0-1.7-.4-2.8-2-2.8-1.7 0-2.3 1.2-2.3 2.8V21H10z" />
-            </svg>
-          </a>
+          {settings.instagramUrl && (
+            <a
+              href={settings.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="IMMRSV on Instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+          )}
+          {settings.linkedinUrl && (
+            <a
+              href={settings.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="IMMRSV on LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="5" cy="5" r="2" />
+                <path d="M3.3 9h3.4v12H3.3zM10 9h3.3v1.6c1-1.5 2.3-2 3.8-2 3.2 0 4.2 2 4.2 5V21h-3.5v-6.6c0-1.7-.4-2.8-2-2.8-1.7 0-2.3 1.2-2.3 2.8V21H10z" />
+              </svg>
+            </a>
+          )}
         </nav>
         <div className="site-footer-credits">
           <span>© {new Date().getFullYear()} IMMRSV</span>

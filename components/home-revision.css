@@ -133,6 +133,11 @@
   filter: grayscale(1) brightness(0) invert(1);
 }
 .home-revision .client-mark .client-logo-color {
+  filter: none;
+}
+.home-revision .client-mark[data-brand="crumbl"] .client-logo-color,
+.home-revision .client-mark[data-brand="pandora-las-vegas"] .client-logo-color,
+.home-revision .client-mark[data-brand="maison-margiela"] .client-logo-color {
   filter: brightness(0) invert(1);
 }
 .home-revision .client-mark[data-brand="starry"] .client-logo-mono {
@@ -274,9 +279,6 @@
 }
 .home-revision .client-mark[data-brand="comfort-cases"] .client-logo-color {
   filter: none;
-  mask: url("/media/brands/comfort-cases-white.png") center / contain no-repeat;
-  -webkit-mask: url("/media/brands/comfort-cases-white.png") center / contain
-    no-repeat;
 }
 @media (min-width: 600px) {
   .home-revision .client-event-preview {
@@ -314,4 +316,18 @@
     flex: none;
     aspect-ratio: 4 / 3;
   }
+}
+
+.home-revision .hero--no-media {
+  height: auto;
+}
+.home-revision .about-layout--text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+.home-revision .about-layout--text-only > h2,
+.home-revision .about-layout--text-only .about-copy {
+  grid-column: 1;
+}
+.home-revision .about-photos figcaption {
+  white-space: normal;
 }

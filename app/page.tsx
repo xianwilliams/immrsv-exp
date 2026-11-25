@@ -1,4 +1,6 @@
 import Experience from "@/components/experience";
-export default function Home() {
-  return <Experience />;
+import { getSiteContent } from "@/lib/cms/server";
+export default async function Home() {
+  const content = await getSiteContent();
+  return <Experience content={content} />;
 }

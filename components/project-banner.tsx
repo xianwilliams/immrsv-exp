@@ -2,20 +2,24 @@
 import { TypedHeading } from "./typed-heading";
 
 import { useEffect, useRef, useState } from "react";
-import { projectBannerImages } from "@/lib/project-previews";
+import type { FeaturedSlide, SiteSettings } from "@/lib/cms/types";
+import { contentLines } from "./content-lines";
 import { Arrow } from "./site-ui";
 import "./project-banner.css";
 
 export function ProjectBanner({
   onContact,
-  home = false,
+  settings,
+  slides,
 }: {
   onContact: () => void;
-  home?: boolean;
+  settings: SiteSettings;
+  slides: FeaturedSlide[];
 }) {
   const root = useRef<HTMLElement>(null);
   const photos = useRef<(HTMLImageElement | null)[]>([]);
   const [active, setActive] = useState(0);
+  const currentIndex = slides.length ? active % slides.length : 0;
   const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
@@ -42,21 +46,22 @@ export function ProjectBanner({
   }, []);
 
   useEffect(() => {
-    if (!playing || !visible || !pageVisible || focused) return;
+    if (!playing || !visible || !pageVisible || focused || slides.length < 2)
+      return;
     const timer = setInterval(() => {
       setActive((current) => {
-        const next = (current + 1) % projectBannerImages.length;
+        const next = (current + 1) % slides.length;
         const photo = photos.current[next];
         return photo?.complete && photo.naturalWidth > 0 ? next : current;
       });
     }, 5500);
     return () => clearInterval(timer);
-  }, [playing, visible, pageVisible, focused]);
+  }, [playing, visible, pageVisible, focused, slides.length]);
 
   return (
     <section
       ref={root}
-      className={`case-contact${home ? " case-contact-home" : ""}`}
+      className="case-contact"
       aria-labelledby="case-contact-title"
       onFocusCapture={() => setFocused(true)}
       onBlurCapture={(event) => {
@@ -65,55 +70,59 @@ export function ProjectBanner({
       }}
     >
       <div className="case-contact-photos" aria-hidden="true">
-        {projectBannerImages.map(({ project, image, position }, index) => (
+        {slides.map(({ project, image }, index) => (
           <img
-            key={project}
+            key={project.id}
             ref={(element) => {
               photos.current[index] = element;
             }}
-            data-project={project}
-            className={index === active ? "is-active" : ""}
+            data-project={project.id}
+            className={index === currentIndex ? "is-active" : ""}
             src={image.src}
             alt=""
             width={image.width}
             height={image.height}
-            style={{ objectPosition: position }}
+            style={{ objectPosition: image.position }}
             loading="lazy"
           />
         ))}
       </div>
       <div className="case-contact-content">
-        {!home && <p className="mono">YOUR TEAM, EXTENDED.</p>}
+        {settings.banner.eyebrow && (
+          <p className="mono">{settings.banner.eyebrow}</p>
+        )}
         <h2 id="case-contact-title">
           <TypedHeading>
-            {home ? "LET’S MAKE" : "YOUR NEXT IDEA."}
-            <br />
-            <em>{home ? "SOMETHING HAPPEN." : "OUT IN THE WORLD."}</em>
+            {contentLines(settings.banner.title)}
+            {settings.banner.emphasis && (
+              <>
+                <br />
+                <em>{contentLines(settings.banner.emphasis)}</em>
+              </>
+            )}
           </TypedHeading>
         </h2>
-        <p>
-          A few days of support or the whole production.
-          <br />
-          Bring us in wherever your team needs us.
-        </p>
+        <p>{contentLines(settings.banner.description)}</p>
         <button className="button" onClick={onContact}>
-          WORK WITH US <Arrow diagonal />
+          {settings.contactButton} <Arrow diagonal />
         </button>
       </div>
-      <button
-        className="case-contact-play mono"
-        aria-label={
-          playing ? "Pause banner slideshow" : "Play banner slideshow"
-        }
-        aria-pressed={playing}
-        onClick={() => {
-          setPlaying((value) => !value);
-          setFocused(false);
-        }}
-      >
-        <span aria-hidden="true">{playing ? "Ⅱ" : "▷"}</span>
-        {playing ? "PAUSE" : "PLAY"}
-      </button>
+      {slides.length > 1 && (
+        <button
+          className="case-contact-play mono"
+          aria-label={
+            playing ? "Pause banner slideshow" : "Play banner slideshow"
+          }
+          aria-pressed={playing}
+          onClick={() => {
+            setPlaying((value) => !value);
+            setFocused(false);
+          }}
+        >
+          <span aria-hidden="true">{playing ? "Ⅱ" : "▷"}</span>
+          {playing ? "PAUSE" : "PLAY"}
+        </button>
+      )}
     </section>
   );
 }

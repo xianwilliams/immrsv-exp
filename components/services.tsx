@@ -1,6 +1,7 @@
 "use client";
 import { TypedHeading } from "./typed-heading";
-import { services } from "@/lib/content";
+import type { Homepage } from "@/lib/cms/types";
+import { contentLines } from "./content-lines";
 import "./services.css";
 
 function ServiceIcon({ index }: { index: number }) {
@@ -20,7 +21,7 @@ function ServiceIcon({ index }: { index: number }) {
       fill="none"
     >
       <path
-        d={paths[index]}
+        d={paths[index] || paths[5]}
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -30,9 +31,7 @@ function ServiceIcon({ index }: { index: number }) {
   );
 }
 
-export function Services() {
-  // Preserve the original service icon order after arranging the text-only list.
-  const iconOrder = [0, 2, 4, 1, 3, 5];
+export function Services({ content }: { content: Homepage["services"] }) {
   return (
     <section
       className="services"
@@ -40,25 +39,33 @@ export function Services() {
       aria-labelledby="services-title"
     >
       <div className="services-heading" data-reveal>
-        <span className="mono">HOW WE CAN HELP</span>
+        <span className="mono">{content.eyebrow}</span>
         <h2 id="services-title">
           <TypedHeading>
-            BUILT AROUND <br />
-            WHAT YOUR <br />
-            <em>PROJECT NEEDS.</em>
+            {contentLines(content.title)}
+            {content.emphasis && (
+              <>
+                <br />
+                <em>{contentLines(content.emphasis)}</em>
+              </>
+            )}
           </TypedHeading>
         </h2>
       </div>
       <div className="service-details" data-reveal>
-        {services.map((service, index) => (
-          <details key={service.title} name="services" open={index === 0}>
+        {content.items.map((service, index) => (
+          <details
+            key={`${service.title}-${index}`}
+            name="services"
+            open={index === 0}
+          >
             <summary>
               <span className="service-label">
                 {service.title}
                 <span className="service-divider" aria-hidden="true">
                   |
                 </span>
-                <ServiceIcon index={iconOrder[index]} />
+                <ServiceIcon index={service.icon} />
               </span>
               <span className="service-expand" aria-hidden="true">
                 +

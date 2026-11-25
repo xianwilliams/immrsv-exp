@@ -4,8 +4,18 @@ import { submitInquiry } from "@/lib/inquiry";
 import { Arrow } from "./site-ui";
 import { ContactSlideshow } from "./contact-slideshow";
 import "./contact-section.css";
+import type { FeaturedSlide, Homepage, SiteSettings } from "@/lib/cms/types";
+import { contentLines } from "./content-lines";
 
-export function ContactSection() {
+export function ContactSection({
+  content,
+  settings,
+  slides,
+}: {
+  content: Homepage["contact"];
+  settings: SiteSettings;
+  slides: FeaturedSlide[];
+}) {
   // Web3Forms' submission key is public by design; it identifies the recipient.
   const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() || "";
   const submitting = useRef(false);
@@ -42,19 +52,18 @@ export function ContactSection() {
       id="contact"
       aria-labelledby="contact-title"
     >
-      <ContactSlideshow />
+      <ContactSlideshow
+        key={slides.map((slide) => slide.project.id).join("|")}
+        slides={slides}
+      />
       <div className="embedded-contact-form contact-form">
-        <span className="mono">WORK WITH US</span>
-        <h2 id="contact-title">
-          What are you
-          <br />
-          thinking?
-        </h2>
-        <p>A first idea. A full brief. An extra set of hands.</p>
+        <span className="mono">{content.eyebrow}</span>
+        <h2 id="contact-title">{contentLines(content.title)}</h2>
+        <p>{content.description}</p>
         {status === "sent" ? (
           <div className="form-success" role="status">
-            <h3>Thanks for reaching out.</h3>
-            <p>Your message has been sent. We’ll be in touch.</p>
+            <h3>{content.successTitle}</h3>
+            <p>{content.successMessage}</p>
           </div>
         ) : (
           <form onSubmit={submit} aria-busy={status === "sending"}>
@@ -121,8 +130,8 @@ export function ContactSection() {
             </button>
           </form>
         )}
-        <a className="contact-email" href="mailto:nick@immrsv-exp.com">
-          nick@immrsv-exp.com
+        <a className="contact-email" href={`mailto:${settings.contactEmail}`}>
+          {settings.contactEmail}
         </a>
       </div>
     </section>

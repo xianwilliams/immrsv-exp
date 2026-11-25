@@ -3,7 +3,7 @@ import { SiteFooter } from "./site-footer";
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import type { Project } from "@/lib/content";
+import type { CmsProject, FeaturedSlide, SiteSettings } from "@/lib/cms/types";
 import type { ProjectImage } from "@/lib/project-galleries";
 import { Arrow, Brand } from "./site-ui";
 import { ImageViewer } from "./image-viewer";
@@ -15,10 +15,18 @@ export function CaseStudy({
   project,
   images,
   next,
+  settings,
+  bannerSlides,
+  contactAvailable = true,
+  workAvailable = true,
 }: {
-  project: Project;
+  project: CmsProject;
+  settings: SiteSettings;
+  bannerSlides: FeaturedSlide[];
+  contactAvailable?: boolean;
+  workAvailable?: boolean;
   images: ProjectImage[];
-  next: Project;
+  next: CmsProject | null;
 }) {
   const [image, setImage] = useState<number | null>(null);
   const imageOpener = useRef<HTMLElement | null>(null);
@@ -36,7 +44,7 @@ export function CaseStudy({
           ? "case-lead"
           : `case-photo${index % 3 === 1 && images[index].width / images[index].height > 1.2 ? " case-photo-wide" : ""}`
       }
-      key={images[index].src}
+      key={`${images[index].src}-${index}`}
     >
       <button
         onClick={() => openImage(index)}
@@ -69,21 +77,24 @@ export function CaseStudy({
         Skip to project details
       </a>
       <header className="case-header">
-        <Link className="case-back mono" href="/#work">
-          <span aria-hidden="true">←</span> ALL WORK
+        <Link className="case-back mono" href={workAvailable ? "/#work" : "/"}>
+          <span aria-hidden="true">←</span>{" "}
+          {workAvailable ? "ALL WORK" : "HOME"}
         </Link>
         <Link className="case-brand" href="/" aria-label="IMMRSV home">
           <Brand />
         </Link>
         <div className="nav-actions">
           <ThemeToggle />
-          <button className="button nav-cta" onClick={openContact}>
-            WORK WITH US <Arrow diagonal />
-          </button>
+          {contactAvailable && (
+            <button className="button nav-cta" onClick={openContact}>
+              {settings.contactButton} <Arrow diagonal />
+            </button>
+          )}
         </div>
       </header>
       <main>
-        {photo(0, true)}
+        {images.length > 0 && photo(0, true)}
         <section className="case-story" id="project-story">
           <div className="case-title">
             <p className="mono">{project.category}</p>
@@ -92,10 +103,13 @@ export function CaseStudy({
           </div>
           <div className="case-overview">
             <p>{project.description}</p>
+            {project.body.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
             {project.roles.length > 0 && (
               <ul className="case-role-tags">
-                {project.roles.map((role) => (
-                  <li key={role}>{role}</li>
+                {project.roles.map((role, index) => (
+                  <li key={`${role}-${index}`}>{role}</li>
                 ))}
               </ul>
             )}
@@ -109,8 +123,8 @@ export function CaseStudy({
           {images.slice(1).map((_, i) => photo(i + 1))}
         </section>
         <div className="case-project-end">
-          <Link className="text-button" href="/#work">
-            ALL SELECTED WORK <Arrow />
+          <Link className="text-button" href={workAvailable ? "/#work" : "/"}>
+            {workAvailable ? "ALL SELECTED WORK" : "BACK TO HOME"} <Arrow />
           </Link>
           {project.link && (
             <a
@@ -123,24 +137,34 @@ export function CaseStudy({
             </a>
           )}
         </div>
-        <ProjectBanner onContact={openContact} />
-        <Link className="case-next" href={`/work/${next.id}`}>
-          <div>
-            <span className="mono">NEXT EXPERIENCE</span>
-            <h2>{next.client}</h2>
-            <p>{next.title}</p>
-            <Arrow diagonal />
-          </div>
-          <img
-            src={next.image}
-            alt={next.client}
-            width={800}
-            height={530}
-            loading="lazy"
+        {contactAvailable && (
+          <ProjectBanner
+            key={bannerSlides.map((slide) => slide.project.id).join("|")}
+            onContact={openContact}
+            settings={settings}
+            slides={bannerSlides}
           />
-        </Link>
+        )}
+        {next && (
+          <Link className="case-next" href={`/work/${next.id}`}>
+            <div>
+              <span className="mono">NEXT EXPERIENCE</span>
+              <h2>{next.client}</h2>
+              <p>{next.title}</p>
+              <Arrow diagonal />
+            </div>
+            <img
+              src={next.cover.src}
+              alt={next.cover.alt || next.client}
+              width={next.cover.width}
+              height={next.cover.height}
+              style={{ objectPosition: next.cover.position }}
+              loading="lazy"
+            />
+          </Link>
+        )}
       </main>
-      <SiteFooter />
+      <SiteFooter settings={settings} />
       <ImageViewer
         images={images}
         index={image}

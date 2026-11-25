@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import localFont from "next/font/local";
+import { getSiteContent } from "@/lib/cms/server";
 import "./globals.css";
 import "@/components/page-frame.css";
 
@@ -16,23 +17,27 @@ const plexMono = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || "https://www.immrsv-exp.com"),
-  title: "IMMRSV | Experiences, brought to life.",
-  description:
-    "Independent experiential production for agencies, internal brand teams, and creative partners. From a short planning sprint to a full production team.",
-  openGraph: {
-    title: "IMMRSV | Experiences, brought to life.",
-    description:
-      "Your project. The right support. Independent experiential production, from one production lead to a full team.",
-    type: "website",
-    images: ["/media/approved/starry/01.webp"],
-  },
-  robots: {
-    index: process.env.SITE_INDEXABLE === "true",
-    follow: process.env.SITE_INDEXABLE === "true",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getSiteContent();
+  const hero = content.projects.find(
+    (project) => project.id === content.home.heroProjects[0],
+  );
+  return {
+    metadataBase: new URL(process.env.SITE_URL || "https://www.immrsv-exp.com"),
+    title: content.settings.seoTitle,
+    description: content.settings.seoDescription,
+    openGraph: {
+      title: content.settings.seoTitle,
+      description: content.settings.seoDescription,
+      type: "website",
+      images: hero ? [hero.cover.src] : [],
+    },
+    robots: {
+      index: process.env.SITE_INDEXABLE === "true",
+      follow: process.env.SITE_INDEXABLE === "true",
+    },
+  };
+}
 export default function RootLayout({
   children,
 }: {

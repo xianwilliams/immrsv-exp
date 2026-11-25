@@ -6,6 +6,7 @@ dist/
 coverage/
 .cache/
 .turbo/
+.sanity/
 *.tsbuildinfo
 next-env.d.ts
 

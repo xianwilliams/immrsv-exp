@@ -113,6 +113,9 @@
   font-size: clamp(17px, 1.4vw, 22px);
   line-height: 1.6;
 }
+.case-overview > p + p {
+  margin-top: 1em;
+}
 .case-role-tags {
   display: flex;
   flex-wrap: wrap;

@@ -3,7 +3,7 @@ import { TypedHeading } from "./typed-heading";
 import { SiteFooter } from "./site-footer";
 import PixelBlast from "./PixelBlast";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, Fragment } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ContactSection } from "./contact-section";
 import { Arrow, Brand, Close } from "./site-ui";
@@ -13,10 +13,15 @@ import { ProjectPhotos } from "./project-photos";
 import { HeroCarousel } from "./hero-carousel";
 import { Services } from "./services";
 import { ThemeToggle } from "./theme-toggle";
-import { projectPreviews } from "@/lib/project-previews";
+import {
+  featuredSlides,
+  type ClientLogo,
+  type CmsProject,
+  type SiteContent,
+} from "@/lib/cms/types";
+import { contentLines } from "./content-lines";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { type Project } from "@/lib/content";
 import "./home-revision.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,8 +31,12 @@ function ProjectDialog({
   onClose,
   onContact,
   onRestoreFocus,
+  contactLabel,
+  contactAvailable,
 }: {
-  project: Project | null;
+  project: CmsProject | null;
+  contactLabel: string;
+  contactAvailable: boolean;
   onClose: () => void;
   onContact: () => void;
   onRestoreFocus: (event: Event) => void;
@@ -48,10 +57,10 @@ function ProjectDialog({
           <Close />
           {project && (
             <>
-              {projectPreviews[project.id]?.length ? (
+              {project.popupGallery.length ? (
                 <ProjectPhotos
                   key={project.id}
-                  images={projectPreviews[project.id]}
+                  images={project.popupGallery}
                   client={project.client}
                 />
               ) : (
@@ -70,8 +79,8 @@ function ProjectDialog({
                   <div className="project-roles">
                     <span className="mono">OUR INVOLVEMENT</span>
                     <ul>
-                      {project.roles.map((role) => (
-                        <li key={role}>{role}</li>
+                      {project.roles.map((role, index) => (
+                        <li key={`${role}-${index}`}>{role}</li>
                       ))}
                     </ul>
                   </div>
@@ -83,16 +92,18 @@ function ProjectDialog({
                   <Link className="text-button" href={`/work/${project.id}`}>
                     EXPLORE THE FULL PROJECT <Arrow diagonal />
                   </Link>
-                  <button
-                    className="button"
-                    onClick={() => {
-                      onClose();
-                      onContact();
-                    }}
-                  >
-                    WORK WITH US
-                    <Arrow diagonal />
-                  </button>
+                  {contactAvailable && (
+                    <button
+                      className="button"
+                      onClick={() => {
+                        onClose();
+                        onContact();
+                      }}
+                    >
+                      {contactLabel}
+                      <Arrow diagonal />
+                    </button>
+                  )}
                 </div>
               </div>
             </>
@@ -103,60 +114,16 @@ function ProjectDialog({
   );
 }
 
-function ClientMarks() {
+function ClientMarks({ clients }: { clients: ClientLogo[] }) {
   const [active, setActive] = useState<string | null>(null);
-  const clients = [
-    [
-      "starry.svg",
-      "Starry",
-      "starry",
-      "Starry NBA All-Star Branding & Operations",
-    ],
-    ["crumbl.svg", "Crumbl", "crumbl", "Crumbl HQ Build Out & Branding"],
-    ["pandora.svg", "Pandora", "pandora-las-vegas", "Pandora Las Vegas Launch"],
-    [
-      "brandless.png",
-      "Brandless",
-      "brandless-summit",
-      "Brandless Consumer Summit",
-    ],
-    [
-      "maison-margiela.svg",
-      "Maison Margiela",
-      "maison-margiela",
-      "Maison Margiela REPLICA Summer Experience",
-    ],
-    [
-      "comfort-cases.png",
-      "Comfort Cases",
-      "comfort-cases",
-      "Comfort Cases × Lisa Barlow",
-    ],
-  ];
   return (
     <div className="client-marks">
-      {clients.map(([file, name, project, title], index) => (
-        <div
-          className={`client-mark ${active === file ? "is-previewing" : ""}`}
-          key={file}
-          data-brand={project}
-          onMouseEnter={() => setActive(file)}
-          onMouseLeave={() => setActive(null)}
-          onFocus={() => setActive(file)}
-          onBlur={() => setActive(null)}
-          onKeyDown={(event) => {
-            if (event.key === "Escape") setActive(null);
-          }}
-        >
-          <Link
-            href={"/work/" + project}
-            className="client-logo-button"
-            aria-label={name + ": " + title}
-            aria-controls={`brand-preview-${index}`}
-          >
+      {clients.map((client, index) => {
+        const images = (
+          <>
             <img
               className="client-logo-mono"
-              src={`/media/brands/${file === "comfort-cases.png" ? "comfort-cases-white.png" : file}`}
+              src={client.monochromeLogo || client.logo}
               alt=""
               width={200}
               height={100}
@@ -164,41 +131,104 @@ function ClientMarks() {
             />
             <img
               className="client-logo-color"
-              src={`/media/brands/${file}`}
+              src={client.logo}
               alt=""
               width={200}
               height={100}
               loading="lazy"
             />
-          </Link>
+          </>
+        );
+        const label = client.previewTitle
+          ? `${client.name}: ${client.previewTitle}`
+          : client.name;
+        return (
           <div
-            className="client-event-preview"
-            id={`brand-preview-${index}`}
-            aria-hidden={active !== file}
+            className={`client-mark ${active === client.id ? "is-previewing" : ""}`}
+            key={client.id}
+            data-brand={client.projectId || client.id}
+            onMouseEnter={() => setActive(client.id)}
+            onMouseLeave={() => setActive(null)}
+            onFocus={() => setActive(client.id)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget))
+                setActive(null);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") setActive(null);
+            }}
           >
-            <img
-              src={projectPreviews[project][0].src}
-              alt=""
-              width={320}
-              height={320}
-              loading="lazy"
-              style={{ objectPosition: projectPreviews[project][0].position }}
-            />
-            <p>{title}</p>
+            {client.projectId ? (
+              <Link
+                href={`/work/${client.projectId}`}
+                className="client-logo-button"
+                aria-label={label}
+                aria-controls={
+                  client.previewImage ? `brand-preview-${index}` : undefined
+                }
+              >
+                {images}
+              </Link>
+            ) : (
+              <span
+                className="client-logo-button"
+                role="img"
+                aria-label={label}
+                tabIndex={client.previewImage ? 0 : undefined}
+              >
+                {images}
+              </span>
+            )}
+            {client.previewImage && (
+              <div
+                className="client-event-preview"
+                id={`brand-preview-${index}`}
+                aria-hidden={active !== client.id}
+              >
+                <img
+                  src={client.previewImage.src}
+                  alt=""
+                  width={320}
+                  height={320}
+                  loading="lazy"
+                  style={{ objectPosition: client.previewImage.position }}
+                />
+                {client.previewTitle && <p>{client.previewTitle}</p>}
+              </div>
+            )}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
 
-export default function Experience() {
+export default function Experience({ content }: { content: SiteContent }) {
+  const { home, settings } = content;
+  const sections = home.sections.filter((section) => section.enabled);
+  const contactAvailable = sections.some(
+    (section) => section.section === "contact",
+  );
+  const navigation = settings.navigation.filter((item) =>
+    sections.some((section) => section.section === item.section),
+  );
+  const slides = featuredSlides(content);
+  const projects = home.work.featuredProjects.flatMap((id) => {
+    const project = content.projects.find((entry) => entry.id === id);
+    return project ? [project] : [];
+  });
   const root = useRef<HTMLDivElement>(null);
   const intro = useRef<HTMLDivElement>(null);
   const dialogOpener = useRef<HTMLElement | null>(null);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
+    null,
+  );
+  const selectedProject =
+    content.projects.find((project) => project.id === selectedProjectId) ||
+    null;
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Refresh reveal positions when a published section is reordered or edited.
   useEffect(() => {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
@@ -240,17 +270,18 @@ export default function Experience() {
             )
             .to(intro.current, { autoAlpha: 0, duration: 0.3 }, 1.35);
         }
-        ScrollTrigger.create({
-          trigger: ".hero",
-          start: "top top",
-          end: () =>
-            "+=" +
-            root.current!.querySelector<HTMLElement>(".hero")!.offsetHeight,
-          pin: true,
-          pinSpacing: false,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        });
+        if (home.heroProjects.length)
+          ScrollTrigger.create({
+            trigger: ".hero",
+            start: "top top",
+            end: () =>
+              "+=" +
+              root.current!.querySelector<HTMLElement>(".hero")!.offsetHeight,
+            pin: true,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          });
         gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
           gsap.from(element, {
             y: 24,
@@ -260,17 +291,18 @@ export default function Experience() {
             scrollTrigger: { trigger: element, start: "top 94%", once: true },
           });
         });
-        gsap.from(".client-mark", {
-          y: 20,
-          opacity: 0,
-          stagger: 0.06,
-          duration: 0.65,
-          scrollTrigger: {
-            trigger: ".client-marks",
-            start: "top 90%",
-            once: true,
-          },
-        });
+        if (root.current?.querySelector(".client-mark"))
+          gsap.from(".client-mark", {
+            y: 20,
+            opacity: 0,
+            stagger: 0.06,
+            duration: 0.65,
+            scrollTrigger: {
+              trigger: ".client-marks",
+              start: "top 90%",
+              once: true,
+            },
+          });
       });
       return () => mm.revert();
     }, root);
@@ -301,10 +333,10 @@ export default function Experience() {
       cancelAnimationFrame(anchorFrame);
       ctx.revert();
     };
-  }, []);
+  }, [content]);
 
   function openContact() {
-    setSelectedProject(null);
+    setSelectedProjectId(null);
     requestAnimationFrame(() => {
       document.getElementById("contact")?.scrollIntoView({
         behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -316,14 +348,17 @@ export default function Experience() {
         ?.focus({ preventScroll: true });
     });
   }
-  const openProject = useCallback((project: Project) => {
+  const openProject = useCallback((project: CmsProject) => {
     dialogOpener.current = document.activeElement as HTMLElement;
-    setSelectedProject(project);
+    setSelectedProjectId(project.id);
   }, []);
 
   return (
     <div ref={root} className="home-revision">
-      <a className="skip-link" href="#about">
+      <a
+        className="skip-link"
+        href={sections.length ? `#${sections[0].section}` : "#home"}
+      >
         Skip to content
       </a>
       <div ref={intro} className="intro" aria-hidden="true">
@@ -331,7 +366,10 @@ export default function Experience() {
           <Brand />
         </div>
       </div>
-      <header className="hero" id="home">
+      <header
+        className={`hero${slides.length ? "" : " hero--no-media"}`}
+        id="home"
+      >
         <nav className="hero-nav" aria-label="Main navigation">
           <a
             href="#home"
@@ -341,17 +379,20 @@ export default function Experience() {
             <Brand />
           </a>
           <div className="nav-links">
-            <a href="#about">ABOUT</a>
-            <a href="#services">SERVICES</a>
-            <a href="#clients">CLIENTS</a>
-            <a href="#work">WORK</a>
+            {navigation.map((item) => (
+              <a key={item.section} href={`#${item.section}`}>
+                {item.label}
+              </a>
+            ))}
           </div>
           <div className="nav-actions">
             <ThemeToggle />
-            <a className="button nav-cta" href="#contact">
-              <span>WORK WITH US</span>
-              <Arrow diagonal />
-            </a>
+            {contactAvailable && (
+              <a className="button nav-cta" href="#contact">
+                <span>{settings.contactButton}</span>
+                <Arrow diagonal />
+              </a>
+            )}
           </div>
           <button
             className="mobile-menu-button"
@@ -364,110 +405,151 @@ export default function Experience() {
         </nav>
         {menuOpen && (
           <nav className="mobile-menu" aria-label="Mobile navigation">
-            {[
-              ["ABOUT", "#about"],
-              ["SERVICES", "#services"],
-              ["CLIENTS", "#clients"],
-              ["WORK", "#work"],
-              ["CONTACT", "#contact"],
-            ].map(([label, href]) => (
-              <a key={href} href={href} onClick={() => setMenuOpen(false)}>
+            {navigation.map(({ label, section }) => (
+              <a
+                key={section}
+                href={`#${section}`}
+                onClick={() => setMenuOpen(false)}
+              >
                 {label}
                 <Arrow diagonal />
               </a>
             ))}
+            {contactAvailable &&
+              !navigation.some((item) => item.section === "contact") && (
+                <a href="#contact" onClick={() => setMenuOpen(false)}>
+                  {settings.contactButton}
+                  <Arrow diagonal />
+                </a>
+              )}
           </nav>
         )}
-        <h1 className="sr-only">
-          IMMRSV. Independent experiential production.
-        </h1>
-        <HeroCarousel paused={!!selectedProject} />
+        <h1 className="sr-only">{settings.seoTitle}</h1>
+        <HeroCarousel
+          key={slides.map((slide) => slide.project.id).join("|")}
+          slides={slides}
+          paused={!!selectedProject}
+        />
       </header>
       <main className="home-content">
-        <section className="about" id="about" aria-labelledby="about-title">
-          <div className="about-layout" data-reveal>
-            <h2 id="about-title">
-              <TypedHeading>
-                YOUR PROJECT.
-                <br />
-                <em>THE RIGHT SUPPORT.</em>
-              </TypedHeading>
-            </h2>
-            <figure className="about-photos">
-              <div className="about-people">
-                <img
-                  src="/media/people/installation.jpg"
-                  alt="The team at an outdoor mirrored installation"
-                  width={1094}
-                  height={1375}
-                  loading="lazy"
-                />
-                <img
-                  src="/media/people/prop-build.png"
-                  alt="Oversized sculptural props taking shape in the workshop"
-                  width={1218}
-                  height={1180}
-                  loading="lazy"
-                />
-                <img
-                  src="/media/people/workshop.png"
-                  alt="The team beside a colorful octopus sculpture during fabrication"
-                  width={1206}
-                  height={1108}
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="mono">
-                BIG IDEAS. REAL-WORLD EXPERIENCES.
-              </figcaption>
-            </figure>
-            <div className="about-copy">
-              <p>
-                IMMRSV is an independent experiential production partner based
-                in Salt Lake City and working around the world. One production
-                lead, a short planning sprint, or a full team—we fit around your
-                project.
-              </p>
-              <p>
-                Led by Nick Wirsching, we work alongside agencies, brand teams,
-                and creative partners, bringing the people and resources needed
-                for one part of a project or the whole production.
-              </p>
-            </div>
-          </div>
-        </section>
-        <Services />
-        <section className="trust" id="clients" aria-labelledby="trust-title">
-          <div className="trust-pixels" aria-hidden="true">
-            <PixelBlast
-              color="#888888"
-              accentColor="#888888"
-              pixelSize={3}
-              patternDensity={0.9}
-              speed={0.2}
-              drift={0.15}
-              glow={0.15}
-              twinkle={0.1}
-              edgeFade={0.2}
-              enableRipples={false}
-              hoverEffect="none"
-              dpr={1}
-            />
-          </div>
-          <div className="trust-proof">
-            <h2 id="trust-title" data-reveal>
-              WHO WE’VE <em>WORKED WITH.</em>
-            </h2>
-            <ClientMarks />
-          </div>
-        </section>
-        <ProjectGallery onOpen={openProject} />
-        <ContactSection />
+        {sections.map(({ section }) => (
+          <Fragment key={section}>
+            {section === "about" && (
+              <section
+                className="about"
+                id="about"
+                aria-labelledby="about-title"
+              >
+                <div
+                  className={`about-layout${home.about.photos.length ? "" : " about-layout--text-only"}`}
+                  data-reveal
+                >
+                  <h2 id="about-title">
+                    <TypedHeading>
+                      {contentLines(home.about.title)}
+                      {home.about.emphasis && (
+                        <>
+                          <br />
+                          <em>{contentLines(home.about.emphasis)}</em>
+                        </>
+                      )}
+                    </TypedHeading>
+                  </h2>
+                  {home.about.photos.length > 0 && (
+                    <figure className="about-photos">
+                      <div
+                        className="about-people"
+                        style={{
+                          gridTemplateColumns: `repeat(${Math.min(home.about.photos.length, 3)}, minmax(0, 1fr))`,
+                        }}
+                      >
+                        {home.about.photos.map((image, index) => (
+                          <img
+                            key={`${image.src}-${index}`}
+                            src={image.src}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                            loading="lazy"
+                            style={{ objectPosition: image.position }}
+                          />
+                        ))}
+                      </div>
+                      {home.about.caption && (
+                        <figcaption className="mono">
+                          {home.about.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
+                  <div className="about-copy">
+                    {home.about.paragraphs.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+            {section === "services" && <Services content={home.services} />}
+            {section === "clients" && (
+              <section
+                className="trust"
+                id="clients"
+                aria-labelledby="trust-title"
+              >
+                <div className="trust-pixels" aria-hidden="true">
+                  <PixelBlast
+                    color="#888888"
+                    accentColor="#888888"
+                    pixelSize={3}
+                    patternDensity={0.9}
+                    speed={0.2}
+                    drift={0.15}
+                    glow={0.15}
+                    twinkle={0.1}
+                    edgeFade={0.2}
+                    enableRipples={false}
+                    hoverEffect="none"
+                    dpr={1}
+                  />
+                </div>
+                <div className="trust-proof">
+                  <h2 id="trust-title" data-reveal>
+                    {contentLines(home.clients.title)}
+                    {home.clients.emphasis && (
+                      <>
+                        {" "}
+                        <em>{contentLines(home.clients.emphasis)}</em>
+                      </>
+                    )}
+                  </h2>
+                  <ClientMarks clients={home.clients.logos} />
+                </div>
+              </section>
+            )}
+            {section === "work" && (
+              <ProjectGallery
+                projects={projects}
+                content={home.work}
+                onOpen={openProject}
+              />
+            )}
+            {section === "contact" && (
+              <ContactSection
+                content={home.contact}
+                settings={settings}
+                slides={slides}
+              />
+            )}
+          </Fragment>
+        ))}
       </main>
-      <SiteFooter />
+      <SiteFooter settings={settings} />
       <ProjectDialog
+        contactLabel={settings.contactButton}
+        contactAvailable={contactAvailable}
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => setSelectedProjectId(null)}
         onContact={openContact}
         onRestoreFocus={(event) => {
           event.preventDefault();

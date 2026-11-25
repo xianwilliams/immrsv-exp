@@ -29,14 +29,22 @@ export function ProjectPhotos({
     const observer = new IntersectionObserver(([entry]) =>
       setVisible(entry.isIntersecting),
     );
-    observer.observe(root.current!);
+    if (root.current) observer.observe(root.current);
     return () => {
       media.removeEventListener("change", apply);
       observer.disconnect();
     };
   }, []);
   useEffect(() => {
-    if (!playing || hovered || focused || !visible || viewer !== null) return;
+    if (
+      !playing ||
+      hovered ||
+      focused ||
+      !visible ||
+      viewer !== null ||
+      images.length < 2
+    )
+      return;
     const timer = setInterval(() => {
       if (!document.hidden) setActive((i) => (i + 1) % images.length);
     }, 4000);
@@ -47,6 +55,8 @@ export function ProjectPhotos({
     setActive(index);
     setViewer(index);
   }
+  if (!images.length) return null;
+  const current = Math.min(active, images.length - 1);
   return (
     <div
       className={`project-photos${images.every((image) => image.height > image.width) ? " project-photos--portrait" : ""}`}
@@ -61,52 +71,54 @@ export function ProjectPhotos({
     >
       <AccordionGallery
         images={images}
-        active={active}
+        active={current}
         onActiveChange={setActive}
         onSelect={open}
         adaptToImage
       />
       <div className="project-photo-caption">
         <span className="mono">
-          {String(active + 1).padStart(2, "0")} /{" "}
+          {String(current + 1).padStart(2, "0")} /{" "}
           {String(images.length).padStart(2, "0")}
         </span>
-        <p aria-live={playing ? "off" : "polite"}>{images[active].caption}</p>
-        <div className="accordion-controls">
-          <button
-            aria-label="Previous accordion image"
-            onClick={() => {
-              setPlaying(false);
-              setActive((i) => (i - 1 + images.length) % images.length);
-            }}
-          >
-            ←
-          </button>
-          <button
-            aria-label={
-              playing ? "Pause project slideshow" : "Play project slideshow"
-            }
-            aria-pressed={playing}
-            onClick={() => {
-              if (!playing) {
-                setHovered(false);
-                setFocused(false);
+        <p aria-live={playing ? "off" : "polite"}>{images[current].caption}</p>
+        {images.length > 1 && (
+          <div className="accordion-controls">
+            <button
+              aria-label="Previous accordion image"
+              onClick={() => {
+                setPlaying(false);
+                setActive((i) => (i - 1 + images.length) % images.length);
+              }}
+            >
+              ←
+            </button>
+            <button
+              aria-label={
+                playing ? "Pause project slideshow" : "Play project slideshow"
               }
-              setPlaying((value) => !value);
-            }}
-          >
-            {playing ? "Ⅱ" : "▷"}
-          </button>
-          <button
-            aria-label="Next accordion image"
-            onClick={() => {
-              setPlaying(false);
-              setActive((i) => (i + 1) % images.length);
-            }}
-          >
-            →
-          </button>
-        </div>
+              aria-pressed={playing}
+              onClick={() => {
+                if (!playing) {
+                  setHovered(false);
+                  setFocused(false);
+                }
+                setPlaying((value) => !value);
+              }}
+            >
+              {playing ? "Ⅱ" : "▷"}
+            </button>
+            <button
+              aria-label="Next accordion image"
+              onClick={() => {
+                setPlaying(false);
+                setActive((i) => (i + 1) % images.length);
+              }}
+            >
+              →
+            </button>
+          </div>
+        )}
       </div>
       <ImageViewer
         images={images}

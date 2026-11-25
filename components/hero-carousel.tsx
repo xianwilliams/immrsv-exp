@@ -1,7 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { heroSlides as slides } from "@/lib/hero-slides";
-export function HeroCarousel({ paused }: { paused: boolean }) {
+import type { FeaturedSlide } from "@/lib/cms/types";
+export function HeroCarousel({
+  paused,
+  slides,
+}: {
+  paused: boolean;
+  slides: FeaturedSlide[];
+}) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -15,14 +21,14 @@ export function HeroCarousel({ paused }: { paused: boolean }) {
     const observer = new IntersectionObserver(([entry]) =>
       setVisible(entry.isIntersecting),
     );
-    observer.observe(root.current!);
+    if (root.current) observer.observe(root.current);
     return () => {
       observer.disconnect();
       media.removeEventListener("change", apply);
     };
   }, []);
   useEffect(() => {
-    if (!playing || paused || !visible) return;
+    if (!playing || paused || !visible || slides.length < 2) return;
     const timer = setInterval(() => {
       if (document.hidden) return;
       setActive((current) => {
@@ -34,7 +40,10 @@ export function HeroCarousel({ paused }: { paused: boolean }) {
       });
     }, 5500);
     return () => clearInterval(timer);
-  }, [playing, paused, visible]);
+  }, [playing, paused, visible, slides.length]);
+  if (!slides.length) return null;
+  const currentIndex = active % slides.length;
+  const current = slides[currentIndex];
   return (
     <div
       className="hero-slideshow"
@@ -50,9 +59,9 @@ export function HeroCarousel({ paused }: { paused: boolean }) {
               images.current[index] = node;
             }}
             src={image.src}
-            alt={index === active ? image.alt : ""}
-            aria-hidden={index !== active}
-            className={index === active ? "active" : ""}
+            alt={index === currentIndex ? image.alt : ""}
+            aria-hidden={index !== currentIndex}
+            className={index === currentIndex ? "active" : ""}
             width={image.width}
             height={image.height}
             style={{ objectPosition: image.position }}
@@ -61,43 +70,47 @@ export function HeroCarousel({ paused }: { paused: boolean }) {
           />
         ))}
       </div>
-      <div className="hero-slideshow-footer mono">
-        <p aria-live={playing ? "off" : "polite"}>
-          <span>
-            {String(active + 1).padStart(2, "0")} /{" "}
-            {String(slides.length).padStart(2, "0")}
-          </span>
-          {slides[active].project.client} — {slides[active].project.title}
-        </p>
-        <div className="hero-slideshow-controls">
-          <button
-            aria-label="Previous featured project"
-            onClick={() => {
-              setPlaying(false);
-              setActive((i) => (i - 1 + slides.length) % slides.length);
-            }}
-          >
-            ←
-          </button>
-          <button
-            aria-label={
-              playing ? "Pause featured projects" : "Play featured projects"
-            }
-            onClick={() => setPlaying((value) => !value)}
-          >
-            {playing ? "PAUSE" : "PLAY"}
-          </button>
-          <button
-            aria-label="Next featured project"
-            onClick={() => {
-              setPlaying(false);
-              setActive((i) => (i + 1) % slides.length);
-            }}
-          >
-            →
-          </button>
+      {current && (
+        <div className="hero-slideshow-footer mono">
+          <p aria-live={playing ? "off" : "polite"}>
+            <span>
+              {String(currentIndex + 1).padStart(2, "0")} /{" "}
+              {String(slides.length).padStart(2, "0")}
+            </span>
+            {current.project.client} — {current.project.title}
+          </p>
+          {slides.length > 1 && (
+            <div className="hero-slideshow-controls">
+              <button
+                aria-label="Previous featured project"
+                onClick={() => {
+                  setPlaying(false);
+                  setActive((i) => (i - 1 + slides.length) % slides.length);
+                }}
+              >
+                ←
+              </button>
+              <button
+                aria-label={
+                  playing ? "Pause featured projects" : "Play featured projects"
+                }
+                onClick={() => setPlaying((value) => !value)}
+              >
+                {playing ? "PAUSE" : "PLAY"}
+              </button>
+              <button
+                aria-label="Next featured project"
+                onClick={() => {
+                  setPlaying(false);
+                  setActive((i) => (i + 1) % slides.length);
+                }}
+              >
+                →
+              </button>
+            </div>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }
