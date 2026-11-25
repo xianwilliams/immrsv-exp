@@ -1,5 +1,3 @@
-import { previewUrl } from "../environment";
-
 const panel = {
   maxWidth: 780,
   margin: "0 auto",
@@ -7,7 +5,7 @@ const panel = {
   lineHeight: 1.65,
 };
 
-export function EditorGuide() {
+export function EditorGuide({ previewUrl }: { previewUrl: string }) {
   return (
     <div style={{ overflow: "auto", height: "100%" }}>
       <article style={panel}>

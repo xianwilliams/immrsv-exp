@@ -1,19 +1,24 @@
 # IMMRSV content editor handoff
 
-The Sanity editor lets Nick maintain content within the existing website design. It is a separate, login-protected editor with no public website navigation link. Website visitors cannot edit content. The dataset is public because it contains website content; do not store passwords, form submissions, confidential client documents, or API secrets in it.
+The Sanity editor lets Nick maintain content within the existing website design. It is a login-protected editor at `/studio` with no public website navigation link. Website visitors cannot edit content. The dataset is public because it contains website content; do not store passwords, form submissions, confidential client documents, or API secrets in it.
 
 ## Project configuration
 
-| Setting        | Value                                         |
-| -------------- | --------------------------------------------- |
-| Sanity project | `mp1drxt3`                                    |
-| Organization   | IMMRSV — `ol2woczne`                          |
-| Dataset        | `production` (public)                         |
-| Local website  | `http://127.0.0.1:3100` (current test server) |
-| Local editor   | `http://127.0.0.1:3333`                       |
-| Hosted editor  | `https://immrsv-editor.sanity.studio/`        |
+| Setting        | Value                                  |
+| -------------- | -------------------------------------- |
+| Sanity project | `mp1drxt3`                             |
+| Organization   | IMMRSV — `ol2woczne`                   |
+| Dataset        | `production` (public)                  |
+| Local website  | `http://127.0.0.1:3000`                |
+| Local editor   | `http://127.0.0.1:3000/studio`         |
+| Website editor | `https://immrsv-exp.vercel.app/studio` |
+| Hosted editor  | `https://immrsv-editor.sanity.studio/` |
 
-The website and editor are separate builds. The authenticated editor is hosted on Sanity. Both existing Vercel projects (`immrsv-exp` and `xianwilliams-immrsv-exp`) have production configuration for `SANITY_PROJECT_ID=mp1drxt3` and `SANITY_DATASET=production`. Publishing content changes the connected website after its cache refresh; deploying the editor does not deploy the website. The **Published preview** tab uses `https://immrsv-exp.vercel.app` and shows published content, not unpublished drafts. Update that setting to Nick’s domain at launch.
+The website build includes the native Sanity login and editor at `/studio`. The Sanity-hosted editor is an alternate entrance to the same backend, not a second content project. Both existing Vercel projects (`immrsv-exp` and `xianwilliams-immrsv-exp`) have production configuration for `SANITY_PROJECT_ID=mp1drxt3` and `SANITY_DATASET=production`. Publishing content changes the connected website after its cache refresh. The **Published preview** tab shows published content, not unpublished drafts. In the embedded editor its links use the current website origin; the standalone editor uses `SANITY_STUDIO_PREVIEW_URL`.
+
+The Studio is excluded from search indexing and isolated from public-page CSS. Sanity authentication and project membership control editing access. The public project ID and dataset are safe to send to the browser; API tokens are not sent to it.
+
+Credential-enabled CORS origins are configured for `http://localhost:3000`, `http://127.0.0.1:3000`, `https://immrsv-exp.vercel.app`, and `https://xianwilliams-immrsv-exp.vercel.app`. Add the final website origin in Sanity Manage → API before using its `/studio` login. The standalone localhost origin on port 3333 remains available. Do not use a wildcard. A domain change leaves the project, content, and accounts intact; a route change also needs the Next.js route and Studio `basePath` updated.
 
 ## Free only
 
@@ -37,7 +42,7 @@ The contact form recipient is managed separately through Web3Forms. Changing the
 1. Nick creates his own free Sanity account. Invite him to this project using an available Free-plan role; grant administrative access for ownership handoff. No shared passwords or custom paid roles are needed.
 2. Confirm his login can upload an image, edit copy, create/publish a test project, feature it, reorder a section, and update a client logo. Verify those changes on the connected website, including its popup and direct project page. Remove the test content afterward.
 3. Make Nick an administrator of the dedicated IMMRSV organization, or transfer the project to his organization through Manage. Confirm access in the receiving organization before removing Fruitstand's administrative access. [Sanity organization and handoff guidance](https://www.sanity.io/docs/platform-management/projects-organizations-and-billing).
-4. Keep the same project and dataset when transferring ownership. A transfer does not require rebuilding the content model. Confirm website configuration and both published URLs afterward, and update `SANITY_STUDIO_PREVIEW_URL` to the final website domain before redeploying the editor.
+4. Keep the same project and dataset when transferring ownership. A transfer does not require rebuilding the content model. Confirm website configuration and both editor entrances afterward. Add the final website origin to Sanity's credential-enabled CORS list and update the standalone editor's `SANITY_STUDIO_PREVIEW_URL` before redeploying it.
 5. Verify the Free plan, usage, account ownership, form recipient, and routine publishing once more. Retain Fruitstand access only if agreed for ongoing support.
 
 This guide describes the setup and remaining handoff checks; it does not itself confirm production deployment or transfer to Nick.
@@ -48,4 +53,4 @@ The local production build passed publishing checks for draft isolation, a new p
 
 The separate user-requested demonstration is `project-cms-test`, at `/work/cms-test`. It uses existing approved Starry photos and is labeled as a temporary website test. It is intentionally left available for review. To remove it after review, remove it from Home → Case studies, publish Home, then disable the test project and publish. The original Starry project is unaffected.
 
-The public website dependency audit is clean. The editor audit has no high/critical findings; 14 moderate transitive advisories remain in Sanity’s CLI dependency chain (`@oclif/core` → `minimatch`). These concern the developer CLI, not a public website dependency. Follow upstream compatible updates rather than force-downgrading the editor.
+The website and editor now share one npm workspace lockfile. Its audit has no high/critical findings; 15 moderate transitive findings remain in Sanity’s CLI dependency chain (`@oclif/core` → `minimatch`). Follow upstream compatible updates rather than force-downgrading the editor.

@@ -3,15 +3,15 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import localFont from "next/font/local";
 import { getSiteContent } from "@/lib/cms/server";
-import "./globals.css";
+import "../globals.css";
 import "@/components/page-frame.css";
 
 const plexMono = localFont({
   src: [
-    { path: "../public/fonts/IBMPlexMono-Light.ttf", weight: "300" },
-    { path: "../public/fonts/IBMPlexMono-Regular.ttf", weight: "400" },
-    { path: "../public/fonts/IBMPlexMono-Medium.ttf", weight: "500" },
-    { path: "../public/fonts/IBMPlexMono-SemiBold.ttf", weight: "600" },
+    { path: "../../public/fonts/IBMPlexMono-Light.ttf", weight: "300" },
+    { path: "../../public/fonts/IBMPlexMono-Regular.ttf", weight: "400" },
+    { path: "../../public/fonts/IBMPlexMono-Medium.ttf", weight: "500" },
+    { path: "../../public/fonts/IBMPlexMono-SemiBold.ttf", weight: "600" },
   ],
   variable: "--font-plex-mono",
   display: "swap",

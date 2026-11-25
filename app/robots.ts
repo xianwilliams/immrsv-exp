@@ -3,7 +3,7 @@ export default function robots(): MetadataRoute.Robots {
   const live = process.env.SITE_INDEXABLE === "true";
   return {
     rules: live
-      ? { userAgent: "*", allow: "/", disallow: "/api/" }
+      ? { userAgent: "*", allow: "/", disallow: ["/api/", "/studio"] }
       : { userAgent: "*", disallow: "/" },
     ...(live
       ? {

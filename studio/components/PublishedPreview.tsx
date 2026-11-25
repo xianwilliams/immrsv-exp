@@ -1,9 +1,9 @@
-import { previewUrl } from "../environment";
-
 export function PublishedPreview({
   document,
+  previewUrl,
 }: {
   document: { displayed: { slug?: { current?: string } } };
+  previewUrl: string;
 }) {
   const slug = document.displayed.slug?.current;
   const href =

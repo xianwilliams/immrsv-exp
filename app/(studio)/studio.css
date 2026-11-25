@@ -1,0 +1,8 @@
+/* Keep Sanity's 320px login panel inside the padding on narrow phones. */
+@media (max-width: 359px) {
+  #sanity
+    [data-ui="Container"]:has(a[href^="https://api.sanity.io/v1/auth/login/"]) {
+    min-width: 0;
+    width: 100%;
+  }
+}
