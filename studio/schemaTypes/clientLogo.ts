@@ -16,10 +16,10 @@ export const clientLogo = defineType({
     }),
     defineField({
       name: "enabled",
-      title: "Available on the website",
+      title: "Visible when selected on Home",
       type: "boolean",
       description:
-        "Turn off and publish to hide this logo. The display order is managed under Home → Client lineup.",
+        "Publish this logo, then select it under Home → Client lineup → Logos to display and publish Home. Turn this off and publish to hide it without deleting it.",
     }),
     defineField({
       name: "logo",
@@ -61,7 +61,10 @@ export const clientLogo = defineType({
     select: { title: "name", enabled: "enabled", media: "logo" },
     prepare: ({ title, enabled, media }) => ({
       title,
-      subtitle: enabled === false ? "Hidden" : "Add to Home → Client lineup",
+      subtitle:
+        enabled === false
+          ? "Hidden"
+          : "Select in Home → Client lineup, then publish Home",
       media,
     }),
   },

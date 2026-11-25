@@ -18,6 +18,8 @@ The **Start here** panel in the editor explains routine tasks. Publishing a proj
 
 Home and Site settings are singletons. Their duplicate, delete, and unpublish actions are removed to prevent accidentally emptying the site. Projects and client logos can be created, edited, hidden, and reordered through the homepage reference lists. The forms keep the existing website templates intact.
 
+For a new logo, publish its **Client logos** record, then select it under **Home → Client lineup → Logos to display** and publish Home. Publishing the logo alone does not place it on the homepage. Drag these selections into order; removing one preserves its logo record. The lineup supports up to 60 logos, wrapping into centered rows of three on desktop or two on mobile, with incomplete rows centered as well.
+
 The **Published preview** tab opens the connected website. It is deliberately labeled: it does not expose draft data. The frontend reads the published perspective only. Set `SANITY_STUDIO_PREVIEW_URL` to the local website while testing and the final domain when launched.
 
 Before handoff, invite Nick to the Sanity project, confirm he can edit and publish using his own login, and transfer the project/organization as agreed. Do not share account passwords. Keep the Studio's public project ID/dataset configuration separate from any server-side or migration credentials.

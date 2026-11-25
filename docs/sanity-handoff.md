@@ -25,7 +25,7 @@ Sanity automatically applied a Growth trial when the project was created. The Pl
 
 - **Home:** copy, three About photos, service summaries, selected hero projects, client logos, and featured case studies. Drag homepage sections into order or hide a section. Hero and footer keep their fixed positions.
 - **Projects:** create a reusable case-study page; change its title, page address, overview, responsibilities, credits, thumbnail, popup accordion images, full gallery, and search description. Reorder photos and adjust crop/hotspot. A popup gallery can inherit the first six full-gallery images.
-- **Client logos:** add or replace logos, select a related project, and set the hover preview. Add, remove, or reorder their references under Home → Client lineup.
+- **Client logos:** add or replace logos, select a related project, and set the hover preview. Publish the logo, select it under **Home → Client lineup → Logos to display**, then publish Home. A published logo is not automatically selected for the homepage. Drag selections into order or remove them while keeping their records for later. Up to 60 logos wrap into centered rows of three on desktop or two on mobile; incomplete rows stay centered.
 - **Site settings:** navigation labels, social links, email link, footer text, project-page banner, and default search descriptions.
 
 Publish a project, then reference it under **Home → Case studies** to feature it on the homepage. Removing that reference preserves its direct project page. Disable and publish a project to hide it everywhere. Publish Home after changing its selections or order.

@@ -121,9 +121,16 @@
   font-size: clamp(32px, 4.2vw, 64px);
 }
 .home-revision .client-marks {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 8vw;
+  --client-column-gap: 8vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px var(--client-column-gap);
   margin-top: 48px;
+}
+.home-revision .client-mark {
+  flex: 0 0 calc((100% - 2 * var(--client-column-gap)) / 3);
+  min-width: 0;
 }
 .home-revision .client-mark img {
   max-width: 180px;
@@ -244,9 +251,12 @@
     padding-bottom: 16px;
   }
   .home-revision .client-marks {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    --client-column-gap: 22px;
+    gap: 22px var(--client-column-gap);
     margin-top: 24px;
+  }
+  .home-revision .client-mark {
+    flex-basis: calc((100% - var(--client-column-gap)) / 2);
   }
   .home-revision .client-mark img {
     max-width: 135px;
@@ -280,7 +290,7 @@
 .home-revision .client-mark[data-brand="comfort-cases"] .client-logo-color {
   filter: none;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .home-revision .client-event-preview {
     left: 50%;
     right: auto;

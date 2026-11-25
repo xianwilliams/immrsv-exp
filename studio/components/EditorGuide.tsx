@@ -66,13 +66,30 @@ export function EditorGuide() {
           section’s handle above or below another section. The opening slideshow
           and footer stay at the top and bottom.
         </p>
-        <h2>Update logos and photos</h2>
+        <h2>Add or replace a client logo</h2>
+        <ol>
+          <li>
+            Create or edit a record under <strong>Client logos</strong>. Upload
+            a transparent brand logo and optionally a white version, then select
+            its related project if it has one. Publish the logo.
+          </li>
+          <li>
+            Open <strong>Home → Client lineup → Logos to display</strong> and
+            select the logo. Uploading and publishing a logo alone does not add
+            it to this lineup.
+          </li>
+          <li>
+            Drag the selections into order, remove any you no longer want to
+            show, then <strong>publish Home</strong>.
+          </li>
+        </ol>
         <p>
-          Create or edit a record under <strong>Client logos</strong>. Upload a
-          transparent brand logo and optionally a white version, then select its
-          related project. Add it to <strong>Home → Client lineup</strong> and
-          publish Home. You can reorder or remove logos there.
+          The lineup supports up to 60 logos, with three per row on desktop and
+          two on mobile. Extra rows appear automatically and incomplete rows
+          stay centered. Removing a selection preserves its logo record for
+          later.
         </p>
+        <h2>Update photos</h2>
         <p>
           Use each photo’s crop and hotspot controls to keep the subject in
           frame. Add a short image description for accessibility. A caption is

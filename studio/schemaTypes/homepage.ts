@@ -214,7 +214,7 @@ export const homepage = defineType({
           title: "Logos to display",
           type: "array",
           description:
-            "Create or select a client logo, then drag to arrange the lineup. Removing it here keeps its logo record for later.",
+            "Publish a logo under Client logos, select it here, then publish Home. Drag to change the order. Up to 60 logos wrap into centered rows: three across on desktop and two on mobile. Removing a selection keeps its logo record for later.",
           of: [
             defineArrayMember({
               type: "reference",
